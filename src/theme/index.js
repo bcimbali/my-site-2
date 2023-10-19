@@ -50,7 +50,11 @@ const theme = {
     yellow: '#ffef96'
   },
   maxWidth: maxWidth,
-  mq: mediaQueries
+  mq: mediaQueries,
+  nav: {
+    mobileNavHeight: '64px',
+    desktopNavHeight: '80px'
+  }
 };
 
 export default theme;
