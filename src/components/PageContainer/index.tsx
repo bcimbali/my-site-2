@@ -3,9 +3,9 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import styled, { css } from 'styled-components';
-import { Inter } from 'next/font/google';
+import { Play } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const Main = styled.main`
   display: flex;
@@ -24,7 +24,7 @@ const Body = styled.body`
 
 const PageContainer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Body className={inter.className}>
+    <Body className={play.className}>
       <Navbar />
       <Main>{children}</Main>
     </Body>
