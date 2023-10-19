@@ -37,7 +37,7 @@ const mediaQueries = (key) => {
 const theme = {
   breakpoints: breakpoints,
   colors: {
-    bg: '#b1b0e5',
+    bg: '#0B0B3E',
     black: '#111111',
     blue: '#0B0B3E',
     fg: '#FFFFFF',
