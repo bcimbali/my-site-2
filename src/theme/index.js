@@ -35,6 +35,7 @@ const mediaQueries = (key) => {
 };
 
 const theme = {
+  breakpoints: breakpoints,
   colors: {
     bg: '#b1b0e5',
     black: '#111111',
@@ -48,8 +49,8 @@ const theme = {
     white: '#FFFFFF',
     yellow: '#ffef96'
   },
-  mq: mediaQueries,
-  maxWidth: maxWidth
+  maxWidth: maxWidth,
+  mq: mediaQueries
 };
 
 export default theme;
