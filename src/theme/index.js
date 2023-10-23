@@ -49,6 +49,28 @@ const theme = {
     white: '#FFFFFF',
     yellow: '#ffef96'
   },
+  layout: {
+    xs: {
+      gutter: '24px',
+      margin: '24px',
+      numOfColumns: 4
+    },
+    md: {
+      gutter: '32px',
+      margin: '32px',
+      numOfColumns: 8
+    },
+    lg: {
+      gutter: '32px',
+      margin: '32px',
+      numOfColumns: 12
+    },
+    xxl: {
+      gutter: '40px',
+      margin: '40px',
+      numOfColumns: 12
+    }
+  },
   maxWidth: maxWidth,
   mq: mediaQueries,
   nav: {
