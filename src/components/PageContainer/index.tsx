@@ -8,9 +8,28 @@ import { Play } from 'next/font/google';
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  border: 1px dotted white;
+  ${({ theme: { layout, mq } }) => css`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 ${layout.xs.margin};
+
+    ${mq('md')(`
+      padding: 0 ${layout.md.margin};
+    `)}
+
+    ${mq('xxl')(`
+      padding: 0 ${layout.xxl.margin};
+    `)}
+  `}
+`;
+
+const InnerPageWrapper = styled.div`
+  ${({ theme: { maxWidth } }) => css`
+    border: 1px dotted yellow;
+    max-width: ${maxWidth};
+    width: 100%;
+  `}
 `;
 
 const Body = styled.body`
@@ -26,7 +45,9 @@ const PageContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <Body className={play.className}>
       <Navbar />
-      <Main>{children}</Main>
+      <Main>
+        <InnerPageWrapper>{children}</InnerPageWrapper>
+      </Main>
     </Body>
   );
 };
