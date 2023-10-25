@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useState } from 'react';
 import Hamburger from '@/icons/jsx/hamburger';
+import MobileCloseIcon from '@/icons/jsx/mobile-x-icon';
 
 const DesktopLink = styled(Link)`
   ${({ theme: { colors } }) => css`
@@ -101,34 +102,7 @@ const Navbar = () => {
     <OuterNav>
       <InnerNav>
         <MobileNavBttn type="button" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
-          {isMobileNavOpen ? (
-            <svg
-              width="32"
-              height="16"
-              viewBox="0 0 32 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="31.5884"
-                y1="14.9114"
-                x2="0.588409"
-                y2="0.911368"
-                stroke="white"
-                strokeWidth="2"
-              />
-              <line
-                x1="31.4229"
-                y1="0.906183"
-                x2="1.42288"
-                y2="14.9062"
-                stroke="white"
-                strokeWidth="2"
-              />
-            </svg>
-          ) : (
-            <Hamburger />
-          )}
+          {isMobileNavOpen ? <MobileCloseIcon /> : <Hamburger />}
         </MobileNavBttn>
 
         <StyledLink href="/">
