@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const DesktopLink = styled(Link)`
   ${({ theme: { colors } }) => css`
@@ -37,15 +38,35 @@ const DesktopLinkNumber = styled.span`
 const DesktopLinkTitle = styled.h4``;
 
 const InnerNav = styled.div`
-  ${({ theme: { maxWidth } }) => css`
+  ${({ theme: { maxWidth, mq } }) => css`
     display: flex;
-    justify-content: space-between;
+    gap: 1rem;
     max-width: ${maxWidth};
     width: 100%;
+
+    ${mq('lg')`
+      justify-content: space-between;
+    `}
   `}
 `;
 
 const Logo = styled.h2``;
+
+const MobileNavBttn = styled.button`
+  background: none;
+  border: 0;
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  ${({ theme: { mq } }) => css`
+    ${mq('lg')`
+      display: none;
+    `}
+  `}
+`;
 
 const OuterNav = styled.nav`
   ${({ theme: { colors, layout, mq, nav } }) => css`
@@ -74,12 +95,55 @@ const StyledLink = styled(Link)`
 `;
 
 const Navbar = () => {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
     <OuterNav>
       <InnerNav>
+        <MobileNavBttn type="button" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+          {isMobileNavOpen ? (
+            <svg
+              width="32"
+              height="16"
+              viewBox="0 0 32 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="31.5884"
+                y1="14.9114"
+                x2="0.588409"
+                y2="0.911368"
+                stroke="white"
+                strokeWidth="2"
+              />
+              <line
+                x1="31.4229"
+                y1="0.906183"
+                x2="1.42288"
+                y2="14.9062"
+                stroke="white"
+                strokeWidth="2"
+              />
+            </svg>
+          ) : (
+            <svg
+              width="31"
+              height="16"
+              viewBox="0 0 31 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line y1="15" x2="31" y2="15" stroke="white" strokeWidth="2" />
+              <line y1="8" x2="31" y2="8" stroke="white" strokeWidth="2" />
+              <line y1="1" x2="31" y2="1" stroke="white" strokeWidth="2" />
+            </svg>
+          )}
+        </MobileNavBttn>
+
         <StyledLink href="/">
           <Logo>Brett Cimbalik</Logo>
         </StyledLink>
+
         <DesktopLinkContainer>
           <DesktopLinkItem>
             <DesktopLink href="/projects">
