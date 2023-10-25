@@ -89,14 +89,14 @@ const Navbar = () => {
           </DesktopLinkItem>
 
           <DesktopLinkItem>
-            <DesktopLink href="/projects">
+            <DesktopLink href="/about">
               <DesktopLinkNumber>02</DesktopLinkNumber>
               <DesktopLinkTitle>About</DesktopLinkTitle>
             </DesktopLink>
           </DesktopLinkItem>
 
           <DesktopLinkItem>
-            <DesktopLink href="/projects">
+            <DesktopLink href="/contact">
               <DesktopLinkNumber>03</DesktopLinkNumber>
               <DesktopLinkTitle>Contact</DesktopLinkTitle>
             </DesktopLink>
