@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useState } from 'react';
+import Hamburger from '@/icons/jsx/hamburger';
 
 const DesktopLink = styled(Link)`
   ${({ theme: { colors } }) => css`
@@ -126,17 +127,7 @@ const Navbar = () => {
               />
             </svg>
           ) : (
-            <svg
-              width="31"
-              height="16"
-              viewBox="0 0 31 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line y1="15" x2="31" y2="15" stroke="white" strokeWidth="2" />
-              <line y1="8" x2="31" y2="8" stroke="white" strokeWidth="2" />
-              <line y1="1" x2="31" y2="1" stroke="white" strokeWidth="2" />
-            </svg>
+            <Hamburger />
           )}
         </MobileNavBttn>
 
