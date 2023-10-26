@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "convertSvgToJsx": "svgr --typescript -- src/icons/raw/hamburger.svg > src/icons/jsx/hamburger.tsx"
+    "convertSvgs": "svgr --typescript --memo --ignore-existing --jsx-runtime 'automatic' --out-dir src/icons/jsx -- src/icons/raw"
   },
   "dependencies": {
     "next": "13.5.6",
