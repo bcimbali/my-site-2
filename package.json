@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "convertSvgs": "svgr --typescript --memo --ignore-existing --jsx-runtime 'automatic' --out-dir src/icons/jsx -- src/icons/raw"
+    "convertSvgs": "svgr --typescript --memo --ignore-existing --jsx-runtime 'automatic' --filename-case 'camel' --out-dir src/icons/jsx -- src/icons/raw"
   },
   "dependencies": {
     "next": "13.5.6",
