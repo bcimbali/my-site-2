@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import { useState } from 'react';
-import Hamburger from '@/icons/jsx/hamburger';
+import Hamburger from 'src/icons/tsx/hamburger';
 import MobileCloseIcon from '@/icons/jsx/mobile-x-icon';
 
 const DesktopLink = styled(Link)`
