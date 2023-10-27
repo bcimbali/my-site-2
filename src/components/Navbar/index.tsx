@@ -5,12 +5,23 @@ import Hamburger from 'src/icons/tsx/hamburger';
 import MobileCloseIcon from '@/icons/tsx/mobileXIcon';
 import pageData from '@/lib/pageData';
 import MobileDropdown from '@/components/MobileDropdown';
+import { usePathname } from 'next/navigation';
 
-const DesktopLink = styled(Link)`
-  ${({ theme: { colors } }) => css`
+type DesktopLinkTypes = {
+  $isDisabled: boolean;
+};
+
+const DesktopLink = styled(Link)<DesktopLinkTypes>`
+  ${({ theme: { colors }, $isDisabled }) => css`
     color: ${colors.white};
     display: flex;
     gap: 0.25rem;
+
+    ${$isDisabled &&
+    css`
+      border-bottom: 1px solid ${colors.white};
+      pointer-events: none;
+    `}
   `}
 `;
 
@@ -103,7 +114,14 @@ const StyledLink = styled(Link)`
 
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const pathname = usePathname();
 
+  // Close menu if page changes:
+  useEffect(() => {
+    setIsMobileNavOpen(false);
+  }, [pathname]);
+
+  // Disable body scrolling when mobile nav open:
   useEffect(() => {
     if (isMobileNavOpen) {
       document.body.classList.add('no-scroll');
@@ -131,7 +149,7 @@ const Navbar = () => {
           <DesktopLinkContainer>
             {pageData.map(({ name, number, path }) => (
               <DesktopLinkItem key={path}>
-                <DesktopLink href={path}>
+                <DesktopLink href={path} $isDisabled={path === pathname}>
                   <DesktopLinkNumber>{number}</DesktopLinkNumber>
                   <DesktopLinkTitle>{name}</DesktopLinkTitle>
                 </DesktopLink>
