@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Hamburger from 'src/icons/tsx/hamburger';
 import MobileCloseIcon from '@/icons/tsx/mobileXIcon';
+import pageData from '@/lib/pageData';
 
 const DesktopLink = styled(Link)`
   ${({ theme: { colors } }) => css`
@@ -80,8 +81,11 @@ const OuterNav = styled.nav`
     padding: 0 ${layout.xs.margin};
 
     ${mq('md')(`
-      height: ${nav.desktopNavHeight};
       padding: 0 ${layout.md.margin};
+    `)}
+
+    ${mq('lg')(`
+      height: ${nav.desktopNavHeight};
     `)}
 
     ${mq('xxl')(`
@@ -110,26 +114,14 @@ const Navbar = () => {
         </StyledLink>
 
         <DesktopLinkContainer>
-          <DesktopLinkItem>
-            <DesktopLink href="/projects">
-              <DesktopLinkNumber>01</DesktopLinkNumber>
-              <DesktopLinkTitle>Projects</DesktopLinkTitle>
-            </DesktopLink>
-          </DesktopLinkItem>
-
-          <DesktopLinkItem>
-            <DesktopLink href="/about">
-              <DesktopLinkNumber>02</DesktopLinkNumber>
-              <DesktopLinkTitle>About</DesktopLinkTitle>
-            </DesktopLink>
-          </DesktopLinkItem>
-
-          <DesktopLinkItem>
-            <DesktopLink href="/contact">
-              <DesktopLinkNumber>03</DesktopLinkNumber>
-              <DesktopLinkTitle>Contact</DesktopLinkTitle>
-            </DesktopLink>
-          </DesktopLinkItem>
+          {pageData.map(({ name, number, path }) => (
+            <DesktopLinkItem key={path}>
+              <DesktopLink href={path}>
+                <DesktopLinkNumber>{number}</DesktopLinkNumber>
+                <DesktopLinkTitle>{name}</DesktopLinkTitle>
+              </DesktopLink>
+            </DesktopLinkItem>
+          ))}
         </DesktopLinkContainer>
       </InnerNav>
     </OuterNav>
