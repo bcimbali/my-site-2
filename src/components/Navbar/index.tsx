@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Hamburger from 'src/icons/tsx/hamburger';
 import MobileCloseIcon from '@/icons/tsx/mobileXIcon';
 import pageData from '@/lib/pageData';
+import MobileDropdown from '@/components/MobileDropdown';
 
 const DesktopLink = styled(Link)`
   ${({ theme: { colors } }) => css`
@@ -102,29 +103,45 @@ const StyledLink = styled(Link)`
 
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileNavOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll');
+    };
+  }, [isMobileNavOpen]);
+
   return (
-    <OuterNav>
-      <InnerNav>
-        <MobileNavBttn type="button" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
-          {isMobileNavOpen ? <MobileCloseIcon /> : <Hamburger />}
-        </MobileNavBttn>
+    <>
+      <OuterNav>
+        <InnerNav>
+          <MobileNavBttn type="button" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+            {isMobileNavOpen ? <MobileCloseIcon /> : <Hamburger />}
+          </MobileNavBttn>
 
-        <StyledLink href="/">
-          <Logo>Brett Cimbalik</Logo>
-        </StyledLink>
+          <StyledLink href="/">
+            <Logo>Brett Cimbalik</Logo>
+          </StyledLink>
 
-        <DesktopLinkContainer>
-          {pageData.map(({ name, number, path }) => (
-            <DesktopLinkItem key={path}>
-              <DesktopLink href={path}>
-                <DesktopLinkNumber>{number}</DesktopLinkNumber>
-                <DesktopLinkTitle>{name}</DesktopLinkTitle>
-              </DesktopLink>
-            </DesktopLinkItem>
-          ))}
-        </DesktopLinkContainer>
-      </InnerNav>
-    </OuterNav>
+          <DesktopLinkContainer>
+            {pageData.map(({ name, number, path }) => (
+              <DesktopLinkItem key={path}>
+                <DesktopLink href={path}>
+                  <DesktopLinkNumber>{number}</DesktopLinkNumber>
+                  <DesktopLinkTitle>{name}</DesktopLinkTitle>
+                </DesktopLink>
+              </DesktopLinkItem>
+            ))}
+          </DesktopLinkContainer>
+        </InnerNav>
+      </OuterNav>
+      <MobileDropdown isOpen={isMobileNavOpen} />
+    </>
   );
 };
 

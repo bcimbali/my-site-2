@@ -141,8 +141,14 @@ const theme = {
   }
 };
 
-// Global Css default text styles:
+// Global Css default styles:
 export const GlobalStyles = createGlobalStyle`
+  .no-scroll {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
   ${({ theme: { mq, typography } }) => css`
     /* Mobile Typography Settings: */
     h1 {

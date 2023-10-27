@@ -33,11 +33,15 @@ const InnerPageWrapper = styled.div`
 `;
 
 const Body = styled.body`
-  ${({ theme }) => css`
-    background-color: ${theme.colors.bg};
+  ${({ theme: { colors, mq } }) => css`
+    background-color: ${colors.bg};
     display: grid;
     height: 100vh;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+
+    ${mq('lg')(`
+      grid-template-rows: auto 1fr;
+    `)}
   `}
 `;
 
