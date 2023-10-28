@@ -26,14 +26,14 @@ const DesktopLink = styled(Link)<DesktopLinkTypes>`
 `;
 
 const DesktopLinkContainer = styled.ul`
-  ${({ theme: { mq } }) => css`
+  ${({ theme: { mediaQuery } }) => css`
     align-items: center;
     display: none;
     gap: 1.5rem;
     list-style-type: none;
     padding: 0;
 
-    ${mq('lg')`
+    ${mediaQuery('lg')`
       display: flex;
     `}
   `}
@@ -53,13 +53,13 @@ const DesktopLinkNumber = styled.span`
 const DesktopLinkTitle = styled.h4``;
 
 const InnerNav = styled.div`
-  ${({ theme: { maxWidth, mq } }) => css`
+  ${({ theme: { maxWidth, mediaQuery } }) => css`
     display: flex;
     gap: 1rem;
     max-width: ${maxWidth};
     width: 100%;
 
-    ${mq('lg')`
+    ${mediaQuery('lg')`
       justify-content: space-between;
     `}
   `}
@@ -76,15 +76,15 @@ const MobileNavBttn = styled.button`
     cursor: pointer;
   }
 
-  ${({ theme: { mq } }) => css`
-    ${mq('lg')`
+  ${({ theme: { mediaQuery } }) => css`
+    ${mediaQuery('lg')`
       display: none;
     `}
   `}
 `;
 
 const OuterNav = styled.nav`
-  ${({ theme: { colors, layout, mq, nav } }) => css`
+  ${({ theme: { colors, layout, mediaQuery, nav } }) => css`
     align-items: center;
     border-bottom: 1px solid ${colors.white};
     display: flex;
@@ -92,15 +92,15 @@ const OuterNav = styled.nav`
     justify-content: center;
     padding: 0 ${layout.xs.margin};
 
-    ${mq('md')(`
+    ${mediaQuery('md')(`
       padding: 0 ${layout.md.margin};
     `)}
 
-    ${mq('lg')(`
+    ${mediaQuery('lg')(`
       height: ${nav.desktopNavHeight};
     `)}
 
-    ${mq('xxl')(`
+    ${mediaQuery('xxl')(`
       padding: 0 ${layout.xxl.margin};
     `)}
   `}

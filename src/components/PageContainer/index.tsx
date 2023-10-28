@@ -8,17 +8,17 @@ import { Play } from 'next/font/google';
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const Main = styled.main`
-  ${({ theme: { layout, mq } }) => css`
+  ${({ theme: { layout, mediaQuery } }) => css`
     align-items: center;
     display: flex;
     flex-direction: column;
     padding: 0 ${layout.xs.margin};
 
-    ${mq('md')(`
+    ${mediaQuery('md')(`
       padding: 0 ${layout.md.margin};
     `)}
 
-    ${mq('xxl')(`
+    ${mediaQuery('xxl')(`
       padding: 0 ${layout.xxl.margin};
     `)}
   `}
@@ -33,13 +33,13 @@ const InnerPageWrapper = styled.div`
 `;
 
 const Body = styled.body`
-  ${({ theme: { colors, mq } }) => css`
+  ${({ theme: { colors, mediaQuery } }) => css`
     background-color: ${colors.bg};
     display: grid;
     height: 100vh;
     grid-template-rows: auto auto 1fr;
 
-    ${mq('lg')(`
+    ${mediaQuery('lg')(`
       grid-template-rows: auto 1fr;
     `)}
   `}

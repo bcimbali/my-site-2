@@ -72,7 +72,7 @@ const theme = {
     }
   },
   maxWidth: maxWidth,
-  mq: mediaQueries,
+  mediaQuery: mediaQueries,
   nav: {
     mobileNavHeight: '64px',
     desktopNavHeight: '80px'
@@ -149,7 +149,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 100%;
   }
 
-  ${({ theme: { mq, typography } }) => css`
+  ${({ theme: { mediaQuery, typography } }) => css`
     /* Mobile Typography Settings: */
     h1 {
       font-size: ${typography.h1.xs.fontSize};
@@ -173,7 +173,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Desktop Typography Settings: */
-    ${mq('lg')(`
+    ${mediaQuery('lg')(`
       h1 {
         font-size: ${typography.h1.lg.fontSize};
         line-height: ${typography.h1.lg.lineHeight};

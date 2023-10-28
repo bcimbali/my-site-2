@@ -12,7 +12,7 @@ type MobileLinkTypes = {
 };
 
 const DropdownContainer = styled.div<DropdownContainerTypes>`
-  ${({ theme: { colors, layout, mq, nav }, $isOpen }) => css`
+  ${({ theme: { colors, layout, mediaQuery, nav }, $isOpen }) => css`
     background-color: ${colors.white};
     height: 100vh;
     max-height: 0;
@@ -28,11 +28,11 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
       max-height: 2000px;
     `}
 
-    ${mq('md')(`
+    ${mediaQuery('md')(`
       padding: 0 ${layout.md.margin};
     `)}
 
-    ${mq('lg')(`
+    ${mediaQuery('lg')(`
       display: none;
     `)}
   `}
