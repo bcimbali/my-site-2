@@ -19,7 +19,7 @@ const colors = {
   white: '#FFFFFF',
   bg: '#0B0B3E',
   fg: '#FFFFFF'
-};
+} as const;
 
 const theme = {
   breakpoints: breakpoints,
@@ -43,6 +43,6 @@ const theme = {
   },
   transitionSpeed: transitionSpeed,
   typography: typography
-};
+} as const;
 
 export default theme;

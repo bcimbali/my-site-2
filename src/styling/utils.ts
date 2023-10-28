@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-const transitionSpeed = '0.2s';
+const transitionSpeed = '0.2s' as const;
 
 export const opacityHover = css`
   transition: ${transitionSpeed} opacity;

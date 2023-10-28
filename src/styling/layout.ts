@@ -17,7 +17,7 @@ export const mediaQueries = (key: mediaQueryTypes) => {
 };
 
 // Sitewide max page container width:
-export const maxWidth = '1440px';
+export const maxWidth = '1440px' as const;
 
 // Sitewide 12, 8, and 4 column grid layout:
 export const gridValues = {
@@ -41,10 +41,10 @@ export const gridValues = {
     margin: '40px',
     numOfColumns: 12
   }
-};
+} as const;
 
 // Sitewide navbar/header heights:
-export const mobileNavHeight = '64px';
-export const desktopNavHeight = '80px';
+export const mobileNavHeight = '64px' as const;
+export const desktopNavHeight = '80px' as const;
 
 export default breakpoints;

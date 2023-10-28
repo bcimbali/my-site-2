@@ -118,6 +118,6 @@ export const typography = {
       lineHeight: '150%'
     }
   }
-};
+} as const;
 
 export default GlobalStyles;
