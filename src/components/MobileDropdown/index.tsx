@@ -12,8 +12,8 @@ type MobileLinkTypes = {
 };
 
 const DropdownContainer = styled.div<DropdownContainerTypes>`
-  ${({ theme: { colors, layout, mediaQuery, nav }, $isOpen }) => css`
-    background-color: ${colors.white};
+  ${({ theme: { layout, mediaQuery, nav, themeColors }, $isOpen }) => css`
+    background-color: ${themeColors.mobileDropdownBg};
     height: 100vh;
     max-height: 0;
     overflow: hidden;
@@ -49,8 +49,8 @@ const LinksContainer = styled.ul`
 `;
 
 const MobileLink = styled(Link)<MobileLinkTypes>`
-  ${({ theme, $isDisabled }) => css`
-    color: ${theme.colors.blue};
+  ${({ theme: { themeColors }, $isDisabled }) => css`
+    color: ${themeColors.mobileDropdownFg};
     display: flex;
     gap: 0.25rem;
 
@@ -63,8 +63,8 @@ const MobileLink = styled(Link)<MobileLinkTypes>`
 `;
 
 const MobileLinkItem = styled.li`
-  ${({ theme: { colors } }) => css`
-    border-bottom: 1px solid ${colors.blue};
+  ${({ theme: { themeColors } }) => css`
+    border-bottom: 1px solid ${themeColors.mobileDropdownFg};
     display: flex;
     list-style-type: none;
   `}

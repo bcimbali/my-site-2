@@ -12,14 +12,14 @@ type DesktopLinkTypes = {
 };
 
 const DesktopLink = styled(Link)<DesktopLinkTypes>`
-  ${({ theme: { colors }, $isDisabled }) => css`
-    color: ${colors.white};
+  ${({ theme: { themeColors }, $isDisabled }) => css`
+    color: ${themeColors.headings};
     display: flex;
     gap: 0.25rem;
 
     ${$isDisabled &&
     css`
-      border-bottom: 1px solid ${colors.white};
+      border-bottom: 1px solid ${themeColors.headings};
       pointer-events: none;
     `}
   `}
@@ -84,9 +84,9 @@ const MobileNavBttn = styled.button`
 `;
 
 const OuterNav = styled.nav`
-  ${({ theme: { colors, layout, mediaQuery, nav } }) => css`
+  ${({ theme: { layout, mediaQuery, nav, themeColors } }) => css`
     align-items: center;
-    border-bottom: 1px solid ${colors.white};
+    border-bottom: 1px solid ${themeColors.headings};
     display: flex;
     height: ${nav.mobileNavHeight};
     justify-content: center;
@@ -107,8 +107,8 @@ const OuterNav = styled.nav`
 `;
 
 const StyledLink = styled(Link)`
-  ${({ theme }) => css`
-    color: ${theme.colors.white};
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.headings};
   `}
 `;
 

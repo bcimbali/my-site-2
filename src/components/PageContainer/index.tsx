@@ -33,8 +33,8 @@ const InnerPageWrapper = styled.div`
 `;
 
 const Body = styled.body`
-  ${({ theme: { colors, mediaQuery } }) => css`
-    background-color: ${colors.bg};
+  ${({ theme: { mediaQuery, themeColors } }) => css`
+    background-color: ${themeColors.bg};
     display: grid;
     height: 100vh;
     grid-template-rows: auto auto 1fr;

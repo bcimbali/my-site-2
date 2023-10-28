@@ -34,20 +34,29 @@ const mediaQueries = (key) => {
   return (style) => `@media (min-width: ${breakpoints[key]}) { ${style} }`;
 };
 
+const colors = {
+  red: '#ff6f69',
+  orange: '#e8af72',
+  yellow: '#ffef96',
+  green: '#a5dbcb',
+  blue: '#0B0B3E',
+  purple: '#b1b0e5',
+  black: '#111111',
+  white: '#FFFFFF',
+  bg: '#0B0B3E',
+  fg: '#FFFFFF'
+};
+
 const theme = {
   breakpoints: breakpoints,
-  colors: {
-    bg: '#0B0B3E',
-    black: '#111111',
-    blue: '#0B0B3E',
-    fg: '#FFFFFF',
-    green: '#a5dbcb',
-    indigo: '#6b5b95',
-    orange: '#e8af72',
-    purple: '#b1b0e5',
-    red: '#ff6f69',
-    white: '#FFFFFF',
-    yellow: '#ffef96'
+  colors,
+  themeColors: {
+    bg: colors.blue,
+    body: colors.white,
+    fg: colors.white,
+    headings: colors.white,
+    mobileDropdownBg: colors.white,
+    mobileDropdownFg: colors.blue
   },
   layout: {
     xs: {
