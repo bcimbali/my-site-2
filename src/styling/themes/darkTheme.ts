@@ -22,7 +22,7 @@ const colors = {
 } as const;
 
 const theme = {
-  breakpoints: breakpoints,
+  breakpoints,
   colors,
   themeColors: {
     bg: colors.blue,
@@ -33,16 +33,16 @@ const theme = {
     mobileDropdownFg: colors.blue
   },
   layout: gridValues,
-  linkHover: linkHover,
-  maxWidth: maxWidth,
-  opacityHover: opacityHover,
+  linkHover,
+  maxWidth,
+  opacityHover,
   mediaQuery: mediaQueries,
   nav: {
-    mobileNavHeight: mobileNavHeight,
-    desktopNavHeight: desktopNavHeight
+    mobileNavHeight,
+    desktopNavHeight
   },
-  transitionSpeed: transitionSpeed,
-  typography: typography
+  transitionSpeed,
+  typography
 } as const;
 
 export default theme;
