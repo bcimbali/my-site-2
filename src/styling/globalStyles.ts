@@ -2,13 +2,20 @@ import { createGlobalStyle, css } from 'styled-components';
 
 // Global Css default styles:
 const GlobalStyles = createGlobalStyle`
-  .no-scroll {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-  }
+  ${({ theme: { mediaQuery, opacityHover, typography } }) => css`
+    /* Defaults for all a tags: */
+    a {
+      ${opacityHover}
+      text-decoration: none;
+    }
 
-  ${({ theme: { mediaQuery, typography } }) => css`
+    /* Class to set on body when mobile dropdown is open: */
+    .no-scroll {
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+    }
+
     /* Mobile Typography Settings: */
     h1 {
       font-size: ${typography.h1.xs.fontSize};
