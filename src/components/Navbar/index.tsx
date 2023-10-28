@@ -68,15 +68,17 @@ const InnerNav = styled.div`
 const Logo = styled.h2``;
 
 const MobileNavBttn = styled.button`
-  background: none;
-  border: 0;
-  padding: 0;
+  ${({ theme: { mediaQuery, opacityHover } }) => css`
+    ${opacityHover}
+    background: none;
+    border: 0;
+    max-width: 31px;
+    padding: 0;
 
-  &:hover {
-    cursor: pointer;
-  }
+    &:hover {
+      cursor: pointer;
+    }
 
-  ${({ theme: { mediaQuery } }) => css`
     ${mediaQuery('lg')`
       display: none;
     `}

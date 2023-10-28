@@ -11,7 +11,7 @@
 - Styled Components
 - Svgr
 
-## Getting Started 🚦
+## 🚦 Getting Started 🚦
 
 1. Clone the repo.
 2. Run a `yarn install`.

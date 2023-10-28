@@ -53,6 +53,7 @@ const MobileLink = styled(Link)<MobileLinkTypes>`
     color: ${themeColors.mobileDropdownFg};
     display: flex;
     gap: 0.25rem;
+    width: 100%;
 
     ${$isDisabled &&
     css`
