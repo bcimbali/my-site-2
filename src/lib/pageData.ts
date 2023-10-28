@@ -14,6 +14,6 @@ const pageData = [
     number: '03',
     name: 'Contact'
   }
-];
+] as const;
 
 export default pageData;

@@ -30,7 +30,7 @@ A quick way to view the current theme values is to just `console.log` the theme 
 
 ##### Theme File Structure
 
-All theming is done inside the `src/styling` directory. Here is a breakdown of the `styling/` dir:
+All global theming is done inside the `src/styling` directory. Here is a breakdown of the `styling/` dir:
 
 ```
  └──  styling/
@@ -41,13 +41,55 @@ All theming is done inside the `src/styling` directory. Here is a breakdown of t
  │  └────  utils.ts
 ```
 
-`themes/` - A directory to house all the possible themes in the app. The files in here are essentially the culmination of the other theme files in the parent `styling/` directory. Themes exported from here are inserted into the global `ThemeProvider`. Currently, there is only the `darkTheme.ts` but more will be added soon.
+`themes/` - A directory to house all the possible themes in the app. The files in here are essentially the culmination of the other theme files in the parent `styling/` directory. Themes exported from here are inserted into the global ThemeProvider. Currently, there is only the `darkTheme.ts` but more will be added soon.
 
 `globalStyles.ts` - All global styles; the global typography is set here, reusable classes, and other global settings live here.
 
 `layout.ts` - All global page layout settings live here; the breakpoints, reusable media queries, global `12, 8, & 4` column grid settings, and the navbar heights live here.
 
 `utils.ts` - A catch all for handy/reusable styling settings or functions. Things like global CSS transition speed or things such as resubale hover settings live here.
+
+##### Using Theme in Local Components
+
+To use the global theme in a component local style, import it into your component, and use the theme values directly in your `CSS`:
+
+```jsx
+const OuterNav = styled.nav`
+  ${({ theme: { layout, mediaQuery, nav, themeColors } }) => css`
+    align-items: center;
+    border-bottom: 1px solid ${themeColors.headings};
+    display: flex;
+    height: ${nav.mobileNavHeight};
+    justify-content: center;
+    padding: 0 ${layout.xs.margin};
+    ...
+  `}
+`;
+```
+
+##### Media Queries
+
+All media queries in this project are mobile-first. That means that the global `mediaQuery` function is a `min-width` query.
+
+The `mediaQuery` function has one required argument, which is a key of the `breakpoints` - `'md'`, `'xxl'` etc.
+
+```jsx
+  ${({ theme: { layout, mediaQuery, nav } }) => css`
+    ...
+      ${mediaQuery('md')(`
+        padding: 0 ${layout.md.margin};
+      `)}
+
+      ${mediaQuery('lg')(`
+        height: ${nav.desktopNavHeight};
+      `)}
+
+      ${mediaQuery('xxl')(`
+        padding: 0 ${layout.xxl.margin};
+      `)}
+    `}
+  `;
+```
 
 ### Icons 🌐
 
