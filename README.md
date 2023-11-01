@@ -4,6 +4,10 @@
 
 ---
 
+## ⚡ Live Link ⚡
+
+[Live Deploy](https://my-site-2-six.vercel.app/)
+
 ## 🏗️ Built with 🏗️
 
 - Next.js
