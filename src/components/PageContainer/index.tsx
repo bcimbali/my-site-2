@@ -26,7 +26,6 @@ const Main = styled.main`
 
 const InnerPageWrapper = styled.div`
   ${({ theme: { maxWidth } }) => css`
-    border: 1px dotted yellow;
     max-width: ${maxWidth};
     width: 100%;
   `}

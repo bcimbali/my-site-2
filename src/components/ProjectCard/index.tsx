@@ -2,29 +2,45 @@
 
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Link from 'next/link';
 
-const CardContainer = styled.a`
+const CardContainer = styled(Link)`
   display: flex;
   flex-direction: column;
-`;
-
-const ChipsContainer = styled.div`
-  display: flex;
   gap: 0.5rem;
 `;
 
-const Chip = styled.div`
+const ChipsContainer = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style-type: none;
+  padding: 0;
+`;
+
+const Chip = styled.li`
   ${({ theme: { themeColors } }) => css`
     border: 1px solid ${themeColors.body};
     border-radius: 2px;
     color: ${themeColors.body};
-    padding: 0.5rem;
+    padding: 0.25rem;
   `}
 `;
+
+const ChipText = styled.p``;
 
 const Description = styled.p`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.body};
+  `}
+`;
+
+const ImgPlaceholder = styled.div`
+  ${({ theme: { colors } }) => css`
+    background-color: ${colors.purple};
+    max-width: 11rem;
+    height: 96px;
+    width: 100%;
   `}
 `;
 
@@ -57,9 +73,12 @@ const ProjectCard = ({
       <Title>{title}</Title>
       {!!image && <div />}
       <Description>{description}</Description>
+      <ImgPlaceholder />
       <ChipsContainer>
         {techStack.map((technology) => (
-          <Chip key={`${title}-${technology}`}>{technology}</Chip>
+          <Chip key={`${title}-${technology}`}>
+            <ChipText>{technology}</ChipText>
+          </Chip>
         ))}
       </ChipsContainer>
     </CardContainer>

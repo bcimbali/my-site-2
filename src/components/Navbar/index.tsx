@@ -68,8 +68,7 @@ const InnerNav = styled.div`
 const Logo = styled.h2``;
 
 const MobileNavBttn = styled.button`
-  ${({ theme: { mediaQuery, opacityHover } }) => css`
-    ${opacityHover}
+  ${({ theme: { mediaQuery } }) => css`
     background: none;
     border: 0;
     max-width: 31px;

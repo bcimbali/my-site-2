@@ -20,7 +20,7 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
     padding: 0 ${layout.xs.margin};
     position: absolute;
     top: ${nav.mobileNavHeight};
-    transition: max-height 0.5s;
+    transition: max-height 0.2s;
     width: 100%;
 
     ${$isOpen &&

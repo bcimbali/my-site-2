@@ -6,9 +6,16 @@ import ProjectCard from '@/components/ProjectCard';
 import projectsData from '@/lib/projectsData';
 
 const ProjectsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  ${({ theme: { mediaQuery } }) => css`
+    display: grid;
+    gap: 3rem;
+    ${mediaQuery('md')(`
+      grid-template-columns: 1fr 1fr;
+    `)}
+    ${mediaQuery('lg')(`
+      grid-template-columns: 1fr 1fr 1fr;
+    `)}
+  `}
 `;
 
 const StyledDiv = styled.div`
@@ -19,13 +26,14 @@ const StyledDiv = styled.div`
 const StyledH1 = styled.h1`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.headings};
+    margin-bottom: 1rem;
   `}
 `;
 
 const ProjectsPage = () => {
   return (
     <StyledDiv>
-      <StyledH1>Projects Page</StyledH1>
+      <StyledH1>Projects</StyledH1>
       <ProjectsContainer>
         {projectsData.map(({ codeLink, description, image, liveLink, techStack, title }) => (
           <ProjectCard
