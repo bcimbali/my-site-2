@@ -5,11 +5,13 @@ import React from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import projectsData from '@/lib/projectsData';
 
-const ProjectsContainer = styled.div`
+const ProjectsContainer = styled.ul`
   ${({ theme: { mediaQuery } }) => css`
     display: grid;
     gap: 3rem;
     justify-content: center;
+    list-style-type: none;
+    padding: 0;
 
     ${mediaQuery('md')(`
       grid-template-columns: 1fr 1fr;

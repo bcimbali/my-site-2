@@ -4,16 +4,13 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
-const CardContainer = styled(Link)`
-  ${({ theme: { mediaQuery } }) => css`
-    align-items: center;
+const CardContainer = styled.li`
+  ${({ theme: { themeColors } }) => css`
+    border: 1px solid ${themeColors.fg};
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     max-width: 27.5rem;
-    ${mediaQuery('md')`
-      align-items: unset
-    `}
   `}
 `;
 
@@ -63,6 +60,21 @@ const ImgPlaceholder = styled.div`
   `}
 `;
 
+const OuterCardLink = styled(Link)`
+  ${({ theme: { mediaQuery } }) => css`
+    align-items: center;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 1rem;
+    ${mediaQuery('md')`
+      align-items: unset
+    `}
+  `}
+`;
+
 const Title = styled.h3`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.headings};
@@ -88,18 +100,20 @@ const ProjectCard = ({
 }: ProjectCardTypes) => {
   console.log('In index.tsx, this is codeLink: ', codeLink);
   return (
-    <CardContainer href={liveLink} target="_blank">
-      <Title>{title}</Title>
-      {!!image && <div />}
-      <Description>{description}</Description>
-      <ImgPlaceholder />
-      <ChipsContainer>
-        {techStack.map((technology) => (
-          <Chip key={`${title}-${technology}`}>
-            <ChipText>{technology}</ChipText>
-          </Chip>
-        ))}
-      </ChipsContainer>
+    <CardContainer>
+      <OuterCardLink href={liveLink} target="_blank">
+        <Title>{title}</Title>
+        {!!image && <div />}
+        <Description>{description}</Description>
+        <ImgPlaceholder />
+        <ChipsContainer>
+          {techStack.map((technology) => (
+            <Chip key={`${title}-${technology}`}>
+              <ChipText>{technology}</ChipText>
+            </Chip>
+          ))}
+        </ChipsContainer>
+      </OuterCardLink>
     </CardContainer>
   );
 };
