@@ -6,6 +6,7 @@ import React from 'react';
 const StyledDiv = styled.div`
   display: flex;
   align-items: center;
+  grid-column: 1/-1;
   justify-content: center;
 `;
 
