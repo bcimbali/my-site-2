@@ -139,7 +139,11 @@ const Navbar = () => {
     <>
       <OuterNav>
         <InnerNav>
-          <MobileNavBttn type="button" onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}>
+          <MobileNavBttn
+            aria-expanded={isMobileNavOpen}
+            type="button"
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+          >
             {isMobileNavOpen ? <MobileCloseIcon /> : <Hamburger />}
           </MobileNavBttn>
 
