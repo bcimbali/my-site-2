@@ -21,6 +21,7 @@ const ProjectsContainer = styled.div`
 const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
+  grid-column: 1/-1;
 `;
 
 const StyledH1 = styled.h1`

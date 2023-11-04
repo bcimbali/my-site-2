@@ -25,9 +25,27 @@ const Main = styled.main`
 `;
 
 const InnerPageWrapper = styled.div`
-  ${({ theme: { maxWidth } }) => css`
+  ${({ theme: { layout, maxWidth, mediaQuery } }) => css`
+    column-gap: ${layout.xs.margin};
+    display: grid;
+    grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
     width: 100%;
+
+    ${mediaQuery('md')(`
+      column-gap: ${layout.md.margin};
+      grid-template-columns: repeat(${layout.md.numOfColumns}, 1fr);
+    `)}
+
+    ${mediaQuery('lg')(`
+      column-gap: ${layout.lg.margin};
+      grid-template-columns: repeat(${layout.lg.numOfColumns}, 1fr);
+    `)}
+
+    ${mediaQuery('xxl')(`
+      column-gap: ${layout.xxl.margin};
+      grid-template-columns: repeat(${layout.xxl.numOfColumns}, 1fr);
+    `)}
   `}
 `;
 
