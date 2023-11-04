@@ -9,8 +9,11 @@ const ProjectsContainer = styled.div`
   ${({ theme: { mediaQuery } }) => css`
     display: grid;
     gap: 3rem;
+    justify-content: center;
+
     ${mediaQuery('md')(`
       grid-template-columns: 1fr 1fr;
+      justify-content: unset;
     `)}
     ${mediaQuery('lg')(`
       grid-template-columns: 1fr 1fr 1fr;
@@ -28,6 +31,7 @@ const StyledH1 = styled.h1`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.headings};
     margin-bottom: 1rem;
+    text-align: center;
   `}
 `;
 

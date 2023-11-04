@@ -5,17 +5,31 @@ import styled, { css } from 'styled-components';
 import Link from 'next/link';
 
 const CardContainer = styled(Link)`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  ${({ theme: { mediaQuery } }) => css`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 27.5rem;
+    ${mediaQuery('md')`
+      align-items: unset
+    `}
+  `}
 `;
 
 const ChipsContainer = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style-type: none;
-  padding: 0;
+  ${({ theme: { mediaQuery } }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+
+    ${mediaQuery('md')`
+      justify-content: unset
+    `}
+  `}
 `;
 
 const Chip = styled.li`
@@ -30,8 +44,13 @@ const Chip = styled.li`
 const ChipText = styled.p``;
 
 const Description = styled.p`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, themeColors } }) => css`
     color: ${themeColors.body};
+    text-align: center;
+
+    ${mediaQuery('md')`
+      text-align: unset;
+    `}
   `}
 `;
 
