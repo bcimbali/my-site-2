@@ -3,6 +3,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const CardContainer = styled.li`
   ${({ theme: { themeColors } }) => css`
@@ -51,11 +52,11 @@ const Description = styled.p`
   `}
 `;
 
-const ImgPlaceholder = styled.div`
+const ImgContainer = styled.div`
   ${({ theme: { colors } }) => css`
     background-color: ${colors.purple};
-    max-width: 11rem;
-    height: 96px;
+    padding-bottom: 56%;
+    position: relative;
     width: 100%;
   `}
 `;
@@ -103,9 +104,12 @@ const ProjectCard = ({
     <CardContainer>
       <OuterCardLink href={liveLink} target="_blank">
         <Title>{title}</Title>
-        {!!image && <div />}
         <Description>{description}</Description>
-        <ImgPlaceholder />
+        {!!image && (
+          <ImgContainer>
+            <Image alt={title} src={image} fill={true} />
+          </ImgContainer>
+        )}
         <ChipsContainer>
           {techStack.map((technology) => (
             <Chip key={`${title}-${technology}`}>
