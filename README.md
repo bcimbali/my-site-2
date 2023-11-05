@@ -71,28 +71,44 @@ const OuterNav = styled.nav`
 `;
 ```
 
-##### Media Queries
+##### Media Queries 📐
 
 All media queries in this project are mobile-first. That means that the global `mediaQuery` function is a `min-width` query.
 
 The `mediaQuery` function has one required argument, which is a key of the `breakpoints` - `'md'`, `'xxl'` etc.
 
+Breakpoints:
+
 ```jsx
-  ${({ theme: { layout, mediaQuery, nav } }) => css`
-    ...
-      ${mediaQuery('md')(`
-        padding: 0 ${layout.md.margin};
-      `)}
+const breakpoints = {
+  xxs: '0px',
+  xs: '320px',
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
+  xxl: '1400px'
+} as const;
+```
 
-      ${mediaQuery('lg')(`
-        height: ${nav.desktopNavHeight};
-      `)}
+and using the `mediaQuery()`:
 
-      ${mediaQuery('xxl')(`
-        padding: 0 ${layout.xxl.margin};
-      `)}
-    `}
-  `;
+```jsx
+${({ theme: { layout, mediaQuery, nav } }) => css`
+  ...
+    ${mediaQuery('md')(`
+      padding: 0 ${layout.md.margin};
+    `)}
+
+    ${mediaQuery('lg')(`
+      height: ${nav.desktopNavHeight};
+    `)}
+
+    ${mediaQuery('xxl')(`
+      padding: 0 ${layout.xxl.margin};
+    `)}
+  `}
+`;
 ```
 
 ### Icons 🌐
