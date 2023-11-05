@@ -19,7 +19,7 @@ const PageTitle = styled.h1`
 const AboutPage = () => {
   return (
     <StyledDiv>
-      <PageTitle>About Page</PageTitle>
+      <PageTitle>About</PageTitle>
     </StyledDiv>
   );
 };

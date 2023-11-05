@@ -37,6 +37,18 @@ const PageTitle = styled.h1`
   `}
 `;
 
+// Mock out Title height for page bttm so
+// top & bottom have same top & bttm margins:
+const PageBttmSpacer = styled.div`
+  ${({ theme: { mediaQuery } }) => css`
+    height: 76px;
+
+    ${mediaQuery('lg')`
+      height: 56px;
+    `}
+  `}
+`;
+
 const ProjectsPage = () => {
   return (
     <StyledDiv>
@@ -54,6 +66,7 @@ const ProjectsPage = () => {
           />
         ))}
       </ProjectsContainer>
+      <PageBttmSpacer />
     </StyledDiv>
   );
 };

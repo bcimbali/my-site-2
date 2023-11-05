@@ -57,11 +57,11 @@ const Body = styled.body`
   ${({ theme: { mediaQuery, themeColors } }) => css`
     background-color: ${themeColors.bg};
     display: grid;
-    height: 100vh;
-    grid-template-rows: auto auto 1fr;
+    height: 100svh;
+    grid-template-rows: auto auto 1fr auto;
 
     ${mediaQuery('lg')(`
-      grid-template-rows: auto 1fr;
+      grid-template-rows: auto 1fr auto;
     `)}
   `}
 `;
