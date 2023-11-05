@@ -9,14 +9,19 @@ import Footer from '@/components/Footer';
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const Main = styled.main`
-  ${({ theme: { layout, mediaQuery } }) => css`
+  ${({ theme: { layout, mediaQuery, nav } }) => css`
     align-items: center;
     display: flex;
     flex-direction: column;
     padding: 0 ${layout.xs.margin};
+    margin-top: ${nav.mobileNavHeight};
 
     ${mediaQuery('md')(`
       padding: 0 ${layout.md.margin};
+    `)}
+
+    ${mediaQuery('lg')(`
+      margin-top: unset;
     `)}
 
     ${mediaQuery('xxl')(`
@@ -54,15 +59,11 @@ const InnerPageWrapper = styled.div`
 `;
 
 const Body = styled.body`
-  ${({ theme: { mediaQuery, themeColors } }) => css`
+  ${({ theme: { themeColors } }) => css`
     background-color: ${themeColors.bg};
     display: grid;
     height: 100svh;
-    grid-template-rows: auto auto 1fr auto;
-
-    ${mediaQuery('lg')(`
-      grid-template-rows: auto 1fr auto;
-    `)}
+    grid-template-rows: auto 1fr auto;
   `}
 `;
 
