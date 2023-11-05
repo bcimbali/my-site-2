@@ -32,7 +32,8 @@ const theme = {
     fg: colors.white,
     headings: colors.white,
     mobileDropdownBg: colors.white,
-    mobileDropdownFg: colors.blue
+    mobileDropdownFg: colors.blue,
+    secondary: '#380D8B'
   },
   layout: gridValues,
   linkHover,

@@ -19,7 +19,7 @@ const PageTitle = styled.h1`
 const ContactPage = () => {
   return (
     <StyledDiv>
-      <PageTitle>Contact Page</PageTitle>
+      <PageTitle>Contact</PageTitle>
     </StyledDiv>
   );
 };
