@@ -21,25 +21,47 @@ export const maxWidth = '1440px' as const;
 
 // Sitewide 12, 8, and 4 column grid layout:
 export const gridValues = {
+  xxs: {
+    gutter: '24px',
+    margin: '24px',
+    numOfColumns: 4,
+    topBttmMargin: '16px'
+  },
   xs: {
     gutter: '24px',
     margin: '24px',
-    numOfColumns: 4
+    numOfColumns: 4,
+    topBttmMargin: '16px'
+  },
+  sm: {
+    gutter: '24px',
+    margin: '24px',
+    numOfColumns: 4,
+    topBttmMargin: '16px'
   },
   md: {
     gutter: '32px',
     margin: '32px',
-    numOfColumns: 8
+    numOfColumns: 8,
+    topBttmMargin: '32px'
   },
   lg: {
     gutter: '32px',
     margin: '32px',
-    numOfColumns: 12
+    numOfColumns: 12,
+    topBttmMargin: '32px'
+  },
+  xl: {
+    gutter: '32px',
+    margin: '32px',
+    numOfColumns: 12,
+    topBttmMargin: '32px'
   },
   xxl: {
     gutter: '40px',
     margin: '40px',
-    numOfColumns: 12
+    numOfColumns: 12,
+    topBttmMargin: '48px'
   }
 } as const;
 

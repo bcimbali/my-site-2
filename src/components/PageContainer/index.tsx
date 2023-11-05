@@ -30,11 +30,13 @@ const InnerPageWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
+    padding: ${layout.xs.topBttmMargin} 0;
     width: 100%;
 
     ${mediaQuery('md')(`
       column-gap: ${layout.md.margin};
       grid-template-columns: repeat(${layout.md.numOfColumns}, 1fr);
+      padding: ${layout.md.topBttmMargin} 0;
     `)}
 
     ${mediaQuery('lg')(`
@@ -45,6 +47,7 @@ const InnerPageWrapper = styled.div`
     ${mediaQuery('xxl')(`
       column-gap: ${layout.xxl.margin};
       grid-template-columns: repeat(${layout.xxl.numOfColumns}, 1fr);
+      padding: ${layout.xxl.topBttmMargin} 0;
     `)}
   `}
 `;
