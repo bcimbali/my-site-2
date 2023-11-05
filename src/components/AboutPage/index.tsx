@@ -1,6 +1,6 @@
 'use client';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import React from 'react';
 
 const StyledDiv = styled.div`
@@ -10,14 +10,16 @@ const StyledDiv = styled.div`
   justify-content: center;
 `;
 
-const StyledH1 = styled.h1`
-  color: red;
+const PageTitle = styled.h1`
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.fg};
+  `}
 `;
 
 const AboutPage = () => {
   return (
     <StyledDiv>
-      <StyledH1>About Page</StyledH1>
+      <PageTitle>About Page</PageTitle>
     </StyledDiv>
   );
 };

@@ -1,8 +1,10 @@
 import breakpoints, {
+  desktopFooterHeight,
   desktopNavHeight,
   gridValues,
   maxWidth,
   mediaQueries,
+  mobileFooterHeight,
   mobileNavHeight
 } from 'src/styling/layout';
 import { typography } from '@/styling/globalStyles';
@@ -40,6 +42,10 @@ const theme = {
   nav: {
     mobileNavHeight,
     desktopNavHeight
+  },
+  footer: {
+    mobileFooterHeight,
+    desktopFooterHeight
   },
   transitionSpeed,
   typography
