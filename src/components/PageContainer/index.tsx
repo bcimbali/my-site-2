@@ -4,6 +4,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import styled, { css } from 'styled-components';
 import { Play } from 'next/font/google';
+import Footer from '@/components/Footer';
 
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
@@ -72,6 +73,7 @@ const PageContainer = ({ children }: { children: React.ReactNode }) => {
       <Main>
         <InnerPageWrapper>{children}</InnerPageWrapper>
       </Main>
+      <Footer />
     </Body>
   );
 };

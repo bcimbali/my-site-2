@@ -29,7 +29,7 @@ const StyledDiv = styled.div`
   grid-column: 1/-1;
 `;
 
-const StyledH1 = styled.h1`
+const PageTitle = styled.h1`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.headings};
     margin-bottom: 1rem;
@@ -40,7 +40,7 @@ const StyledH1 = styled.h1`
 const ProjectsPage = () => {
   return (
     <StyledDiv>
-      <StyledH1>Projects</StyledH1>
+      <PageTitle>Projects</PageTitle>
       <ProjectsContainer>
         {projectsData.map(({ codeLink, description, image, liveLink, techStack, title }) => (
           <ProjectCard

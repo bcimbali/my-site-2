@@ -69,4 +69,8 @@ export const gridValues = {
 export const mobileNavHeight = '64px' as const;
 export const desktopNavHeight = '80px' as const;
 
+// Sitewide footer heights:
+export const mobileFooterHeight = '64px' as const;
+export const desktopFooterHeight = '80px' as const;
+
 export default breakpoints;
