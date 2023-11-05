@@ -87,11 +87,16 @@ const MobileNavBttn = styled.button`
 const OuterNav = styled.nav`
   ${({ theme: { layout, mediaQuery, nav, themeColors } }) => css`
     align-items: center;
+    background-color: ${themeColors.bg};
     border-bottom: 1px solid ${themeColors.headings};
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
     display: flex;
     height: ${nav.mobileNavHeight};
     justify-content: center;
     padding: 0 ${layout.xs.margin};
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 
     ${mediaQuery('md')(`
       padding: 0 ${layout.md.margin};
@@ -99,6 +104,7 @@ const OuterNav = styled.nav`
 
     ${mediaQuery('lg')(`
       height: ${nav.desktopNavHeight};
+      position: unset;
     `)}
 
     ${mediaQuery('xxl')(`
@@ -162,8 +168,8 @@ const Navbar = () => {
             ))}
           </DesktopLinkContainer>
         </InnerNav>
+        <MobileDropdown isOpen={isMobileNavOpen} />
       </OuterNav>
-      <MobileDropdown isOpen={isMobileNavOpen} />
     </>
   );
 };
