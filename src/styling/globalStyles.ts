@@ -2,7 +2,7 @@ import { createGlobalStyle, css } from 'styled-components';
 
 // Global Css default styles:
 const GlobalStyles = createGlobalStyle`
-  ${({ theme: { mediaQuery, opacityHover, typography } }) => css`
+  ${({ theme: { mediaQuery, opacityHover, themeColors, typography } }) => css`
     /* Defaults for all a tags: */
     a {
       ${opacityHover}
@@ -14,6 +14,25 @@ const GlobalStyles = createGlobalStyle`
       overflow: hidden;
       position: absolute;
       width: 100%;
+    }
+
+    /* Set body tag colors: */
+    p,
+    a,
+    li,
+    ul,
+    ol {
+      color: ${themeColors.body};
+    }
+
+    /* Set heading font colors: */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: ${themeColors.headings};
     }
 
     /* Mobile Typography Settings: */
