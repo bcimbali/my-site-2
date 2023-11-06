@@ -80,16 +80,19 @@ const MobileLinkNumber = styled.span`
 
 const MobileLinkTitle = styled.h4``;
 
-const Links = ({ pathname }: { pathname: string }) => (
+const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
   <LinksContainer>
-    {pageData.map(({ name, number, path }) => (
-      <MobileLinkItem key={path}>
-        <MobileLink href={path} $isDisabled={path === pathname}>
-          <MobileLinkNumber>{number}</MobileLinkNumber>
-          <MobileLinkTitle>{name}</MobileLinkTitle>
-        </MobileLink>
-      </MobileLinkItem>
-    ))}
+    {pageData.map(({ name, number, path }) => {
+      const isDisabled = path === pathname;
+      return (
+        <MobileLinkItem key={path}>
+          <MobileLink href={path} $isDisabled={isDisabled} tabIndex={isOpen ? 0 : -1}>
+            <MobileLinkNumber>{number}</MobileLinkNumber>
+            <MobileLinkTitle>{name}</MobileLinkTitle>
+          </MobileLink>
+        </MobileLinkItem>
+      );
+    })}
   </LinksContainer>
 );
 
@@ -97,7 +100,7 @@ const MobileDropdown = ({ isOpen }: { isOpen: boolean }) => {
   const pathname = usePathname();
   return (
     <DropdownContainer $isOpen={isOpen}>
-      <Links pathname={pathname} />
+      <Links pathname={pathname} isOpen={isOpen} />
     </DropdownContainer>
   );
 };
