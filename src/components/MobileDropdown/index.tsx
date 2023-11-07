@@ -78,7 +78,11 @@ const MobileLinkNumber = styled.span`
   font-size: 0.5rem;
 `;
 
-const MobileLinkTitle = styled.h4``;
+const MobileLinkTitle = styled.h4`
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.mobileDropdownFg};
+  `}
+`;
 
 const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
   <LinksContainer>
