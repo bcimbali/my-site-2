@@ -33,6 +33,7 @@ const GlobalStyles = createGlobalStyle`
     h5,
     h6 {
       color: ${themeColors.headings};
+      font-weight: 400;
     }
 
     /* Mobile Typography Settings: */
