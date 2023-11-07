@@ -65,7 +65,7 @@ const InnerNav = styled.div`
   `}
 `;
 
-const Logo = styled.h2``;
+const Logo = styled.h3``;
 
 const MobileNavBttn = styled.button`
   ${({ theme: { mediaQuery } }) => css`
