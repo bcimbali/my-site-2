@@ -30,10 +30,14 @@ const StyledDiv = styled.div`
 `;
 
 const PageTitle = styled.h1`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, themeColors } }) => css`
     color: ${themeColors.headings};
     margin-bottom: 1rem;
     text-align: center;
+
+    ${mediaQuery('lg')`
+      margin-bottom: 3rem;
+    `}
   `}
 `;
 
