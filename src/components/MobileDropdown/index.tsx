@@ -73,9 +73,11 @@ const MobileLinkItem = styled.li`
 `;
 
 const MobileLinkNumber = styled.span`
-  align-items: flex-end;
-  display: inline-flex;
-  font-size: 0.5rem;
+  ${({ theme: { typography } }) => css`
+    align-items: flex-end;
+    display: inline-flex;
+    font-size: ${typography.mobile[-1]};
+  `}
 `;
 
 const MobileLinkTitle = styled.h4`
