@@ -40,7 +40,6 @@ const TypographyPage = () => {
         <h3>This is an h3 tag.</h3>
         <h4>This is an h4 tag.</h4>
         <h5>This is an h5 tag.</h5>
-        <h6>This is an h6 tag.</h6>
         <p>This is a p tag.</p>
       </TypographyContainer>
     </StyledDiv>
