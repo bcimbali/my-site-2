@@ -34,89 +34,105 @@ export const genTypographicScale = ({ scale }: { scale: number }) => {
   return Object.fromEntries(combinedValues);
 };
 
-// Mobile - 1.200 Modular Scale, Minor 3rd.
-// Desktop - 1.333 Modular Scale, Perfect 4th.
-const typography = {
-  mega: {
-    xs: {
-      fontSize: '2.986rem', // 47.78px
-      lineHeight: '100%'
-    },
-    lg: {
-      fontSize: '5.61rem', // 89.76px
-      lineHeight: '150%'
+// TODO: Add base value.
+// Way to override individual tags if need be.
+// Remove mega.
+// Add safe fallbacks / defaults.
+const typography = ({
+  desktopSettings,
+  mobileSettings
+}: {
+  desktopSettings: { scale?: number; bodyLineHeight?: number; headingLineHeight?: number };
+  mobileSettings: { scale?: number; bodyLineHeight?: number; headingLineHeight?: number };
+}) => {
+  const desktop = genTypographicScale({ scale: desktopSettings?.scale || 1 });
+  const mobile = genTypographicScale({ scale: mobileSettings?.scale || 1 });
+  return {
+    desktop,
+    mobile,
+    tags: {
+      mega: {
+        xs: {
+          fontSize: mobile[5],
+          lineHeight: '100%'
+        },
+        lg: {
+          fontSize: desktop[5],
+          lineHeight: '150%'
+        }
+      },
+      h1: {
+        xs: {
+          fontSize: mobile[4],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[4],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      h2: {
+        xs: {
+          fontSize: mobile[3],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[3],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      h3: {
+        xs: {
+          fontSize: mobile[2],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[2],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      h4: {
+        xs: {
+          fontSize: mobile[1],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[1],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      h5: {
+        xs: {
+          fontSize: mobile[0],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[0],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      h6: {
+        xs: {
+          fontSize: mobile[0],
+          lineHeight: mobileSettings.headingLineHeight
+        },
+        lg: {
+          fontSize: desktop[0],
+          lineHeight: desktopSettings.headingLineHeight
+        }
+      },
+      p: {
+        xs: {
+          fontSize: '1rem', // 16px
+          lineHeight: mobileSettings.bodyLineHeight
+        },
+        lg: {
+          fontSize: '1rem', // 16px
+          lineHeight: desktopSettings.bodyLineHeight
+        }
+      }
     }
-  },
-  h1: {
-    xs: {
-      fontSize: '2.488rem', // 39.81px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '4.209rem', // 67.34px
-      lineHeight: '100%'
-    }
-  },
-  h2: {
-    xs: {
-      fontSize: '2.074rem', // 33.18px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '3.157rem', // 50.52px
-      lineHeight: '100%'
-    }
-  },
-  h3: {
-    xs: {
-      fontSize: '1.728rem', // 27.65px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '2.369rem', // 37.90px
-      lineHeight: '100%'
-    }
-  },
-  h4: {
-    xs: {
-      fontSize: '1.44rem', // 23.04px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '1.777rem', // 28.43px
-      lineHeight: '100%'
-    }
-  },
-  h5: {
-    xs: {
-      fontSize: '1.2rem', // 19.20px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '1.333rem', // 21.33px
-      lineHeight: '100%'
-    }
-  },
-  h6: {
-    xs: {
-      fontSize: '1.2rem', // 19.20px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '1.333rem', // 21.33px
-      lineHeight: '100%'
-    }
-  },
-  p: {
-    xs: {
-      fontSize: '1rem', // 16px
-      lineHeight: '150%'
-    },
-    lg: {
-      fontSize: '1rem', // 16px
-      lineHeight: '150%'
-    }
-  }
-} as const;
+  };
+};
 
 export default typography;

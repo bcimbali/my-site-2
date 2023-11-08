@@ -7,11 +7,16 @@ import breakpoints, {
   mobileFooterHeight,
   mobileNavHeight
 } from 'src/styling/layout';
-import typography from '@/styling/typography';
+import genTypography from '@/styling/typography';
 import transitionSpeed, { opacityHover, linkHover } from '@/styling/utils';
 import { genTypographicScale } from '@/styling/typography';
 
 const textSizes = genTypographicScale({ scale: 1.333 });
+
+const typography = genTypography({
+  desktopSettings: { scale: 1.333, bodyLineHeight: 1.5, headingLineHeight: 1 },
+  mobileSettings: { scale: 1.333, bodyLineHeight: 1.5, headingLineHeight: 1.5 }
+});
 
 const colors = {
   red: '#ff6f69',
