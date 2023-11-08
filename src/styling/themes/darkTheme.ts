@@ -7,9 +7,9 @@ import breakpoints, {
   mobileFooterHeight,
   mobileNavHeight
 } from 'src/styling/layout';
-import { typography } from '@/styling/globalStyles';
+import typography from '@/styling/typography';
 import transitionSpeed, { opacityHover, linkHover } from '@/styling/utils';
-import { genTypographicScale } from '@/styling/utils';
+import { genTypographicScale } from '@/styling/typography';
 
 const textSizes = genTypographicScale({ scale: 1.333 });
 
