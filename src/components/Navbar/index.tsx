@@ -45,9 +45,11 @@ const DesktopLinkItem = styled.li`
 `;
 
 const DesktopLinkNumber = styled.span`
-  align-items: flex-end;
-  display: inline-flex;
-  font-size: 0.5rem;
+  ${({ theme: { typography } }) => css`
+    align-items: flex-end;
+    display: inline-flex;
+    font-size: ${typography.desktop[-1]};
+  `}
 `;
 
 const DesktopLinkTitle = styled.h4``;
