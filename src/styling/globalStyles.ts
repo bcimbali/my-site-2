@@ -38,63 +38,63 @@ const GlobalStyles = createGlobalStyle`
 
     /* Mobile Typography Settings: */
     h1 {
-      font-size: ${typography.h1.xs.fontSize};
-      line-height: ${typography.h1.xs.lineHeight};
+      font-size: ${typography.tags.h1.xs.fontSize};
+      line-height: ${typography.tags.h1.xs.lineHeight};
     }
     h2 {
-      font-size: ${typography.h2.xs.fontSize};
-      line-height: ${typography.h2.xs.lineHeight};
+      font-size: ${typography.tags.h2.xs.fontSize};
+      line-height: ${typography.tags.h2.xs.lineHeight};
     }
     h3 {
-      font-size: ${typography.h3.xs.fontSize};
-      line-height: ${typography.h3.xs.lineHeight};
+      font-size: ${typography.tags.h3.xs.fontSize};
+      line-height: ${typography.tags.h3.xs.lineHeight};
     }
     h4 {
-      font-size: ${typography.h4.xs.fontSize};
-      line-height: ${typography.h4.xs.lineHeight};
+      font-size: ${typography.tags.h4.xs.fontSize};
+      line-height: ${typography.tags.h4.xs.lineHeight};
     }
     h5 {
-      font-size: ${typography.h5.xs.fontSize};
-      line-height: ${typography.h5.xs.lineHeight};
+      font-size: ${typography.tags.h5.xs.fontSize};
+      line-height: ${typography.tags.h5.xs.lineHeight};
     }
     h6 {
-      font-size: ${typography.h6.xs.fontSize};
-      line-height: ${typography.h6.xs.lineHeight};
+      font-size: ${typography.tags.h6.xs.fontSize};
+      line-height: ${typography.tags.h6.xs.lineHeight};
     }
     p {
-      font-size: ${typography.p.xs.fontSize};
-      line-height: ${typography.p.xs.lineHeight};
+      font-size: ${typography.tags.p.xs.fontSize};
+      line-height: ${typography.tags.p.xs.lineHeight};
     }
 
     /* Desktop Typography Settings: */
     ${mediaQuery('lg')(`
       h1 {
-        font-size: ${typography.h1.lg.fontSize};
-        line-height: ${typography.h1.lg.lineHeight};
+        font-size: ${typography.tags.h1.lg.fontSize};
+        line-height: ${typography.tags.h1.lg.lineHeight};
       }
       h2 {
-        font-size: ${typography.h2.lg.fontSize};
-        line-height: ${typography.h2.lg.lineHeight};
+        font-size: ${typography.tags.h2.lg.fontSize};
+        line-height: ${typography.tags.h2.lg.lineHeight};
       }
       h3 {
-        font-size: ${typography.h3.lg.fontSize};
-        line-height: ${typography.h3.lg.lineHeight};
+        font-size: ${typography.tags.h3.lg.fontSize};
+        line-height: ${typography.tags.h3.lg.lineHeight};
       }
       h4 {
-        font-size: ${typography.h4.lg.fontSize};
-        line-height: ${typography.h4.lg.lineHeight};
+        font-size: ${typography.tags.h4.lg.fontSize};
+        line-height: ${typography.tags.h4.lg.lineHeight};
       }
       h5 {
-        font-size: ${typography.h5.lg.fontSize};
-        line-height: ${typography.h5.lg.lineHeight};
+        font-size: ${typography.tags.h5.lg.fontSize};
+        line-height: ${typography.tags.h5.lg.lineHeight};
       }
       h6 {
-        font-size: ${typography.h6.lg.fontSize};
-        line-height: ${typography.h6.lg.lineHeight};
+        font-size: ${typography.tags.h6.lg.fontSize};
+        line-height: ${typography.tags.h6.lg.lineHeight};
       }
       p {
-        font-size: ${typography.p.lg.fontSize};
-        line-height: ${typography.p.lg.lineHeight};
+        font-size: ${typography.tags.p.lg.fontSize};
+        line-height: ${typography.tags.p.lg.lineHeight};
       }
     `)}
   `}
