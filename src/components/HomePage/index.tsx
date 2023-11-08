@@ -2,6 +2,7 @@
 
 import styled, { css } from 'styled-components';
 import React from 'react';
+import { genTypographicScale } from '@/styling/utils';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const PageTitle = styled.h1`
 `;
 
 const HomePage = () => {
+  console.log('genTypographicScale: ', genTypographicScale({ scale: 1.333 }));
   return (
     <StyledDiv>
       <PageTitle>Welcome</PageTitle>
