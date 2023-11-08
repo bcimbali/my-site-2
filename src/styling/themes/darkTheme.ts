@@ -9,6 +9,9 @@ import breakpoints, {
 } from 'src/styling/layout';
 import { typography } from '@/styling/globalStyles';
 import transitionSpeed, { opacityHover, linkHover } from '@/styling/utils';
+import { genTypographicScale } from '@/styling/utils';
+
+const textSizes = genTypographicScale({ scale: 1.333 });
 
 const colors = {
   red: '#ff6f69',
@@ -48,6 +51,7 @@ const theme = {
     mobileFooterHeight,
     desktopFooterHeight
   },
+  textSizes,
   transitionSpeed,
   typography
 } as const;
