@@ -14,20 +14,39 @@ const StyledDiv = styled.div`
 const PageTitle = styled.h1`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.fg};
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   `}
 `;
 
 const TypographyContainer = styled.div`
-  border: 1px dotted white;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-
-  * {
+  ${({ theme: { mediaQuery, typography } }) => css`
     border: 1px dotted white;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: ${typography.mobile.settings.verticalRhythmSpacing};
+    width: 100%;
+
+    * {
+      border: 1px dotted white;
+    }
+
+    ${mediaQuery('lg')(`
+      gap: ${typography.desktop.settings.verticalRhythmSpacing};
+    `)}
+  `}
+`;
+
+const TestContainer = styled.div`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    margin-top: 3rem;
+    border: 1px dotted white;
+    display: grid;
+    gap: ${typography.mobile.settings.verticalRhythmSpacing};
+
+    ${mediaQuery('lg')(`
+      gap: ${typography.desktop.settings.verticalRhythmSpacing};
+    `)}
+  `}
 `;
 
 const TypographyPage = () => {
@@ -42,6 +61,61 @@ const TypographyPage = () => {
         <h5>This is an h5 tag.</h5>
         <p>This is a p tag.</p>
       </TypographyContainer>
+
+      <TestContainer>
+        <h1>This is an h1 tag.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+        <h2>This is an h2 tag.</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+        <h3>This is an h3 tag.</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+        <h3>This is an h3 tag.</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
+        </p>
+      </TestContainer>
     </StyledDiv>
   );
 };
