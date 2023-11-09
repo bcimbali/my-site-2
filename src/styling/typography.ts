@@ -26,11 +26,32 @@ const genAscendingValues = ({ base, scale }: { base?: number; scale: number }) =
 };
 
 // Combine descedings & ascending sizes in one object:
-export const genTypographicScale = ({ base, scale }: { base?: number; scale: number }) => {
+export const genTypographicScale = ({
+  base = 1,
+  bodyLineHeight = 1.5,
+  headingLineHeight = 1.5,
+  scale = 1.333
+}: {
+  base?: number;
+  bodyLineHeight?: number;
+  headingLineHeight?: number;
+  scale: number;
+}) => {
   const descendingValues = genDescendingDegrees({ base, scale });
   const ascendingValues = genAscendingValues({ base, scale });
 
-  const combinedValues = [...descendingValues, ...ascendingValues];
+  // Get base vertical rhythm spacing:
+  // https://designmodo.com/vertical-rhythm/
+  const verticalRhythmSpacing = `${base * bodyLineHeight}rem`;
+
+  // House all settings within generated sizes:
+  const settings = [
+    ['settings'],
+    { base, bodyLineHeight, headingLineHeight, scale, verticalRhythmSpacing }
+  ];
+
+  // Combine everything and return in one object:
+  const combinedValues = [...descendingValues, ...ascendingValues, settings];
   return Object.fromEntries(combinedValues);
 };
 
@@ -38,6 +59,7 @@ export const genTypographicScale = ({ base, scale }: { base?: number; scale: num
 // Way to override individual tags if need be.
 // Remove mega.
 // Add safe fallbacks / defaults.
+// Add sensible vertical rhythm values based off of verticalRhythmSpacing.
 const typography = ({
   desktopSettings,
   mobileSettings
@@ -57,11 +79,15 @@ const typography = ({
 }) => {
   const desktop = genTypographicScale({
     scale: desktopSettings?.scale || 1,
-    base: desktopSettings?.baseRem || 1
+    base: desktopSettings?.baseRem || 1,
+    bodyLineHeight: desktopSettings?.bodyLineHeight || 1.5,
+    headingLineHeight: desktopSettings?.headingLineHeight || 1.5
   });
   const mobile = genTypographicScale({
     scale: mobileSettings?.scale || 1,
-    base: mobileSettings?.baseRem || 1
+    base: mobileSettings?.baseRem || 1,
+    bodyLineHeight: mobileSettings?.bodyLineHeight || 1.5,
+    headingLineHeight: mobileSettings?.headingLineHeight || 1.5
   });
   return {
     desktop,

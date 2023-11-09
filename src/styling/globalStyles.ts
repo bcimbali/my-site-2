@@ -16,6 +16,11 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
     }
 
+    /* Set max-width of body text for readability: */
+    p {
+      max-width: 60ch;
+    }
+
     /* Set body tag colors: */
     p,
     a,
