@@ -14,8 +14,8 @@ import { genTypographicScale } from '@/styling/typography';
 const textSizes = genTypographicScale({ scale: 1.333 });
 
 const typography = genTypography({
-  desktopSettings: { scale: 1.333, bodyLineHeight: 1.5, headingLineHeight: 1 },
-  mobileSettings: { scale: 1.25, bodyLineHeight: 1.5, headingLineHeight: 1.5 }
+  desktopSettings: { scale: 1.333, bodyLineHeight: 1.5, headingLineHeight: 1, baseRem: 1 },
+  mobileSettings: { scale: 1.25, bodyLineHeight: 1.5, headingLineHeight: 1.5, baseRem: 1 }
 });
 
 const colors = {
