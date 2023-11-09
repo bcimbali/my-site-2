@@ -1,7 +1,7 @@
 // Get descending rem sizes by ratio (e.g '1rem', '0.75rem' etc.):
-const genDescendingDegrees = ({ scale }: { scale: number }) => {
+const genDescendingDegrees = ({ base, scale }: { base?: number; scale: number }) => {
   const descendingDegrees = [-1, -2, -3];
-  let lastDescendingValue = 1;
+  let lastDescendingValue = base || 1;
 
   const descendingValues = descendingDegrees.map((degree) => {
     const nextValue = lastDescendingValue / scale;
@@ -12,9 +12,9 @@ const genDescendingDegrees = ({ scale }: { scale: number }) => {
 };
 
 // Get ascending rem sizes by ratio (e.g '1rem', '1.333rem' etc.):
-const genAscendingValues = ({ scale }: { scale: number }) => {
+const genAscendingValues = ({ base, scale }: { base?: number; scale: number }) => {
   const ascendingDegrees = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-  let lastAscendingValue = 1;
+  let lastAscendingValue = base || 1;
 
   const increasingValues = ascendingDegrees.map((degree) => {
     const nextValue = lastAscendingValue * scale;
@@ -26,15 +26,15 @@ const genAscendingValues = ({ scale }: { scale: number }) => {
 };
 
 // Combine descedings & ascending sizes in one object:
-export const genTypographicScale = ({ scale }: { scale: number }) => {
-  const descendingValues = genDescendingDegrees({ scale });
-  const ascendingValues = genAscendingValues({ scale });
+export const genTypographicScale = ({ base, scale }: { base?: number; scale: number }) => {
+  const descendingValues = genDescendingDegrees({ base, scale });
+  const ascendingValues = genAscendingValues({ base, scale });
 
   const combinedValues = [...descendingValues, ...ascendingValues];
   return Object.fromEntries(combinedValues);
 };
 
-// TODO: Add base value.
+// TODO:
 // Way to override individual tags if need be.
 // Remove mega.
 // Add safe fallbacks / defaults.
@@ -42,11 +42,27 @@ const typography = ({
   desktopSettings,
   mobileSettings
 }: {
-  desktopSettings: { scale?: number; bodyLineHeight?: number; headingLineHeight?: number };
-  mobileSettings: { scale?: number; bodyLineHeight?: number; headingLineHeight?: number };
+  desktopSettings: {
+    scale?: number;
+    bodyLineHeight?: number;
+    headingLineHeight?: number;
+    baseRem?: number;
+  };
+  mobileSettings: {
+    scale?: number;
+    bodyLineHeight?: number;
+    headingLineHeight?: number;
+    baseRem?: number;
+  };
 }) => {
-  const desktop = genTypographicScale({ scale: desktopSettings?.scale || 1 });
-  const mobile = genTypographicScale({ scale: mobileSettings?.scale || 1 });
+  const desktop = genTypographicScale({
+    scale: desktopSettings?.scale || 1,
+    base: desktopSettings?.baseRem || 1
+  });
+  const mobile = genTypographicScale({
+    scale: mobileSettings?.scale || 1,
+    base: mobileSettings?.baseRem || 1
+  });
   return {
     desktop,
     mobile,
