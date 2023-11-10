@@ -12,9 +12,13 @@ const StyledDiv = styled.div`
 `;
 
 const PageTitle = styled.h1`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, spacing, themeColors } }) => css`
     color: ${themeColors.fg};
-    margin-bottom: 3rem;
+    margin-bottom: ${spacing[0]};
+
+    ${mediaQuery('lg')(`
+      margin-bottom: ${spacing[4]};
+    `)}
   `}
 `;
 

@@ -31,12 +31,12 @@ const Main = styled.main`
 `;
 
 const InnerPageWrapper = styled.div`
-  ${({ theme: { layout, maxWidth, mediaQuery } }) => css`
+  ${({ theme: { layout, maxWidth, mediaQuery, spacing } }) => css`
     column-gap: ${layout.xs.margin};
     display: grid;
     grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
-    padding: ${layout.xs.topBttmMargin} 0;
+    padding: ${spacing[0]} 0;
     width: 100%;
 
     ${mediaQuery('md')(`
