@@ -73,16 +73,30 @@ export const desktopNavHeight = '80px' as const;
 export const mobileFooterHeight = '64px' as const;
 export const desktopFooterHeight = '80px' as const;
 
-export const genSpacingValues = ({ lineHeight, base }: { lineHeight: number; base: number }) => {
+export const genSpacingValues = ({
+  lineHeight,
+  base
+}: {
+  lineHeight: number;
+  base: number;
+  isPx?: boolean;
+}) => {
   const multipliers = [
     0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25, 3.5, 3.75, 4, 4.25, 4.5, 4.75,
     5
   ];
   const baseline = base * lineHeight;
 
-  const spacingMultiples = multipliers.map((m, idx) => [[idx - 3], `${baseline * m}rem`]);
+  const spacingRemMultiples = multipliers.map((m, idx) => [[idx - 3], `${baseline * m}rem`]);
+  const asRemValues = Object.fromEntries(spacingRemMultiples);
 
-  return Object.fromEntries(spacingMultiples);
+  const spacingPxMultiples = multipliers.map((m, idx) => [[idx - 3], `${baseline * m * 16}px`]);
+  const asPixelValues = Object.fromEntries(spacingPxMultiples);
+
+  return {
+    asPixels: asPixelValues,
+    ...asRemValues
+  };
 };
 
 export default breakpoints;
