@@ -50,8 +50,19 @@ export const genTypographicScale = ({
     { base, bodyLineHeight, headingLineHeight, scale, verticalRhythmSpacing }
   ];
 
+  const descendingValAsRem = descendingValues.map((v) => [v[0], `${v[1]}rem`]);
+  const ascendingValAsRem = ascendingValues.map((v) => [v[0], `${v[1]}rem`]);
+
+  const combinedRemNumbers = [...descendingValAsRem, ...ascendingValAsRem];
+
+  const combinedRawNumbers = [...descendingValues, ...ascendingValues];
+
   // Combine everything and return in one object:
-  const combinedValues = [...descendingValues, ...ascendingValues, settings];
+  const combinedValues = [
+    ...combinedRemNumbers,
+    ['asNumbers', Object.fromEntries(combinedRawNumbers)],
+    settings
+  ];
   return Object.fromEntries(combinedValues);
 };
 
@@ -111,72 +122,72 @@ const typography = ({
     tags: {
       mega: {
         xs: {
-          fontSize: mobile[5],
+          fontSize: mobile.asNumbers[5],
           lineHeight: '100%'
         },
         lg: {
-          fontSize: desktop[5],
+          fontSize: desktop.asNumbers[5],
           lineHeight: '150%'
         }
       },
       h1: {
         xs: {
           fontSize: mobile[4],
-          lineHeight: genLineHeight(mobile[4], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[4], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[4],
-          lineHeight: genLineHeight(desktop[4], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[4], baselineDestkopMultiples)
         }
       },
       h2: {
         xs: {
           fontSize: mobile[3],
-          lineHeight: genLineHeight(mobile[3], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[3], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[3],
-          lineHeight: genLineHeight(desktop[3], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[3], baselineDestkopMultiples)
         }
       },
       h3: {
         xs: {
           fontSize: mobile[2],
-          lineHeight: genLineHeight(mobile[2], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[2], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[2],
-          lineHeight: genLineHeight(desktop[2], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[2], baselineDestkopMultiples)
         }
       },
       h4: {
         xs: {
           fontSize: mobile[1],
-          lineHeight: genLineHeight(mobile[1], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[1], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[1],
-          lineHeight: genLineHeight(desktop[1], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[1], baselineDestkopMultiples)
         }
       },
       h5: {
         xs: {
           fontSize: mobile[0],
-          lineHeight: genLineHeight(mobile[0], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[0], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[0],
-          lineHeight: genLineHeight(desktop[0], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[0], baselineDestkopMultiples)
         }
       },
       h6: {
         xs: {
           fontSize: mobile[0],
-          lineHeight: genLineHeight(mobile[0], baselineMobileMultiples)
+          lineHeight: genLineHeight(mobile.asNumbers[0], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[0],
-          lineHeight: genLineHeight(desktop[0], baselineDestkopMultiples)
+          lineHeight: genLineHeight(desktop.asNumbers[0], baselineDestkopMultiples)
         }
       },
       p: {
