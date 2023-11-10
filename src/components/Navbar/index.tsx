@@ -48,7 +48,7 @@ const DesktopLinkNumber = styled.span`
   ${({ theme: { typography } }) => css`
     align-items: flex-end;
     display: inline-flex;
-    font-size: ${typography.desktop[-1]};
+    font-size: ${typography.desktop[-1]}rem;
   `}
 `;
 

@@ -76,7 +76,7 @@ const MobileLinkNumber = styled.span`
   ${({ theme: { typography } }) => css`
     align-items: flex-end;
     display: inline-flex;
-    font-size: ${typography.mobile[-1]};
+    font-size: ${typography.mobile[-1]}rem;
   `}
 `;
 

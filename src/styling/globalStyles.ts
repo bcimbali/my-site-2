@@ -43,62 +43,62 @@ const GlobalStyles = createGlobalStyle`
 
     /* Mobile Typography Settings: */
     h1 {
-      font-size: ${typography.tags.h1.xs.fontSize};
+      font-size: ${typography.tags.h1.xs.fontSize}rem;
       line-height: ${typography.tags.h1.xs.lineHeight};
     }
     h2 {
-      font-size: ${typography.tags.h2.xs.fontSize};
+      font-size: ${typography.tags.h2.xs.fontSize}rem;
       line-height: ${typography.tags.h2.xs.lineHeight};
     }
     h3 {
-      font-size: ${typography.tags.h3.xs.fontSize};
+      font-size: ${typography.tags.h3.xs.fontSize}rem;
       line-height: ${typography.tags.h3.xs.lineHeight};
     }
     h4 {
-      font-size: ${typography.tags.h4.xs.fontSize};
+      font-size: ${typography.tags.h4.xs.fontSize}rem;
       line-height: ${typography.tags.h4.xs.lineHeight};
     }
     h5 {
-      font-size: ${typography.tags.h5.xs.fontSize};
+      font-size: ${typography.tags.h5.xs.fontSize}rem;
       line-height: ${typography.tags.h5.xs.lineHeight};
     }
     h6 {
-      font-size: ${typography.tags.h6.xs.fontSize};
+      font-size: ${typography.tags.h6.xs.fontSize}rem;
       line-height: ${typography.tags.h6.xs.lineHeight};
     }
     p {
-      font-size: ${typography.tags.p.xs.fontSize};
+      font-size: ${typography.tags.p.xs.fontSize}rem;
       line-height: ${typography.tags.p.xs.lineHeight};
     }
 
     /* Desktop Typography Settings: */
     ${mediaQuery('lg')(`
       h1 {
-        font-size: ${typography.tags.h1.lg.fontSize};
+        font-size: ${typography.tags.h1.lg.fontSize}rem;
         line-height: ${typography.tags.h1.lg.lineHeight};
       }
       h2 {
-        font-size: ${typography.tags.h2.lg.fontSize};
+        font-size: ${typography.tags.h2.lg.fontSize}rem;
         line-height: ${typography.tags.h2.lg.lineHeight};
       }
       h3 {
-        font-size: ${typography.tags.h3.lg.fontSize};
+        font-size: ${typography.tags.h3.lg.fontSize}rem;
         line-height: ${typography.tags.h3.lg.lineHeight};
       }
       h4 {
-        font-size: ${typography.tags.h4.lg.fontSize};
+        font-size: ${typography.tags.h4.lg.fontSize}rem;
         line-height: ${typography.tags.h4.lg.lineHeight};
       }
       h5 {
-        font-size: ${typography.tags.h5.lg.fontSize};
+        font-size: ${typography.tags.h5.lg.fontSize}rem;
         line-height: ${typography.tags.h5.lg.lineHeight};
       }
       h6 {
-        font-size: ${typography.tags.h6.lg.fontSize};
+        font-size: ${typography.tags.h6.lg.fontSize}rem;
         line-height: ${typography.tags.h6.lg.lineHeight};
       }
       p {
-        font-size: ${typography.tags.p.lg.fontSize};
+        font-size: ${typography.tags.p.lg.fontSize}rem;
         line-height: ${typography.tags.p.lg.lineHeight};
       }
     `)}
