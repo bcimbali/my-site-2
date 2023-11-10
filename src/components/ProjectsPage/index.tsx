@@ -7,9 +7,9 @@ import projectsData from '@/lib/projectsData';
 import PageTitle from '@/components/PageTitle';
 
 const ProjectsContainer = styled.ul`
-  ${({ theme: { mediaQuery } }) => css`
+  ${({ theme: { mediaQuery, spacing } }) => css`
     display: grid;
-    gap: 3rem;
+    gap: ${spacing[2]};
     justify-content: center;
     list-style-type: none;
     padding: 0;
