@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import projectsData from '@/lib/projectsData';
+import PageTitle from '@/components/PageTitle';
 
 const ProjectsContainer = styled.ul`
   ${({ theme: { mediaQuery } }) => css`
@@ -27,18 +28,6 @@ const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
-`;
-
-const PageTitle = styled.h1`
-  ${({ theme: { mediaQuery, themeColors } }) => css`
-    color: ${themeColors.headings};
-    margin-bottom: 1rem;
-    text-align: center;
-
-    ${mediaQuery('lg')`
-      margin-bottom: 3rem;
-    `}
-  `}
 `;
 
 // Mock out Title height for page bttm so

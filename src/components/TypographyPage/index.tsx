@@ -2,6 +2,7 @@
 
 import styled, { css } from 'styled-components';
 import React from 'react';
+import PageTitle from '@/components/PageTitle';
 
 const StyledDiv = styled.div`
   align-items: center;
@@ -9,17 +10,6 @@ const StyledDiv = styled.div`
   flex-direction: column;
   grid-column: 1/-1;
   justify-content: center;
-`;
-
-const PageTitle = styled.h1`
-  ${({ theme: { mediaQuery, spacing, themeColors } }) => css`
-    color: ${themeColors.fg};
-    margin-bottom: ${spacing[0]};
-
-    ${mediaQuery('lg')(`
-      margin-bottom: ${spacing[4]};
-    `)}
-  `}
 `;
 
 const TypographyContainer = styled.div`
