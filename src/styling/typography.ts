@@ -6,7 +6,7 @@ const genDescendingDegrees = ({ base, scale }: { base?: number; scale: number })
   const descendingValues = descendingDegrees.map((degree) => {
     const nextValue = lastDescendingValue / scale;
     lastDescendingValue = nextValue;
-    return [degree, `${nextValue.toFixed(3)}rem`];
+    return [degree, nextValue.toFixed(3)];
   });
   return descendingValues.reverse();
 };
@@ -19,7 +19,7 @@ const genAscendingValues = ({ base, scale }: { base?: number; scale: number }) =
   const increasingValues = ascendingDegrees.map((degree) => {
     const nextValue = lastAscendingValue * scale;
     lastAscendingValue = nextValue;
-    return [degree, `${nextValue.toFixed(3)}rem`];
+    return [degree, nextValue.toFixed(3)];
   });
 
   return increasingValues;
@@ -55,6 +55,9 @@ export const genTypographicScale = ({
   return Object.fromEntries(combinedValues);
 };
 
+// Used for generating all the multiples of the baseline multiplier:
+const multipliers = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+
 // TODO:
 // Way to override individual tags if need be.
 // Remove mega.
@@ -89,6 +92,19 @@ const typography = ({
     bodyLineHeight: mobileSettings?.bodyLineHeight || 1.5,
     headingLineHeight: mobileSettings?.headingLineHeight || 1.5
   });
+
+  const desktopBaseline =
+    (desktopSettings?.baseRem || 1) * (desktopSettings?.bodyLineHeight || 1.5);
+  const baselineDestkopMultiples = multipliers.map((m) => m * desktopBaseline);
+
+  const mobileBaseline = (mobileSettings?.baseRem || 1) * (mobileSettings?.bodyLineHeight || 1.5);
+  const baselineMobileMultiples = multipliers.map((m) => m * mobileBaseline);
+
+  const genLineHeight = (fontSize: number, multiples: number[]) => {
+    const firstMultipleLarger = multiples.find((m) => m > fontSize) || 1;
+    return firstMultipleLarger / fontSize;
+  };
+
   return {
     desktop,
     mobile,
@@ -106,61 +122,61 @@ const typography = ({
       h1: {
         xs: {
           fontSize: mobile[4],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[4], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[4],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[4], baselineDestkopMultiples)
         }
       },
       h2: {
         xs: {
           fontSize: mobile[3],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[3], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[3],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[3], baselineDestkopMultiples)
         }
       },
       h3: {
         xs: {
           fontSize: mobile[2],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[2], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[2],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[2], baselineDestkopMultiples)
         }
       },
       h4: {
         xs: {
           fontSize: mobile[1],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[1], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[1],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[1], baselineDestkopMultiples)
         }
       },
       h5: {
         xs: {
           fontSize: mobile[0],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[0], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[0],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[0], baselineDestkopMultiples)
         }
       },
       h6: {
         xs: {
           fontSize: mobile[0],
-          lineHeight: mobileSettings.headingLineHeight
+          lineHeight: genLineHeight(mobile[0], baselineMobileMultiples)
         },
         lg: {
           fontSize: desktop[0],
-          lineHeight: desktopSettings.headingLineHeight
+          lineHeight: genLineHeight(desktop[0], baselineDestkopMultiples)
         }
       },
       p: {
