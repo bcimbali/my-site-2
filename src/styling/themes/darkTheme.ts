@@ -1,6 +1,7 @@
 import breakpoints, {
   desktopFooterHeight,
   desktopNavHeight,
+  genSpacingValues,
   gridValues,
   maxWidth,
   mediaQueries,
@@ -11,12 +12,17 @@ import genTypography from '@/styling/typography';
 import transitionSpeed, { opacityHover, linkHover } from '@/styling/utils';
 import { genTypographicScale } from '@/styling/typography';
 
+export const baseRem = 1;
+export const bodyLineHeight = 1.5;
+
 const textSizes = genTypographicScale({ scale: 1.333 });
 
 const typography = genTypography({
-  desktopSettings: { scale: 1.333, bodyLineHeight: 1.5, headingLineHeight: 1, baseRem: 1 },
-  mobileSettings: { scale: 1.25, bodyLineHeight: 1.5, headingLineHeight: 1.5, baseRem: 1 }
+  desktopSettings: { scale: 1.333, bodyLineHeight, headingLineHeight: 1, baseRem },
+  mobileSettings: { scale: 1.25, bodyLineHeight, headingLineHeight: 1.5, baseRem }
 });
+
+const spacing = genSpacingValues({ lineHeight: bodyLineHeight, base: baseRem });
 
 const colors = {
   red: '#ff6f69',
@@ -56,6 +62,7 @@ const theme = {
     mobileFooterHeight,
     desktopFooterHeight
   },
+  spacing,
   textSizes,
   transitionSpeed,
   typography
