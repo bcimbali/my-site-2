@@ -25,43 +25,50 @@ export const gridValues = {
     gutter: '24px',
     margin: '24px',
     numOfColumns: 4,
-    topBttmMargin: '24px'
+    topMargin: '24px',
+    bottomMargin: '48px'
   },
   xs: {
     gutter: '24px',
     margin: '24px',
     numOfColumns: 4,
-    topBttmMargin: '24px'
+    topMargin: '24px',
+    bottomMargin: '48px'
   },
   sm: {
     gutter: '24px',
     margin: '24px',
     numOfColumns: 4,
-    topBttmMargin: '24px'
+    topMargin: '24px',
+    bottomMargin: '48px'
   },
   md: {
     gutter: '36px',
     margin: '36px',
     numOfColumns: 8,
-    topBttmMargin: '36px'
+    topMargin: '36px',
+    bottomMargin: '48px'
   },
   lg: {
     gutter: '36px',
     margin: '36px',
     numOfColumns: 12,
-    topBttmMargin: '36px'
+    topMargin: '36px',
+    bottomMargin: '48px'
   },
   xl: {
     gutter: '36px',
     margin: '36px',
     numOfColumns: 12,
-    topBttmMargin: '36px'
+    topMargin: '36px',
+    bottomMargin: '48px'
   },
   xxl: {
     gutter: '48px',
     margin: '48px',
     numOfColumns: 12,
-    topBttmMargin: '48px'
+    topMargin: '48px',
+    bottomMargin: '48px'
   }
 } as const;
 
