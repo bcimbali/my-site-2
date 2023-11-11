@@ -66,12 +66,12 @@ export const gridValues = {
 } as const;
 
 // Sitewide navbar/header heights:
-export const mobileNavHeight = '64px' as const;
-export const desktopNavHeight = '80px' as const;
+export const mobileNavHeight = '66px' as const;
+export const desktopNavHeight = '84px' as const;
 
 // Sitewide footer heights:
-export const mobileFooterHeight = '64px' as const;
-export const desktopFooterHeight = '80px' as const;
+export const mobileFooterHeight = '66px' as const;
+export const desktopFooterHeight = '84px' as const;
 
 export const genSpacingValues = ({
   lineHeight,
