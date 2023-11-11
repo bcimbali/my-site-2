@@ -9,7 +9,7 @@ import PageTitle from '@/components/PageTitle';
 const ProjectsContainer = styled.ul`
   ${({ theme: { mediaQuery, spacing } }) => css`
     display: grid;
-    gap: ${spacing[2]};
+    gap: ${spacing[1]};
     justify-content: center;
     list-style-type: none;
     padding: 0;
@@ -30,18 +30,6 @@ const StyledDiv = styled.div`
   grid-column: 1/-1;
 `;
 
-// Mock out Title height for page bttm so
-// top & bottom have same top & bttm margins:
-const PageBttmSpacer = styled.div`
-  ${({ theme: { mediaQuery } }) => css`
-    height: 76px;
-
-    ${mediaQuery('lg')`
-      height: 56px;
-    `}
-  `}
-`;
-
 const ProjectsPage = () => {
   return (
     <StyledDiv>
@@ -59,7 +47,6 @@ const ProjectsPage = () => {
           />
         ))}
       </ProjectsContainer>
-      <PageBttmSpacer />
     </StyledDiv>
   );
 };

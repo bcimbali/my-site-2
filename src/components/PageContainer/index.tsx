@@ -36,24 +36,25 @@ const InnerPageWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
-    padding: ${spacing[0]} 0;
+    padding: ${layout.xxs.topMargin} 0 ${layout.xxs.bottomMargin} 0;
     width: 100%;
 
     ${mediaQuery('md')(`
       column-gap: ${layout.md.margin};
       grid-template-columns: repeat(${layout.md.numOfColumns}, 1fr);
-      padding: ${layout.md.topBttmMargin} 0;
+      padding: ${layout.md.topMargin} 0 ${layout.md.bottomMargin} 0;
     `)}
 
     ${mediaQuery('lg')(`
       column-gap: ${layout.lg.margin};
-      grid-template-columns: repeat(${layout.lg.numOfColumns}, 1fr);
+      grid-template-columns: repeat(${spacing[4]}, 1fr);
+      padding: ${layout.lg.topMargin} 0 ${layout.lg.bottomMargin} 0;
     `)}
 
     ${mediaQuery('xxl')(`
       column-gap: ${layout.xxl.margin};
       grid-template-columns: repeat(${layout.xxl.numOfColumns}, 1fr);
-      padding: ${layout.xxl.topBttmMargin} 0;
+      padding: ${layout.xxl.topMargin} 0 ${layout.xxl.bottomMargin} 0;
     `)}
   `}
 `;
