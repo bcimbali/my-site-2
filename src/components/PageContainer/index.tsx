@@ -61,7 +61,9 @@ const InnerPageWrapper = styled.div`
 
 const Body = styled.body`
   ${({ theme: { themeColors } }) => css`
-    background-color: ${themeColors.bg};
+    background: ${themeColors.bg};
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: grid;
     height: 100svh;
     grid-template-rows: auto 1fr auto;

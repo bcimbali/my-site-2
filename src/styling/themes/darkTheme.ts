@@ -33,7 +33,7 @@ const colors = {
   purple: '#b1b0e5',
   black: '#111111',
   white: '#FFFFFF',
-  bg: '#0B0B3E',
+  bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
   fg: '#FFFFFF'
 } as const;
 
@@ -41,7 +41,7 @@ const theme = {
   breakpoints,
   colors,
   themeColors: {
-    bg: colors.blue,
+    bg: colors.bg,
     body: colors.white,
     fg: colors.white,
     headings: colors.white,
