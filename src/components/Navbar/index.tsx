@@ -55,9 +55,9 @@ const DesktopLinkNumber = styled.span`
 const DesktopLinkTitle = styled.h4``;
 
 const InnerNav = styled.div`
-  ${({ theme: { maxWidth, mediaQuery } }) => css`
+  ${({ theme: { maxWidth, mediaQuery, spacing } }) => css`
     display: flex;
-    gap: 1rem;
+    gap: ${spacing[-1]};
     max-width: ${maxWidth};
     width: 100%;
 
