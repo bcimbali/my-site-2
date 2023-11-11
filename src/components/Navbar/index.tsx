@@ -71,9 +71,11 @@ const Logo = styled.h3``;
 
 const MobileNavBttn = styled.button`
   ${({ theme: { mediaQuery } }) => css`
+    align-self: center;
     background: none;
     border: 0;
-    max-width: 31px;
+    max-height: 24px;
+    max-width: 24px;
     padding: 0;
 
     &:hover {
