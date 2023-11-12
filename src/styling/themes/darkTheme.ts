@@ -26,9 +26,9 @@ const spacing = genSpacingValues({ lineHeight: bodyLineHeight, base: baseRem });
 
 const colors = {
   red: '#ff6f69',
-  orange: '#e8af72',
-  yellow: '#ffef96',
-  green: '#a5dbcb',
+  orange: '#FF5733',
+  yellow: '#FFFF33',
+  green: '#7CFC00',
   blue: '#0B0B3E',
   purple: '#b1b0e5',
   brown: '#402a23',
