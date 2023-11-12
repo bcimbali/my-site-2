@@ -91,7 +91,7 @@ const MobileNavBttn = styled.button`
 const OuterNav = styled.nav`
   ${({ theme: { layout, mediaQuery, nav, themeColors } }) => css`
     align-items: center;
-    background-color: ${themeColors.bg};
+    background-color: ${themeColors.navbarBg};
     border-bottom: 1px solid ${themeColors.headings};
     box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
     display: flex;
