@@ -46,7 +46,7 @@ const MarqueeContent = styled.div`
     justify-content: space-around;
     min-width: 100%;
 
-    &:last-child {
+    :last-child {
       animation-name: ${scrollAbs};
     }
   `}
