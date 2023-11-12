@@ -63,13 +63,15 @@ const ImgContainer = styled.div`
 `;
 
 const InnerContentContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex: 1 0 auto;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: flex-start;
-  padding: 1rem;
+  ${({ theme: { spacing } }) => css`
+    align-items: center;
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    gap: ${spacing[-2]};
+    justify-content: flex-start;
+    padding: ${spacing[-1]};
+  `}
 `;
 
 const OuterCardLink = styled(Link)`

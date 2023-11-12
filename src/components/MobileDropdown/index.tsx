@@ -99,6 +99,12 @@ const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
         </MobileLinkItem>
       );
     })}
+    <MobileLinkItem>
+      <MobileLink href="/typography" tabIndex={isOpen ? 0 : -1}>
+        <MobileLinkNumber>04</MobileLinkNumber>
+        <MobileLinkTitle>Typography</MobileLinkTitle>
+      </MobileLink>
+    </MobileLinkItem>
   </LinksContainer>
 );
 
