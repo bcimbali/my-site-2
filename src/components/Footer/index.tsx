@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
 const FooterContainer = styled.footer`
-  ${({ theme: { colors, footer, mediaQuery, themeColors } }) => css`
+  ${({ theme: { footer, mediaQuery, themeColors } }) => css`
     align-items: center;
     align-self: end;
-    background-color: ${colors.blue};
+    background-color: ${themeColors.footerBg};
     border-top: 1px solid ${themeColors.fg};
     display: flex;
     flex-direction: column;
