@@ -28,7 +28,7 @@ const MarqueeContainer = styled.div`
     border: 1px dashed white;
     display: flex;
     gap: var(--gap);
-    max-width: 1440px;
+    max-width: 100vw;
     overflow: hidden;
     position: relative;
     user-select: none;
