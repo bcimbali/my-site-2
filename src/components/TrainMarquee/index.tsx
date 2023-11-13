@@ -22,7 +22,7 @@ const scrollAbs = keyframes`
 `;
 
 const MarqueeContainer = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     --gap: 1rem;
     animation-direction: reverse;
     border: 1px dashed white;
@@ -36,7 +36,7 @@ const MarqueeContainer = styled.div`
 `;
 
 const MarqueeContent = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     --gap: 1rem;
     animation: ${scroll} 10s linear infinite;
     animation-direction: reverse;

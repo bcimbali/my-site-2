@@ -13,7 +13,7 @@ const BottomBorder = styled.div`
 `;
 
 const InnerShippingWrapper = styled.div`
-  ${({ theme }) => css`
+  ${() => css`
     align-items: center;
     border: 1px solid #000000;
     display: flex;
