@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: center;
   grid-column: 1/-1;
-  justify-content: center;
+  justify-content: space-between;
 `;
 
 const HomePage = () => {

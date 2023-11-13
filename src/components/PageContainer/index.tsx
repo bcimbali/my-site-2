@@ -34,6 +34,7 @@ const InnerPageWrapper = styled.div`
   ${({ theme: { layout, maxWidth, mediaQuery, spacing } }) => css`
     column-gap: ${layout.xs.margin};
     display: grid;
+    flex-grow: 1;
     grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
     padding: ${layout.xxs.topMargin} 0 ${layout.xxs.bottomMargin} 0;
