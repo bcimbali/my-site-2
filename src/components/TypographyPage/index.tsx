@@ -5,7 +5,6 @@ import React from 'react';
 import PageTitle from '@/components/PageTitle';
 
 const StyledDiv = styled.div`
-  align-items: center;
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
@@ -32,6 +31,7 @@ const TypographyContainer = styled.div`
 
 const TestContainer = styled.div`
   ${({ theme: { mediaQuery, typography } }) => css`
+    align-self: center;
     margin-top: 3rem;
     border: 1px dotted white;
     display: grid;

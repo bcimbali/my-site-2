@@ -5,7 +5,6 @@ import React from 'react';
 import PageTitle from '@/components/PageTitle';
 
 const StyledDiv = styled.div`
-  align-items: center;
   display: flex;
   grid-column: 1/-1;
   justify-content: center;
