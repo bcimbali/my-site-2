@@ -31,7 +31,7 @@ const Main = styled.main`
 `;
 
 const InnerPageWrapper = styled.div`
-  ${({ theme: { layout, maxWidth, mediaQuery, spacing } }) => css`
+  ${({ theme: { layout, maxWidth, mediaQuery } }) => css`
     column-gap: ${layout.xs.margin};
     display: grid;
     flex-grow: 1;
@@ -48,7 +48,7 @@ const InnerPageWrapper = styled.div`
 
     ${mediaQuery('lg')(`
       column-gap: ${layout.lg.margin};
-      grid-template-columns: repeat(${spacing[4]}, 1fr);
+      grid-template-columns: repeat(${layout.lg.numOfColumns}, 1fr);
       padding: ${layout.lg.topMargin} 0 ${layout.lg.bottomMargin} 0;
     `)}
 
