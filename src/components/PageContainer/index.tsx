@@ -61,13 +61,17 @@ const InnerPageWrapper = styled.div`
 `;
 
 const Body = styled.body`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, themeColors } }) => css`
     background: ${themeColors.bg};
     background-repeat: no-repeat;
     background-attachment: fixed;
     display: grid;
     height: 100svh;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr;
+
+    ${mediaQuery('lg')(`
+      grid-template-rows: auto 1fr auto;
+    `)}
   `}
 `;
 
