@@ -152,11 +152,7 @@ const TopBorder = styled.div<BorderTypes>`
   `}
 `;
 
-type ShippingContainerTypes = {
-  color?: string;
-};
-
-const ShippingContainer = ({ color = '#FF69B4' }: ShippingContainerTypes) => {
+const ShippingContainer = ({ color = '#FF69B4' }: { color?: string }) => {
   return (
     <OuterShippingWrapper>
       <InnerShippingWrapper $color={color}>
