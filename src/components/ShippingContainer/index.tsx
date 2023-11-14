@@ -156,7 +156,7 @@ type ShippingContainerTypes = {
   color?: string;
 };
 
-const ShippingContainer = ({ color = '#FF69B4' }) => {
+const ShippingContainer = ({ color = '#FF69B4' }: ShippingContainerTypes) => {
   return (
     <OuterShippingWrapper>
       <InnerShippingWrapper $color={color}>

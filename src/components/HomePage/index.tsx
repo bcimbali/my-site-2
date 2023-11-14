@@ -20,7 +20,11 @@ const HomePage = () => {
       <PageTitle>Welcome</PageTitle>
       <TrainMarquee>
         <ShippingContainer />
+        <ShippingContainer color="#A9A9A9" />
+        <ShippingContainer color="#006A4E" />
         <ShippingContainer />
+        <ShippingContainer color="#A52A2A" />
+        <ShippingContainer color="#CD5700" />
       </TrainMarquee>
     </StyledDiv>
   );

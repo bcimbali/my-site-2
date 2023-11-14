@@ -38,7 +38,7 @@ const MarqueeContainer = styled.div`
 const MarqueeContent = styled.div`
   ${() => css`
     --gap: 1rem;
-    animation: ${scroll} 10s linear infinite;
+    animation: ${scroll} 17s linear infinite;
     animation-direction: reverse;
     display: flex;
     flex-shrink: 0;
