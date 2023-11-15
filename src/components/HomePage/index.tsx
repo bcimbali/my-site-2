@@ -20,11 +20,11 @@ const HomePage = () => {
       <PageTitle>Welcome</PageTitle>
       <TrainMarquee>
         <ShippingContainer />
-        <ShippingContainer color="#A9A9A9" />
-        <ShippingContainer color="#006A4E" />
+        <ShippingContainer bgColor="#6050DC" />
+        <ShippingContainer bgColor="#006A4E" textColor="#FFDF00" />
         <ShippingContainer />
-        <ShippingContainer color="#A52A2A" />
-        <ShippingContainer color="#CD5700" />
+        <ShippingContainer bgColor="#A52A2A" textColor="#CCCCFF" />
+        <ShippingContainer bgColor="#F4F0EC" textColor="#111111" />
       </TrainMarquee>
     </StyledDiv>
   );

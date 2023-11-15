@@ -4,16 +4,20 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 type BorderTypes = {
-  $color?: string;
+  $bgColor?: string;
 };
 
 type InnerShippingWrapperTypes = {
-  $color?: string;
+  $bgColor?: string;
+};
+
+type TextTypes = {
+  $textColor: string;
 };
 
 const BottomBorder = styled.div<BorderTypes>`
-  ${({ $color, theme: { mediaQuery } }) => css`
-    background-color: ${$color};
+  ${({ $bgColor, theme: { mediaQuery } }) => css`
+    background-color: ${$bgColor};
     border-top: 2px solid #000000;
     height: 5px;
     bottom: 0;
@@ -27,7 +31,7 @@ const BottomBorder = styled.div<BorderTypes>`
 `;
 
 const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
-  ${({ $color, theme: { mediaQuery } }) => css`
+  ${({ $bgColor, theme: { mediaQuery } }) => css`
     align-items: center;
     border: 1px solid #000000;
     display: flex;
@@ -43,7 +47,7 @@ const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
         rgba(0, 0, 0, 0.3) 30px,
         rgba(0, 0, 0, 0.3) 40px
       ),
-      ${$color};
+      ${$bgColor};
 
     ${mediaQuery('lg')(`
         height: 400px;
@@ -53,8 +57,8 @@ const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
 `;
 
 const LeftBorder = styled.div<BorderTypes>`
-  ${({ $color, theme: { mediaQuery } }) => css`
-    background-color: ${$color};
+  ${({ $bgColor, theme: { mediaQuery } }) => css`
+    background-color: ${$bgColor};
     border-right: 2px solid #000000;
     height: 100%;
     left: 0;
@@ -67,9 +71,9 @@ const LeftBorder = styled.div<BorderTypes>`
   `}
 `;
 
-const MainText = styled.h2`
-  ${({ theme: { mediaQuery } }) => css`
-    color: #ffffff;
+const MainText = styled.h2<TextTypes>`
+  ${({ $textColor, theme: { mediaQuery } }) => css`
+    color: ${$textColor};
     font-size: 4rem;
     margin: 0;
 
@@ -86,8 +90,8 @@ const OuterShippingWrapper = styled.div`
 `;
 
 const RightBorder = styled.div<BorderTypes>`
-  ${({ $color, theme: { mediaQuery } }) => css`
-    background-color: ${$color};
+  ${({ $bgColor, theme: { mediaQuery } }) => css`
+    background-color: ${$bgColor};
     border-left: 2px solid #000000;
     height: 100%;
     right: 0;
@@ -100,9 +104,9 @@ const RightBorder = styled.div<BorderTypes>`
   `}
 `;
 
-const SmallVerticalText = styled.div`
-  ${({ theme: { mediaQuery } }) => css`
-    color: #ffffff;
+const SmallVerticalText = styled.div<TextTypes>`
+  ${({ $textColor, theme: { mediaQuery } }) => css`
+    color: ${$textColor};
     font-family: monospace;
     font-size: 0.5rem;
     margin: 0;
@@ -119,9 +123,9 @@ const SmallVerticalText = styled.div`
   `}
 `;
 
-const SubTitle = styled.p`
-  ${({ theme: { mediaQuery } }) => css`
-    color: #ffffff;
+const SubTitle = styled.p<TextTypes>`
+  ${({ $textColor, theme: { mediaQuery } }) => css`
+    color: ${$textColor};
     font-size: 1.5rem;
     margin: 0;
 
@@ -138,8 +142,8 @@ const TitleContainer = styled.div`
 `;
 
 const TopBorder = styled.div<BorderTypes>`
-  ${({ $color, theme: { mediaQuery } }) => css`
-    background-color: ${$color};
+  ${({ $bgColor, theme: { mediaQuery } }) => css`
+    background-color: ${$bgColor};
     border-bottom: 2px solid #000000;
     height: 5px;
     top: 0;
@@ -152,19 +156,25 @@ const TopBorder = styled.div<BorderTypes>`
   `}
 `;
 
-const ShippingContainer = ({ color = '#FF69B4' }: { color?: string }) => {
+const ShippingContainer = ({
+  bgColor = '#FF69B4',
+  textColor = '#FFFFFF'
+}: {
+  bgColor?: string;
+  textColor?: string;
+}) => {
   return (
     <OuterShippingWrapper>
-      <InnerShippingWrapper $color={color}>
-        <TopBorder $color={color} />
-        <LeftBorder $color={color} />
+      <InnerShippingWrapper $bgColor={bgColor}>
+        <TopBorder $bgColor={bgColor} />
+        <LeftBorder $bgColor={bgColor} />
         <TitleContainer>
-          <MainText>ONE</MainText>
-          <SubTitle>OCEAN NETWORK EXPRESS</SubTitle>
+          <MainText $textColor={textColor}>ONE</MainText>
+          <SubTitle $textColor={textColor}>OCEAN NETWORK EXPRESS</SubTitle>
         </TitleContainer>
-        <RightBorder $color={color} />
-        <BottomBorder $color={color} />
-        <SmallVerticalText>H3T-L MRT</SmallVerticalText>
+        <RightBorder $bgColor={bgColor} />
+        <BottomBorder $bgColor={bgColor} />
+        <SmallVerticalText $textColor={textColor}>H3T-L MRT</SmallVerticalText>
       </InnerShippingWrapper>
     </OuterShippingWrapper>
   );
