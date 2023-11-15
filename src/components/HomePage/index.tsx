@@ -20,11 +20,31 @@ const HomePage = () => {
       <PageTitle>Welcome</PageTitle>
       <TrainMarquee>
         <ShippingContainer />
-        <ShippingContainer bgColor="#6050DC" />
-        <ShippingContainer bgColor="#006A4E" textColor="#FFDF00" />
-        <ShippingContainer />
-        <ShippingContainer bgColor="#A52A2A" textColor="#CCCCFF" />
-        <ShippingContainer bgColor="#F4F0EC" textColor="#111111" />
+        <ShippingContainer bgColor="#6050DC" title="EMP" subtitle="Eastern MI Parcel" />
+        <ShippingContainer
+          bgColor="#66FF00"
+          textColor="#1B4D3E"
+          title="SW"
+          subtitle="Southwestern"
+        />
+        <ShippingContainer
+          bgColor="#FFFF00"
+          textColor="#111111"
+          title="ZRE"
+          subtitle="Zeus Intermodal"
+        />
+        <ShippingContainer
+          bgColor="#A52A2A"
+          textColor="#CCCCFF"
+          title="LR-NW"
+          subtitle="Lisle Northwestern"
+        />
+        <ShippingContainer
+          bgColor="#F4F0EC"
+          textColor="#111111"
+          title="VLI"
+          subtitle="VLI  Network"
+        />
       </TrainMarquee>
     </StyledDiv>
   );
