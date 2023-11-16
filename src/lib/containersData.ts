@@ -58,12 +58,6 @@ const containersData = [
         subtitle: 'Zeus Intermodal',
         textColor: '#111111',
         title: 'ZRE'
-      },
-      {
-        bgColor: '#FFFF00',
-        subtitle: 'Zeus Intermodal',
-        textColor: '#111111',
-        title: 'ZRE'
       }
     ]
   },
@@ -87,12 +81,6 @@ const containersData = [
   {
     id: 'DTTX 0702',
     containers: [
-      {
-        bgColor: '#F4F0EC',
-        subtitle: 'VLI  Network',
-        textColor: '#111111',
-        title: 'VLI'
-      },
       {
         bgColor: '#F4F0EC',
         subtitle: 'VLI  Network',
