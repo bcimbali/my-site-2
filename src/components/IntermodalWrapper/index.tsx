@@ -6,8 +6,10 @@ import ShippingContainer from '@/components/ShippingContainer';
 import Flatcar from 'src/components/Flatcar';
 
 const Wrapper = styled.div`
-  display: grid;
-  align-items: end;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 type Container = {
