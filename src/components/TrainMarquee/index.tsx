@@ -25,7 +25,6 @@ const MarqueeContainer = styled.div`
   ${() => css`
     --gap: 1rem;
     animation-direction: reverse;
-    border: 1px dashed white;
     display: flex;
     gap: var(--gap);
     max-width: 100vw;
