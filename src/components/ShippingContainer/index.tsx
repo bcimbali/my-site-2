@@ -50,9 +50,9 @@ const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
       ${$bgColor};
 
     ${mediaQuery('lg')(`
-        height: 400px;
-        width: 900px;
-      `)}
+      height: 400px;
+      width: 900px;
+    `)}
   `}
 `;
 
