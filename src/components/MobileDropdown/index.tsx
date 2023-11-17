@@ -12,7 +12,15 @@ type MobileLinkTypes = {
 };
 
 const DropdownContainer = styled.div<DropdownContainerTypes>`
-  ${({ theme: { layout, mediaQuery, nav, themeColors }, $isOpen }) => css`
+  ${({
+    theme: {
+      components: { nav },
+      layout,
+      mediaQuery,
+      themeColors
+    },
+    $isOpen
+  }) => css`
     background-color: ${themeColors.mobileDropdownBg};
     height: 100svh;
     max-height: 0;

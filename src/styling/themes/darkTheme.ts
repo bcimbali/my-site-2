@@ -57,13 +57,15 @@ const theme = {
   maxWidth,
   opacityHover,
   mediaQuery: mediaQueries,
-  nav: {
-    mobileNavHeight,
-    desktopNavHeight
-  },
-  footer: {
-    mobileFooterHeight,
-    desktopFooterHeight
+  components: {
+    nav: {
+      mobileNavHeight,
+      desktopNavHeight
+    },
+    footer: {
+      mobileFooterHeight,
+      desktopFooterHeight
+    }
   },
   spacing,
   textSizes,

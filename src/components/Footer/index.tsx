@@ -1,7 +1,13 @@
 import styled, { css } from 'styled-components';
 
 const FooterContainer = styled.footer`
-  ${({ theme: { footer, mediaQuery, themeColors } }) => css`
+  ${({
+    theme: {
+      components: { footer },
+      mediaQuery,
+      themeColors
+    }
+  }) => css`
     align-items: center;
     align-self: end;
     background-color: ${themeColors.footerBg};
