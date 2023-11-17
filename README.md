@@ -127,9 +127,9 @@ ${({ theme: { layout, mediaQuery, nav } }) => css`
 
 This repo uses the `svgr/cli` to convert svg icons into flexible TSX components. To add an icon:
 
-1. Export the `SVG` from Figma or get the svg file from wherever you choose.
+1. Export the `SVG` from Figma.
 2. Add the raw `SVG` as a file in the `src/icons/raw`.
-3. In the root directory of this project, run a `yarn convertSvgs`.
+3. In the root directory of this project, run `yarn icons`.
 4. This command will run through all the SVG files in the `/raw` directory and create new icons as converted TSX files in the `/tsx` directory. Pre-existing `SVG` icons will be ignored.
 5. They can then be used in throughout the app like this:
 
