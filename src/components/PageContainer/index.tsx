@@ -1,12 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import Navbar from '@/components/Navbar';
 import styled, { css } from 'styled-components';
 import { Play } from 'next/font/google';
 import Footer from '@/components/Footer';
+import { usePathname } from 'next/navigation';
 
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
+
+type InnerPageTypes = {
+  $noBttmPadding?: boolean;
+};
 
 const Main = styled.main`
   ${({
@@ -36,32 +41,32 @@ const Main = styled.main`
   `}
 `;
 
-const InnerPageWrapper = styled.div`
-  ${({ theme: { layout, maxWidth, mediaQuery } }) => css`
+const InnerPageWrapper = styled.div<InnerPageTypes>`
+  ${({ $noBttmPadding, theme: { layout, maxWidth, mediaQuery } }) => css`
     column-gap: ${layout.xs.margin};
     display: grid;
     flex-grow: 1;
     grid-template-columns: repeat(${layout.xs.numOfColumns}, 1fr);
     max-width: ${maxWidth};
-    padding: ${layout.xxs.topMargin} 0 ${layout.xxs.bottomMargin} 0;
+    padding: ${layout.xxs.topMargin} 0 ${$noBttmPadding ? 0 : layout.xxs.bottomMargin} 0;
     width: 100%;
 
     ${mediaQuery('md')(`
       column-gap: ${layout.md.margin};
       grid-template-columns: repeat(${layout.md.numOfColumns}, 1fr);
-      padding: ${layout.md.topMargin} 0 ${layout.md.bottomMargin} 0;
+      padding: ${layout.md.topMargin} 0 ${$noBttmPadding ? 0 : layout.md.bottomMargin} 0;
     `)}
 
     ${mediaQuery('lg')(`
       column-gap: ${layout.lg.margin};
       grid-template-columns: repeat(${layout.lg.numOfColumns}, 1fr);
-      padding: ${layout.lg.topMargin} 0 ${layout.lg.bottomMargin} 0;
+      padding: ${layout.lg.topMargin} 0 ${$noBttmPadding ? 0 : layout.lg.bottomMargin} 0;
     `)}
 
     ${mediaQuery('xxl')(`
       column-gap: ${layout.xxl.margin};
       grid-template-columns: repeat(${layout.xxl.numOfColumns}, 1fr);
-      padding: ${layout.xxl.topMargin} 0 ${layout.xxl.bottomMargin} 0;
+      padding: ${layout.xxl.topMargin} 0 ${$noBttmPadding ? 0 : layout.xxl.bottomMargin} 0;
     `)}
   `}
 `;
@@ -82,11 +87,14 @@ const Body = styled.body`
 `;
 
 const PageContainer = ({ children }: { children: React.ReactNode }) => {
+  const pathname = usePathname();
+  const isHomePage = useMemo(() => pathname === '/', [pathname]);
+
   return (
     <Body className={play.className}>
       <Navbar />
       <Main>
-        <InnerPageWrapper>{children}</InnerPageWrapper>
+        <InnerPageWrapper $noBttmPadding={isHomePage}>{children}</InnerPageWrapper>
       </Main>
       <Footer />
     </Body>

@@ -18,7 +18,7 @@ const StyledDiv = styled.div`
 const HomePage = () => {
   return (
     <StyledDiv>
-      <PageTitle>Welcome</PageTitle>
+      <PageTitle>{''}</PageTitle>
       <TrainMarquee>
         {containersData.map((item, idx) => (
           <IntermodalWrapper

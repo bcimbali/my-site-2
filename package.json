@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "convertSvgs": "svgr --typescript --memo --ignore-existing --jsx-runtime 'automatic' --filename-case 'camel' --out-dir src/icons/tsx -- src/icons/raw",
+    "icons": "svgr --typescript --memo --ignore-existing --jsx-runtime 'automatic' --filename-case 'camel' --out-dir src/icons/tsx -- src/icons/raw",
     "types": "tsc"
   },
   "dependencies": {
