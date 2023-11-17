@@ -1,49 +1,62 @@
 const containersData = [
   {
-    id: 'DTTX 1197',
-    containers: [{}, {}]
-  },
-  {
-    id: 'DTTX 7201',
+    id: 'DTTX-1197',
     containers: [
       {
-        bgColor: '#BADA55',
-        title: 'TRT',
-        subtitle: 'Tricoastal'
+        containerNo: 'H3T-L MRT'
       },
       {
-        bgColor: '#BADA55',
-        title: 'TRT',
-        subtitle: 'Tricoastal'
+        containerNo: 'D6V-X IZI'
       }
     ]
   },
   {
-    id: 'DTTX 4719',
+    id: 'DTTX-7201',
+    containers: [
+      {
+        bgColor: '#BADA55',
+        containerNo: 'R2G-E DUP',
+        subtitle: 'Tricoastal',
+        title: 'TRT'
+      },
+      {
+        bgColor: '#BADA55',
+        containerNo: 'F61-N REQ',
+        subtitle: 'Tricoastal',
+        title: 'TRT'
+      }
+    ]
+  },
+  {
+    id: 'DTTX-4719',
     containers: [
       {
         bgColor: '#6050DC',
+        containerNo: 'Q1P-O LKY',
         subtitle: 'Eastern MI Parcel',
         title: 'EMP'
       },
       {
         bgColor: '#6050DC',
+        containerNo: 'Z3I-B VLV',
         subtitle: 'Eastern MI Parcel',
         title: 'EMP'
       }
     ]
   },
   {
-    id: 'DTTX 9209',
+    id: 'DTTX-9209',
     containers: [
       {
         bgColor: '#66FF00',
+        containerNo: 'C8W-I ZEZ',
         subtitle: 'Southwestern',
         textColor: '#1B4D3E',
         title: 'SW'
       },
       {
         bgColor: '#66FF00',
+        containerNo: 'E9A-A KJG',
         subtitle: 'Southwestern',
         textColor: '#1B4D3E',
         title: 'SW'
@@ -51,10 +64,11 @@ const containersData = [
     ]
   },
   {
-    id: 'DTTX 7789',
+    id: 'DTTX-7789',
     containers: [
       {
         bgColor: '#FFFF00',
+        containerNo: 'N9M-X SRK',
         subtitle: 'Zeus Intermodal',
         textColor: '#111111',
         title: 'ZRE'
@@ -62,16 +76,18 @@ const containersData = [
     ]
   },
   {
-    id: 'DTTX 0702',
+    id: 'DTTX-0702',
     containers: [
       {
         bgColor: '#A52A2A',
+        containerNo: 'N7W-M ZFD',
         subtitle: 'Lisle Northwestern',
         textColor: '#CCCCFF',
         title: 'LR-NW'
       },
       {
         bgColor: '#A52A2A',
+        containerNo: 'T0V-E SJT',
         subtitle: 'Lisle Northwestern',
         textColor: '#CCCCFF',
         title: 'LR-NW'
@@ -79,10 +95,11 @@ const containersData = [
     ]
   },
   {
-    id: 'DTTX 0702',
+    id: 'DTTX-4132',
     containers: [
       {
         bgColor: '#F4F0EC',
+        containerNo: 'I7T-S ACY',
         subtitle: 'VLI  Network',
         textColor: '#111111',
         title: 'VLI'

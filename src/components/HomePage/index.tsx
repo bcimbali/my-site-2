@@ -20,8 +20,12 @@ const HomePage = () => {
     <StyledDiv>
       <PageTitle>Welcome</PageTitle>
       <TrainMarquee>
-        {containersData.map((box, idx) => (
-          <IntermodalWrapper key={`${box?.id}-${idx}-intermodal`} containers={box?.containers} />
+        {containersData.map((item, idx) => (
+          <IntermodalWrapper
+            key={`${item?.id}-${idx}-intermodal`}
+            containers={item?.containers}
+            id={item.id}
+          />
         ))}
       </TrainMarquee>
     </StyledDiv>

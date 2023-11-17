@@ -158,13 +158,13 @@ const TopBorder = styled.div<BorderTypes>`
 
 const ShippingContainer = ({
   bgColor = '#FF69B4',
-  containerNumber = 'H3T-L MRT',
+  containerNo = 'H3T-L MRT',
   subtitle = 'OCEAN NETWORK EXPRESS',
   textColor = '#FFFFFF',
   title = 'ONE'
 }: {
   bgColor?: string;
-  containerNumber?: string;
+  containerNo?: string;
   subtitle?: string;
   textColor?: string;
   title?: string;
@@ -180,7 +180,7 @@ const ShippingContainer = ({
         </TitleContainer>
         <RightBorder $bgColor={bgColor} />
         <BottomBorder $bgColor={bgColor} />
-        <SmallVerticalText $textColor={textColor}>{containerNumber}</SmallVerticalText>
+        <SmallVerticalText $textColor={textColor}>{containerNo}</SmallVerticalText>
       </InnerShippingWrapper>
     </OuterShippingWrapper>
   );
