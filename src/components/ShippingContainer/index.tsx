@@ -72,13 +72,13 @@ const LeftBorder = styled.div<BorderTypes>`
 `;
 
 const MainText = styled.h2<TextTypes>`
-  ${({ $textColor, theme: { mediaQuery } }) => css`
+  ${({ $textColor, theme: { mediaQuery, typography } }) => css`
     color: ${$textColor};
-    font-size: 4rem;
+    font-size: ${typography.mobile[5]};
     margin: 0;
 
     ${mediaQuery('lg')(`
-      font-size: 10rem;
+      font-size: ${typography.desktop[7]};
     `)}
   `}
 `;
@@ -105,10 +105,10 @@ const RightBorder = styled.div<BorderTypes>`
 `;
 
 const SmallVerticalText = styled.div<TextTypes>`
-  ${({ $textColor, theme: { mediaQuery } }) => css`
+  ${({ $textColor, theme: { mediaQuery, typography } }) => css`
     color: ${$textColor};
     font-family: monospace;
-    font-size: 0.5rem;
+    font-size: ${typography.mobile[-3]};
     margin: 0;
     position: absolute;
     top: 25px;
@@ -124,13 +124,13 @@ const SmallVerticalText = styled.div<TextTypes>`
 `;
 
 const SubTitle = styled.p<TextTypes>`
-  ${({ $textColor, theme: { mediaQuery } }) => css`
+  ${({ $textColor, theme: { mediaQuery, typography } }) => css`
     color: ${$textColor};
-    font-size: 1.5rem;
+    font-size: ${typography.mobile[1]};
     margin: 0;
 
     ${mediaQuery('lg')(`
-      font-size: 3rem;
+      font-size: ${typography.desktop[2]};
     `)}
   `}
 `;
