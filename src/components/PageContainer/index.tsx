@@ -9,7 +9,13 @@ import Footer from '@/components/Footer';
 const play = Play({ display: 'swap', weight: ['400', '700'], subsets: ['latin'] });
 
 const Main = styled.main`
-  ${({ theme: { layout, mediaQuery, nav } }) => css`
+  ${({
+    theme: {
+      components: { nav },
+      layout,
+      mediaQuery
+    }
+  }) => css`
     align-items: center;
     display: flex;
     flex-direction: column;
