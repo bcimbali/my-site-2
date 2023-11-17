@@ -14,19 +14,25 @@ const Wrapper = styled.div`
 
 type Container = {
   bgColor?: string;
-  containerNumber?: string;
+  containerNo?: string;
   subtitle?: string;
   textColor?: string;
   title?: string;
 };
 
-const IntermodalWrapper = ({ containers = [] }: { containers?: Container[] }) => {
+const IntermodalWrapper = ({
+  containers = [],
+  id = 'DTTX-0092'
+}: {
+  containers?: Container[];
+  id: string;
+}) => {
   return (
     <Wrapper>
       {containers.map((box, idx) => (
         <ShippingContainer key={`${box?.title}-${idx}`} {...box} />
       ))}
-      <Flatcar />
+      <Flatcar carNo={id} />
     </Wrapper>
   );
 };
