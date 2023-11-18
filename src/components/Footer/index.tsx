@@ -11,7 +11,6 @@ const FooterContainer = styled.footer`
     align-items: center;
     align-self: end;
     background-color: ${themeColors.footerBg};
-    border-top: 1px solid ${themeColors.fg};
     display: flex;
     flex-direction: column;
     height: ${footer.mobileFooterHeight};
@@ -36,8 +35,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <FooterContainer>
-      <FooterText>{`Brett Cimbalik © ${currentYear}.`}</FooterText>
-      <FooterText>All rights reserved.</FooterText>
+      <FooterText>{`Brett Cimbalik © ${currentYear}`}</FooterText>
     </FooterContainer>
   );
 };
