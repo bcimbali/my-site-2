@@ -129,7 +129,7 @@ This repo uses the `svgr/cli` to convert svg icons into flexible TSX components.
 
 1. Export the `SVG` from Figma.
 2. Add the raw `SVG` as a file in the `src/icons/raw`.
-3. In the root directory of this project, run `yarn icons`.
+3. In root directory, run `yarn icons`.
 4. This command will run through all the SVG files in the `/raw` directory and create new icons as converted TSX files in the `/tsx` directory. Pre-existing `SVG` icons will be ignored.
 5. They can then be used in throughout the app like this:
 
@@ -141,7 +141,9 @@ const ExampleUseCase = () => {
     <Container>
       <InnerComponent>
 
-      <Hamburger color="#bade10" /> // <- optional color can be passed in.
+      <Hamburger color="#bade10" /> // <- optional color prop is used for stroke color.
+
+      <LogoIcon color="#f12EFF" fill="#377379" /> // <- optional fill prop is used for fill color.
     </Container>
   )
 }
