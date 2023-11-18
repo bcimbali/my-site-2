@@ -13,6 +13,13 @@ module.exports = {
                 spread: false,
                 literal: true,
                 position: 'end'
+              },
+              {
+                name: 'fill',
+                value: "props.fill || 'none'",
+                spread: false,
+                literal: true,
+                position: 'end'
               }
             ]
           },
