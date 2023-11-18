@@ -35,7 +35,8 @@ const colors = {
   black: '#111111',
   gray: '#222222',
   white: '#FFFFFF',
-  bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
+  // bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
+  bg: 'linear-gradient(180deg, #00154A 0%, #001242 26.56%, #001C54 55.21%, #00377A 80.73%, #3C4280 100%)',
   fg: '#FFFFFF'
 } as const;
 
@@ -50,7 +51,8 @@ const theme = {
     headings: colors.white,
     mobileDropdownBg: colors.white,
     mobileDropdownFg: colors.blue,
-    navbarBg: '#004694',
+    // navbarBg: '#004694',
+    navbarBg: '#00154A',
     secondary: '#380D8B'
   },
   layout: gridValues,
