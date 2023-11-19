@@ -6,9 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const CardContainer = styled.li`
-  ${({ theme: { colors, themeColors } }) => css`
+  ${({ theme: { colors } }) => css`
     background: ${colors.black};
-    border: 1px solid ${themeColors.fg};
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
