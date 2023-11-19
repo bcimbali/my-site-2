@@ -29,7 +29,7 @@ const colors = {
   orange: '#FF5733',
   yellow: '#FFFF33',
   green: '#7CFC00',
-  blue: '#0B0B3E',
+  blue: '#00154A',
   purple: '#b1b0e5',
   brown: '#483C32',
   black: '#111111',
@@ -52,7 +52,7 @@ const theme = {
     mobileDropdownBg: colors.white,
     mobileDropdownFg: colors.blue,
     // navbarBg: '#004694',
-    navbarBg: '#00154A',
+    navbarBg: colors.blue,
     secondary: '#380D8B'
   },
   layout: gridValues,
