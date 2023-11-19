@@ -5,6 +5,7 @@ import React, { useMemo } from 'react';
 
 type TowerTypes = {
   $height: string;
+  $hideOnMobile: boolean;
   $left: string;
   $width: string;
 };
@@ -26,11 +27,11 @@ const BlinkingLight = styled.div`
 `;
 
 const Tower = styled.div<TowerTypes>`
-  ${({ $height, $left, $width }) => css`
+  ${({ $height, $hideOnMobile, $left, $width, theme: { mediaQuery } }) => css`
     background: #292525;
     border-radius: 4px;
     bottom: 0;
-    display: flex;
+    display: ${$hideOnMobile ? 'none' : 'flex'};
     flex-direction: column;
     height: ${$height};
     justify-content: space-between;
@@ -38,17 +39,23 @@ const Tower = styled.div<TowerTypes>`
     position: absolute;
     width: ${$width};
     z-index: -1;
+
+    ${mediaQuery('sm')(`
+      display: flex;
+    `)}
   `}
 `;
 
 const CommsTower = ({
   amountOfLights = 2,
   height = '300px',
+  hideOnMobile = false,
   left = '0',
   width = '1px'
 }: {
   amountOfLights?: number;
   height?: string;
+  hideOnMobile?: boolean;
   left?: string;
   width?: string;
 }) => {
@@ -61,7 +68,7 @@ const CommsTower = ({
   );
 
   return (
-    <Tower $height={height} $left={left} $width={width}>
+    <Tower $height={height} $hideOnMobile={hideOnMobile} $left={left} $width={width}>
       {lights}
     </Tower>
   );
