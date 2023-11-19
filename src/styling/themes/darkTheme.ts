@@ -62,12 +62,12 @@ const theme = {
   mediaQuery: mediaQueries,
   components: {
     nav: {
-      mobileNavHeight,
-      desktopNavHeight
+      mobileHeight: mobileNavHeight,
+      desktopHeight: desktopNavHeight
     },
     footer: {
-      mobileFooterHeight,
-      desktopFooterHeight
+      mobileHeight: mobileFooterHeight,
+      desktopHeight: desktopFooterHeight
     }
   },
   spacing,

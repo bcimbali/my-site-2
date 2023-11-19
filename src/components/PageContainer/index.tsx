@@ -25,7 +25,7 @@ const Main = styled.main`
     display: flex;
     flex-direction: column;
     padding: 0 ${layout.xs.margin};
-    margin-top: ${nav.mobileNavHeight};
+    margin-top: ${nav.mobileHeight};
 
     background-image: url('transmission-lines-and-stars.svg');
     background-position: bottom;

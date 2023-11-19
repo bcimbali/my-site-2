@@ -13,13 +13,13 @@ const FooterContainer = styled.footer`
     background-color: ${themeColors.footerBg};
     display: flex;
     flex-direction: column;
-    height: ${footer.mobileFooterHeight};
+    height: ${footer.mobileHeight};
     justify-content: center;
     padding: 1rem;
     width: 100%;
 
     ${mediaQuery('lg')(`
-      height: ${footer.desktopFooterHeight};
+      height: ${footer.desktopHeight};
     `)}
   `}
 `;
