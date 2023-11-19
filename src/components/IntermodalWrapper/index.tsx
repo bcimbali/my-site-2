@@ -22,9 +22,11 @@ type Container = {
 
 const IntermodalWrapper = ({
   containers = [],
+  flatcarColor,
   id = 'DTTX-0092'
 }: {
   containers?: Container[];
+  flatcarColor?: string;
   id: string;
 }) => {
   return (
@@ -32,7 +34,7 @@ const IntermodalWrapper = ({
       {containers.map((box, idx) => (
         <ShippingContainer key={`${box?.title}-${idx}`} {...box} />
       ))}
-      <Flatcar carNo={id} />
+      <Flatcar carNo={id} flatcarColor={flatcarColor} />
     </Wrapper>
   );
 };

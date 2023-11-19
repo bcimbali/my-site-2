@@ -9,9 +9,9 @@ import containersData from '@/lib/containersData';
 import CommsTower from '@/components/CommsTower';
 
 const StyledDiv = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   grid-column: 1/-1;
   justify-content: space-between;
   position: relative;
@@ -26,6 +26,7 @@ const HomePage = () => {
           <IntermodalWrapper
             key={`${item?.id}-${idx}-intermodal`}
             containers={item?.containers}
+            flatcarColor={item?.flatcarColor}
             id={item.id}
           />
         ))}
