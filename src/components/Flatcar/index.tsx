@@ -21,25 +21,25 @@ const desktopQuarter = `${shipContainer.desktop.asNumbers.width * 0.25}px`;
 const desktopHalf = `${shipContainer.desktop.asNumbers.width * 0.5}px`;
 const desktopThreeQuarters = `${shipContainer.desktop.asNumbers.width * 0.75}px`;
 
+type ContainerTypes = {
+  $bgColor?: string;
+};
+
 type VerticalRowTypes = {
+  $bgColor?: string;
   $mobile: { left: string };
   $desktop: { left: string };
 };
 
-const Container = styled.div`
+const Container = styled.div<ContainerTypes>`
   ${({
+    $bgColor,
     theme: {
       components: { shippingContainer },
       mediaQuery
     }
   }) => css`
-    background: rgb(166, 103, 35);
-    background: linear-gradient(
-      90deg,
-      rgba(166, 103, 35, 1) 0%,
-      rgba(166, 129, 35, 1) 35%,
-      rgba(166, 116, 35, 1) 100%
-    );
+    background: ${$bgColor};
     border-radius: 2px;
     clip-path: polygon(0 0, 10% 0, 90% 0, 100% 0, 100% 90%, 90% 100%, 10% 100%, 0% 90%, 0% 10%);
     display: flex;
@@ -94,8 +94,8 @@ const TopRow = styled.div`
 `;
 
 const VerticalSupport = styled.div<VerticalRowTypes>`
-  ${({ $desktop, $mobile, theme: { colors, mediaQuery } }) => css`
-    background: rgba(166, 129, 35, 1);
+  ${({ $bgColor, $desktop, $mobile, theme: { colors, mediaQuery } }) => css`
+    background: ${$bgColor};
     border-bottom: 1px solid ${colors.black};
     border-left: 1px solid ${colors.black};
     border-right: 1px solid ${colors.black};
@@ -114,13 +114,20 @@ const VerticalSupport = styled.div<VerticalRowTypes>`
   `}
 `;
 
-const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
+const Flatcar = ({
+  carNo = 'DTTX 724130',
+  flatcarColor = 'linear-gradient(90deg,rgba(166, 103, 35, 1) 0%,rgba(166, 129, 35, 1) 35%,rgba(166, 116, 35, 1) 100%)'
+}: {
+  carNo?: string;
+  flatcarColor?: string;
+}) => {
   return (
-    <Container>
+    <Container $bgColor={flatcarColor}>
       <TopRow />
 
       {/* Far Left */}
       <VerticalSupport
+        $bgColor={flatcarColor}
         $mobile={{
           left: mobileVerticalWidth
         }}
@@ -131,6 +138,7 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
 
       {/* 25% */}
       <VerticalSupport
+        $bgColor={flatcarColor}
         $mobile={{
           left: mobileQuarter
         }}
@@ -141,6 +149,7 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
 
       {/* 50% */}
       <VerticalSupport
+        $bgColor={flatcarColor}
         $mobile={{
           left: mobileHalf
         }}
@@ -151,6 +160,7 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
 
       {/* 75% */}
       <VerticalSupport
+        $bgColor={flatcarColor}
         $mobile={{
           left: mobileThreeQuarters
         }}
@@ -161,6 +171,7 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
 
       {/* 100% */}
       <VerticalSupport
+        $bgColor={flatcarColor}
         $mobile={{
           left: shipContainer.mobile.width
         }}

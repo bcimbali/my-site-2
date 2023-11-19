@@ -25,7 +25,8 @@ const containersData = [
         subtitle: 'Tricoastal',
         title: 'TRT'
       }
-    ]
+    ],
+    flatcarColor: '#7b3c3c'
   },
   {
     id: 'DTTX-4719',
@@ -73,7 +74,8 @@ const containersData = [
         textColor: '#111111',
         title: 'ZRE'
       }
-    ]
+    ],
+    flatcarColor: '#4B5320'
   },
   {
     id: 'DTTX-5142',
@@ -100,7 +102,8 @@ const containersData = [
   },
   {
     id: 'DTTX-8244',
-    containers: []
+    containers: [],
+    flatcarColor: '#71797E'
   },
   {
     id: 'DTTX-4132',
