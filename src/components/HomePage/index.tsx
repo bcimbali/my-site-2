@@ -6,6 +6,7 @@ import PageTitle from '@/components/PageTitle';
 import TrainMarquee from '@/components/TrainMarquee';
 import IntermodalWrapper from '@/components/IntermodalWrapper';
 import containersData from '@/lib/containersData';
+import CommsTower from '@/components/CommsTower';
 
 const StyledDiv = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const StyledDiv = styled.div`
   align-items: center;
   grid-column: 1/-1;
   justify-content: space-between;
+  position: relative;
 `;
 
 const HomePage = () => {
@@ -28,6 +30,11 @@ const HomePage = () => {
           />
         ))}
       </TrainMarquee>
+
+      <CommsTower amountOfLights={4} height="300px" left="0" width="1px" />
+      <CommsTower amountOfLights={6} height="400px" left="100%" width="1px" />
+      <CommsTower amountOfLights={4} height="200px" left="25%" width="1px" />
+      <CommsTower amountOfLights={4} height="500px" left="75%" width="1px" />
     </StyledDiv>
   );
 };
