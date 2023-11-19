@@ -3,13 +3,22 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+// Used for dynamically extending width of flatcar:
+const mobileFlatcarOffset = '100px';
+const desktopFlatcarOffset = '200px';
+
 type VerticalRowTypes = {
   $mobile: { height: string; left: string };
   $desktop: { height: string; left: string };
 };
 
 const Container = styled.div`
-  ${({ theme: { mediaQuery } }) => css`
+  ${({
+    theme: {
+      components: { shippingContainer },
+      mediaQuery
+    }
+  }) => css`
     background: rgb(166, 103, 35);
     background: linear-gradient(
       90deg,
@@ -22,11 +31,11 @@ const Container = styled.div`
     display: flex;
     height: 50px;
     position: relative;
-    width: 550px;
+    width: calc(${`${shippingContainer.mobile.width} + ${mobileFlatcarOffset}`});
 
     ${mediaQuery('lg')(`
       height: 75px;
-      width: 1100px;
+      width: calc(${`${shippingContainer.desktop.width} + ${desktopFlatcarOffset}`})
     `)};
   `}
 `;
