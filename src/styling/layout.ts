@@ -106,4 +106,16 @@ export const genSpacingValues = ({
   };
 };
 
+// Global Sizes for shipping container components on HomePage:
+export const shippingContainer = {
+  mobile: {
+    height: '200px',
+    width: '450px'
+  },
+  desktop: {
+    height: '400px',
+    width: '900px'
+  }
+};
+
 export default breakpoints;

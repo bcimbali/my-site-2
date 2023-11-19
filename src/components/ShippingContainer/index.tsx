@@ -31,14 +31,20 @@ const BottomBorder = styled.div<BorderTypes>`
 `;
 
 const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
-  ${({ $bgColor, theme: { mediaQuery } }) => css`
+  ${({
+    $bgColor,
+    theme: {
+      components: { shippingContainer },
+      mediaQuery
+    }
+  }) => css`
     align-items: center;
     border: 1px solid #000000;
     display: flex;
     justify-content: center;
     position: relative;
-    height: 200px;
-    width: 450px;
+    height: ${shippingContainer.mobile.height};
+    width: ${shippingContainer.mobile.width};
 
     background: repeating-linear-gradient(
         90deg,
@@ -50,8 +56,8 @@ const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
       ${$bgColor};
 
     ${mediaQuery('lg')(`
-      height: 400px;
-      width: 900px;
+      height: ${shippingContainer.desktop.height};
+      width: ${shippingContainer.desktop.width};
     `)}
   `}
 `;
