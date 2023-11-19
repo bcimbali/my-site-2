@@ -102,7 +102,7 @@ const OuterNav = styled.nav`
     border-bottom: 1px solid ${themeColors.headings};
     box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 10px;
     display: flex;
-    height: ${nav.mobileNavHeight};
+    height: ${nav.mobileHeight};
     justify-content: center;
     padding: 0 ${layout.xs.margin};
     position: fixed;
@@ -114,7 +114,7 @@ const OuterNav = styled.nav`
     `)}
 
     ${mediaQuery('lg')(`
-      height: ${nav.desktopNavHeight};
+      height: ${nav.desktopHeight};
       position: unset;
     `)}
 

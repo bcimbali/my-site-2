@@ -59,11 +59,18 @@ To use the global theme in a component local style, import it into your componen
 
 ```jsx
 const OuterNav = styled.nav`
-  ${({ theme: { layout, mediaQuery, nav, themeColors } }) => css`
+  ${({
+    theme: {
+      components: { nav },
+      layout,
+      mediaQuery,
+      themeColors
+    }
+  }) => css`
     align-items: center;
     border-bottom: 1px solid ${themeColors.headings};
     display: flex;
-    height: ${nav.mobileNavHeight};
+    height: ${nav.mobileHeight};
     justify-content: center;
     padding: 0 ${layout.xs.margin};
     ...
@@ -94,7 +101,7 @@ The `mediaQuery` function has one required argument, which is a key of the `brea
 and using the `mediaQuery()`:
 
 ```jsx
-${({ theme: { layout, mediaQuery, nav } }) => css`
+${({ theme: { components: { nav }, layout, mediaQuery, nav } }) => css`
   ...
     ${mediaQuery('xs')(`
       padding: 0 ${layout.xs.margin};
@@ -109,7 +116,7 @@ ${({ theme: { layout, mediaQuery, nav } }) => css`
     `)}
 
     ${mediaQuery('lg')(`
-      height: ${nav.desktopNavHeight};
+      height: ${nav.desktopHeight};
     `)}
 
     ${mediaQuery('xl')(`
