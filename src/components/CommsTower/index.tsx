@@ -20,8 +20,9 @@ const BlinkingLight = styled.div`
   animation: ${blinking} 4s ease-in-out infinite;
   background-color: #ec4809;
   border-radius: 100%;
-  box-shadow: rgba(247, 87, 51, 0.9) 0px 0px 70px 4px;
+  box-shadow: 0px 0px 70px 4px rgba(247, 87, 51, 0.9);
   filter: blur(3px);
+  margin-left: -3px;
   top: 150px;
   z-index: -1;
 `;
