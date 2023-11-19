@@ -6,7 +6,8 @@ import breakpoints, {
   maxWidth,
   mediaQueries,
   mobileFooterHeight,
-  mobileNavHeight
+  mobileNavHeight,
+  shippingContainer
 } from 'src/styling/layout';
 import genTypography from '@/styling/typography';
 import transitionSpeed, { opacityHover, linkHover } from '@/styling/utils';
@@ -68,7 +69,8 @@ const theme = {
     footer: {
       mobileHeight: mobileFooterHeight,
       desktopHeight: desktopFooterHeight
-    }
+    },
+    shippingContainer
   },
   spacing,
   textSizes,
