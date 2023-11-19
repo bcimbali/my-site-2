@@ -4,13 +4,22 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { shippingContainer as shipContainer } from '@/styling/layout';
 
-// Used for dynamically extending width of flatcar:
+// Used for dynamically extending width of flatcar beyond shipping container:
 const mobileFlatcarOffset = '100px';
 const desktopFlatcarOffset = '200px';
 
-// Used for vertical supports:
+// Used for vertical support widths:
 const mobileVerticalWidth = '10px';
 const desktopVerticalWidth = '15px';
+
+// Get equal divisions of Shipping Containers for VerticalSupport placement:
+const mobileQuarter = `${shipContainer.mobile.asNumbers.width * 0.25}px`;
+const mobileHalf = `${shipContainer.mobile.asNumbers.width * 0.5}px`;
+const mobileThreeQuarters = `${shipContainer.mobile.asNumbers.width * 0.75}px`;
+
+const desktopQuarter = `${shipContainer.desktop.asNumbers.width * 0.25}px`;
+const desktopHalf = `${shipContainer.desktop.asNumbers.width * 0.5}px`;
+const desktopThreeQuarters = `${shipContainer.desktop.asNumbers.width * 0.75}px`;
 
 type VerticalRowTypes = {
   $mobile: { height: string; left: string };
@@ -117,6 +126,36 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
         $desktop={{
           height: '45px',
           left: desktopVerticalWidth
+        }}
+      />
+      <VerticalSupport
+        $mobile={{
+          height: '30px',
+          left: mobileQuarter
+        }}
+        $desktop={{
+          height: '45px',
+          left: desktopQuarter
+        }}
+      />
+      <VerticalSupport
+        $mobile={{
+          height: '30px',
+          left: mobileHalf
+        }}
+        $desktop={{
+          height: '45px',
+          left: desktopHalf
+        }}
+      />
+      <VerticalSupport
+        $mobile={{
+          height: '30px',
+          left: mobileThreeQuarters
+        }}
+        $desktop={{
+          height: '45px',
+          left: desktopThreeQuarters
         }}
       />
       <VerticalSupport
