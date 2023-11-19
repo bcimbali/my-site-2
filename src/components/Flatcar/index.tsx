@@ -2,10 +2,15 @@
 
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { shippingContainer as shipContainer } from '@/styling/layout';
 
 // Used for dynamically extending width of flatcar:
 const mobileFlatcarOffset = '100px';
 const desktopFlatcarOffset = '200px';
+
+// Used for vertical supports:
+const mobileVerticalWidth = '10px';
+const desktopVerticalWidth = '15px';
 
 type VerticalRowTypes = {
   $mobile: { height: string; left: string };
@@ -86,16 +91,16 @@ const VerticalSupport = styled.div<VerticalRowTypes>`
     border-left: 1px solid ${colors.black};
     border-right: 1px solid ${colors.black};
     height: ${$mobile.height};
-    left: ${$mobile.left};
+    left: calc(${`(${mobileFlatcarOffset} / 2) + (${$mobile.left} - ${mobileVerticalWidth})`});
     position: absolute;
     top: 9px;
-    width: 10px;
+    width: ${mobileVerticalWidth};
 
     ${mediaQuery('lg')(`
       height: ${$desktop.height};
-      left: ${$desktop.left};
+      left: calc(${`(${desktopFlatcarOffset} / 2) + (${$desktop.left} - ${desktopVerticalWidth})`});
       top: 14px;
-      width: 15px;
+      width: ${desktopVerticalWidth};
     `)}
   `}
 `;
@@ -107,21 +112,21 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
       <VerticalSupport
         $mobile={{
           height: '30px',
-          left: '50px'
+          left: mobileVerticalWidth
         }}
         $desktop={{
           height: '45px',
-          left: '100px'
+          left: desktopVerticalWidth
         }}
       />
       <VerticalSupport
         $mobile={{
           height: '30px',
-          left: '490px'
+          left: shipContainer.mobile.width
         }}
         $desktop={{
           height: '45px',
-          left: '985px'
+          left: shipContainer.desktop.width
         }}
       />
       <Label>{carNo}</Label>
