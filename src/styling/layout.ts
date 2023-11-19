@@ -109,10 +109,18 @@ export const genSpacingValues = ({
 // Global Sizes for shipping container components on HomePage:
 export const shippingContainer = {
   mobile: {
+    asNumbers: {
+      height: 200,
+      width: 450
+    },
     height: '200px',
     width: '450px'
   },
   desktop: {
+    asNumbers: {
+      height: 400,
+      width: 900
+    },
     height: '400px',
     width: '900px'
   }
