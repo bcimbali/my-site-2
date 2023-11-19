@@ -22,8 +22,8 @@ const desktopHalf = `${shipContainer.desktop.asNumbers.width * 0.5}px`;
 const desktopThreeQuarters = `${shipContainer.desktop.asNumbers.width * 0.75}px`;
 
 type VerticalRowTypes = {
-  $mobile: { height: string; left: string };
-  $desktop: { height: string; left: string };
+  $mobile: { left: string };
+  $desktop: { left: string };
 };
 
 const Container = styled.div`
@@ -62,11 +62,11 @@ const Label = styled.div`
     padding: 0px 8px;
     position: absolute;
     top: 15px;
-    left: 80px;
+    left: calc(${`(${mobileFlatcarOffset} / 2) + (${mobileQuarter} / 5)`});
 
     ${mediaQuery('lg')(`
       font-size: ${typography.desktop[-1]};
-      left: 150px;
+      left: calc(${`(${desktopFlatcarOffset} / 2) + (${desktopQuarter} / 3)`});
       top: 25px;
     `)}
   `}
@@ -99,14 +99,14 @@ const VerticalSupport = styled.div<VerticalRowTypes>`
     border-bottom: 1px solid ${colors.black};
     border-left: 1px solid ${colors.black};
     border-right: 1px solid ${colors.black};
-    height: ${$mobile.height};
+    height: 30px;
     left: calc(${`(${mobileFlatcarOffset} / 2) + (${$mobile.left} - ${mobileVerticalWidth})`});
     position: absolute;
     top: 9px;
     width: ${mobileVerticalWidth};
 
     ${mediaQuery('lg')(`
-      height: ${$desktop.height};
+      height: 45px;
       left: calc(${`(${desktopFlatcarOffset} / 2) + (${$desktop.left} - ${desktopVerticalWidth})`});
       top: 14px;
       width: ${desktopVerticalWidth};
@@ -118,56 +118,57 @@ const Flatcar = ({ carNo = 'DTTX 724130' }: { carNo?: string }) => {
   return (
     <Container>
       <TopRow />
+
+      {/* Far Left */}
       <VerticalSupport
         $mobile={{
-          height: '30px',
           left: mobileVerticalWidth
         }}
         $desktop={{
-          height: '45px',
           left: desktopVerticalWidth
         }}
       />
+
+      {/* 25% */}
       <VerticalSupport
         $mobile={{
-          height: '30px',
           left: mobileQuarter
         }}
         $desktop={{
-          height: '45px',
           left: desktopQuarter
         }}
       />
+
+      {/* 50% */}
       <VerticalSupport
         $mobile={{
-          height: '30px',
           left: mobileHalf
         }}
         $desktop={{
-          height: '45px',
           left: desktopHalf
         }}
       />
+
+      {/* 75% */}
       <VerticalSupport
         $mobile={{
-          height: '30px',
           left: mobileThreeQuarters
         }}
         $desktop={{
-          height: '45px',
           left: desktopThreeQuarters
         }}
       />
+
+      {/* 100% */}
       <VerticalSupport
         $mobile={{
-          height: '30px',
           left: shipContainer.mobile.width
         }}
         $desktop={{
-          height: '45px',
           left: shipContainer.desktop.width
         }}
       />
+
       <Label>{carNo}</Label>
     </Container>
   );
