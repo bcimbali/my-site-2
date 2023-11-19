@@ -101,7 +101,7 @@ const PageContainer = ({ children }: { children: React.ReactNode }) => {
       <Main>
         <InnerPageWrapper $isHomePage={isHomePage}>{children}</InnerPageWrapper>
       </Main>
-      <Footer />
+      {!isHomePage && <Footer />}
     </Body>
   );
 };
