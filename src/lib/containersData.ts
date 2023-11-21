@@ -15,7 +15,14 @@ const containersData = [
         }
       },
       {
-        containerNo: 'D6V-X IZI'
+        containerNo: 'D6V-X IZI',
+        logo: {
+          color: '#FFFFFF',
+          desktopWidth: '250px',
+          fill: '#FFFFFF',
+          mobileWidth: '100px',
+          src: Vmr
+        }
       }
     ]
   },
@@ -25,14 +32,20 @@ const containersData = [
       {
         bgColor: '#BADA55',
         containerNo: 'R2G-E DUP',
-        subtitle: 'Tricoastal',
-        title: 'TRT'
+        logo: {
+          color: 'none',
+          desktopWidth: '250px',
+          fill: '#002244',
+          mobileWidth: '100px',
+          src: Vmr
+        },
+        textColor: '#002244'
       },
       {
         bgColor: '#BADA55',
         containerNo: 'F61-N REQ',
-        subtitle: 'Tricoastal',
-        title: 'TRT'
+        subtitle: '2023',
+        title: 'T R T'
       }
     ],
     flatcarColor: '#7b3c3c'
@@ -43,14 +56,12 @@ const containersData = [
       {
         bgColor: '#6050DC',
         containerNo: 'Q1P-O LKY',
-        subtitle: 'Eastern MI Parcel',
-        title: 'EMP'
+        title: 'E M P'
       },
       {
         bgColor: '#6050DC',
         containerNo: 'Z3I-B VLV',
-        subtitle: 'Eastern MI Parcel',
-        title: 'EMP'
+        title: 'E M P'
       }
     ]
   },
@@ -60,16 +71,14 @@ const containersData = [
       {
         bgColor: '#66FF00',
         containerNo: 'C8W-I ZEZ',
-        subtitle: 'Southwestern',
         textColor: '#1B4D3E',
-        title: 'SW'
+        title: 'S W'
       },
       {
         bgColor: '#66FF00',
         containerNo: 'E9A-A KJG',
-        subtitle: 'Southwestern',
         textColor: '#1B4D3E',
-        title: 'SW'
+        title: 'S W'
       }
     ]
   },
@@ -79,9 +88,8 @@ const containersData = [
       {
         bgColor: '#FFFF00',
         containerNo: 'N9M-X SRK',
-        subtitle: 'Zeus Intermodal',
         textColor: '#111111',
-        title: 'ZRE'
+        title: 'Z R E'
       }
     ],
     flatcarColor: '#4B5320'
@@ -96,16 +104,14 @@ const containersData = [
       {
         bgColor: '#A52A2A',
         containerNo: 'N7W-M ZFD',
-        subtitle: 'Lisle Northwestern',
         textColor: '#CCCCFF',
-        title: 'LR-NW'
+        title: 'L R - N W'
       },
       {
         bgColor: '#A52A2A',
         containerNo: 'T0V-E SJT',
-        subtitle: 'Lisle Northwestern',
         textColor: '#CCCCFF',
-        title: 'LR-NW'
+        title: 'L R - N W'
       }
     ]
   },
@@ -120,9 +126,8 @@ const containersData = [
       {
         bgColor: '#F4F0EC',
         containerNo: 'I7T-S ACY',
-        subtitle: 'VLI  Network',
         textColor: '#111111',
-        title: 'VLI'
+        title: 'V   A   M   I'
       }
     ]
   }
