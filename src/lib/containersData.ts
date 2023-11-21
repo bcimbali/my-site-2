@@ -1,9 +1,18 @@
+import { Vmr } from '@/icons/tsx';
+
 const containersData = [
   {
     id: 'DTTX-1197',
     containers: [
       {
-        containerNo: 'H3T-L MRT'
+        containerNo: 'H3T-L MRT',
+        logo: {
+          color: '#FFFFFF',
+          desktopWidth: '250px',
+          fill: '#FFFFFF',
+          mobileWidth: '100px',
+          src: Vmr
+        }
       },
       {
         containerNo: 'D6V-X IZI'
