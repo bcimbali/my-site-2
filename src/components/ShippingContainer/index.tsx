@@ -3,7 +3,6 @@
 import type { SVGProps } from 'react';
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Image from 'next/image';
 
 type BorderTypes = {
   $bgColor?: string;
