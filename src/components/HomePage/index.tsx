@@ -33,8 +33,6 @@ const HomePage = () => {
       </TrainMarquee>
 
       <CommsTower amountOfLights={4} height="300px" left="0" width="1px" />
-      <CommsTower amountOfLights={4} height="200px" hideOnMobile left="25%" width="1px" />
-      <CommsTower amountOfLights={6} height="400px" hideOnMobile left="75%" width="1px" />
       <CommsTower amountOfLights={4} height="500px" left="100%" width="1px" />
     </StyledDiv>
   );
