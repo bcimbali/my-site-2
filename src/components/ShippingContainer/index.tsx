@@ -1,7 +1,9 @@
 'use client';
 
+import type { SVGProps } from 'react';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import Image from 'next/image';
 
 type BorderTypes = {
   $bgColor?: string;
@@ -13,6 +15,11 @@ type InnerShippingWrapperTypes = {
 
 type TextTypes = {
   $textColor: string;
+};
+
+type LogoWrapperTypes = {
+  $desktopWidth?: string;
+  $mobileWidth?: string;
 };
 
 const BottomBorder = styled.div<BorderTypes>`
@@ -73,6 +80,19 @@ const LeftBorder = styled.div<BorderTypes>`
 
     ${mediaQuery('lg')(`
       width: 30px;
+    `)}
+  `}
+`;
+
+const LogoWrapper = styled.div<LogoWrapperTypes>`
+  ${({ $desktopWidth, $mobileWidth, theme: { mediaQuery } }) => css`
+    width: ${$mobileWidth};
+
+    svg {
+    }
+
+    ${mediaQuery('lg')(`
+      width: ${$desktopWidth};
     `)}
   `}
 `;
@@ -165,15 +185,25 @@ const TopBorder = styled.div<BorderTypes>`
 const ShippingContainer = ({
   bgColor = '#FF69B4',
   containerNo = 'H3T-L MRT',
-  subtitle = 'OCEAN NETWORK EXPRESS',
+  subtitle,
   textColor = '#FFFFFF',
-  title = 'ONE'
+  title,
+  logo
 }: {
   bgColor?: string;
   containerNo?: string;
   subtitle?: string;
   textColor?: string;
   title?: string;
+  logo?: {
+    src: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+    color?: string;
+    desktopWidth?: string;
+    fill?: string;
+    mobileWidth?: string;
+  };
+  color?: string;
+  fill?: string;
 }) => {
   return (
     <OuterShippingWrapper>
@@ -181,8 +211,13 @@ const ShippingContainer = ({
         <TopBorder $bgColor={bgColor} />
         <LeftBorder $bgColor={bgColor} />
         <TitleContainer>
-          <MainText $textColor={textColor}>{title}</MainText>
-          <SubTitle $textColor={textColor}>{subtitle}</SubTitle>
+          {logo && (
+            <LogoWrapper $desktopWidth={logo?.desktopWidth} $mobileWidth={logo?.mobileWidth}>
+              <logo.src color={logo.color} fill={logo.fill} width="100%" />
+            </LogoWrapper>
+          )}
+          {title && <MainText $textColor={textColor}>{title}</MainText>}
+          {subtitle && <SubTitle $textColor={textColor}>{subtitle}</SubTitle>}
         </TitleContainer>
         <RightBorder $bgColor={bgColor} />
         <BottomBorder $bgColor={bgColor} />
