@@ -161,7 +161,11 @@ const Navbar = () => {
             type="button"
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
           >
-            {isMobileNavOpen ? <MobileCloseIcon fill="#FFFFFF" color="#FFFFFF" /> : <Hamburger />}
+            {isMobileNavOpen ? (
+              <MobileCloseIcon fill="#FFFFFF" color="#FFFFFF" width="24px" height="24px" />
+            ) : (
+              <Hamburger width="24px" height="24px" />
+            )}
           </MobileNavBttn>
 
           <StyledLink href="/">
