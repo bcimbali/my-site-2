@@ -50,8 +50,8 @@ const theme = {
     fg: colors.white,
     footerBg: colors.gray,
     headings: colors.white,
-    mobileDropdownBg: colors.white,
-    mobileDropdownFg: colors.blue,
+    mobileDropdownBg: colors.blue,
+    mobileDropdownFg: colors.white,
     // navbarBg: '#004694',
     navbarBg: colors.blue,
     secondary: '#380D8B'
