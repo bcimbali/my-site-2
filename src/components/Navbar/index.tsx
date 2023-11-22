@@ -13,8 +13,10 @@ type DesktopLinkTypes = {
 
 const DesktopLink = styled(Link)<DesktopLinkTypes>`
   ${({ theme: { themeColors }, $isDisabled }) => css`
+    border-bottom: 1px solid transparent;
     color: ${themeColors.headings};
     display: flex;
+    margin-bottom: -1px;
     gap: 0.25rem;
 
     ${$isDisabled &&
