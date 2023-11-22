@@ -8,7 +8,7 @@ const containersData = [
         containerNo: 'H3T-L MRT',
         logo: {
           color: '#FFFFFF',
-          desktopWidth: '250px',
+          desktopWidth: '150px',
           fill: '#FFFFFF',
           mobileWidth: '100px',
           src: Vmr
@@ -18,7 +18,7 @@ const containersData = [
         containerNo: 'D6V-X IZI',
         logo: {
           color: '#FFFFFF',
-          desktopWidth: '250px',
+          desktopWidth: '150px',
           fill: '#FFFFFF',
           mobileWidth: '100px',
           src: Vmr
@@ -34,7 +34,7 @@ const containersData = [
         containerNo: 'R2G-E DUP',
         logo: {
           color: 'none',
-          desktopWidth: '250px',
+          desktopWidth: '150px',
           fill: '#002244',
           mobileWidth: '100px',
           src: Vmr
@@ -44,7 +44,8 @@ const containersData = [
       {
         bgColor: '#BADA55',
         containerNo: 'F61-N REQ',
-        subtitle: '2023',
+        subtitle: '23',
+        textColor: '#002244',
         title: 'T R T'
       }
     ],
