@@ -3,6 +3,12 @@
 import type { SVGProps } from 'react';
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { shippingContainer as shipContainer } from '@/styling/layout';
+
+type BottomGapTypes = {
+  $mobileLeft?: string;
+  $desktopLeft?: string;
+};
 
 type BorderTypes = {
   $bgColor?: string;
@@ -21,20 +27,45 @@ type LogoWrapperTypes = {
   $mobileWidth?: string;
 };
 
+const desktopBttmmGapWidth = 40;
+const mobileBttmmGapWidth = 30;
+
+// Get equal divisions of Shipping Containers for Bottom Gap:
+const mobileOneThird = `${shipContainer.mobile.asNumbers.width * 0.333}px`;
+const mobileTwoThird = `${shipContainer.mobile.asNumbers.width * 0.666 - mobileBttmmGapWidth}px`;
+const desktopOneThird = `${shipContainer.desktop.asNumbers.width * 0.333}px`;
+const desktopTwoThird = `${shipContainer.desktop.asNumbers.width * 0.666 - desktopBttmmGapWidth}px`;
+
 const BottomBorder = styled.div<BorderTypes>`
   ${({ $bgColor, theme: { mediaQuery } }) => css`
     background-color: ${$bgColor};
     border-top: 2px solid #000000;
+    bottom: 0;
     box-shadow:
       rgba(0, 0, 0, 0.19) 0px -5px 30px 30px,
       rgba(0, 0, 0, 0.23) 0px -3px 6px;
     height: 5px;
-    bottom: 0;
     position: absolute;
     width: 100%;
 
     ${mediaQuery('lg')(`
       height: 10px;
+    `)}
+  `}
+`;
+
+const BottomGap = styled.div<BottomGapTypes>`
+  ${({ $desktopLeft, $mobileLeft, theme: { mediaQuery } }) => css`
+    border-left: 2px solid #111111;
+    border-right: 2px solid #111111;
+    height: 100%;
+    left: ${$mobileLeft};
+    position: absolute;
+    width: ${mobileBttmmGapWidth}px;
+
+    ${mediaQuery('lg')(`
+      left: ${$desktopLeft};
+      width: ${desktopBttmmGapWidth}px;
     `)}
   `}
 `;
@@ -228,7 +259,10 @@ const ShippingContainer = ({
           {subtitle && <SubTitle $textColor={textColor}>{subtitle}</SubTitle>}
         </TitleContainer>
         <RightBorder $bgColor={bgColor} />
-        <BottomBorder $bgColor={bgColor} />
+        <BottomBorder $bgColor={bgColor}>
+          <BottomGap $desktopLeft={desktopOneThird} $mobileLeft={mobileOneThird} />
+          <BottomGap $desktopLeft={desktopTwoThird} $mobileLeft={mobileTwoThird} />
+        </BottomBorder>
         <SmallVerticalText $textColor={textColor}>{containerNo}</SmallVerticalText>
       </InnerShippingWrapper>
     </OuterShippingWrapper>
