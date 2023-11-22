@@ -66,7 +66,7 @@ const Label = styled.div`
 
     ${mediaQuery('lg')(`
       font-size: ${typography.desktop[-1]};
-      left: calc(${`(${desktopFlatcarOffset} / 2) + (${desktopQuarter} / 3)`});
+      left: calc(${`(${desktopFlatcarOffset} / 2) + (${desktopQuarter} / 3.75)`});
       top: 25px;
     `)}
   `}
