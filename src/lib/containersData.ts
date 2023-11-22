@@ -8,7 +8,7 @@ const containersData = [
         containerNo: 'H3T-L MRT',
         logo: {
           color: '#FFFFFF',
-          desktopWidth: '150px',
+          desktopWidth: '130px',
           fill: '#FFFFFF',
           mobileWidth: '100px',
           src: Vmr
@@ -18,7 +18,7 @@ const containersData = [
         containerNo: 'D6V-X IZI',
         logo: {
           color: '#FFFFFF',
-          desktopWidth: '150px',
+          desktopWidth: '130px',
           fill: '#FFFFFF',
           mobileWidth: '100px',
           src: Vmr
@@ -34,7 +34,7 @@ const containersData = [
         containerNo: 'R2G-E DUP',
         logo: {
           color: 'none',
-          desktopWidth: '150px',
+          desktopWidth: '130px',
           fill: '#002244',
           mobileWidth: '100px',
           src: Vmr
