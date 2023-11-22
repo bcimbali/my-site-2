@@ -148,9 +148,14 @@ const ExampleUseCase = () => {
     <Container>
       <InnerComponent>
 
-      <Hamburger color="#bade10" /> // <- optional color prop is used for stroke color.
+      {/* Pass in at least a width to get the icon to show. */}
+      <Hamburger width="24px" height="24px" />
 
-      <LogoIcon color="#f12EFF" fill="#377379" /> // <- optional fill prop is used for fill color.
+      {/* Optional color prop is used for stroke color. */}
+      <Hamburger width="24px" color="#bade10" />
+
+      {/* Optional fill prop is used for fill color. */}
+      <LogoIcon width="24px" color="#f12EFF" fill="#377379" /> // <-
     </Container>
   )
 }
