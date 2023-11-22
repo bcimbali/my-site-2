@@ -25,6 +25,9 @@ const BottomBorder = styled.div<BorderTypes>`
   ${({ $bgColor, theme: { mediaQuery } }) => css`
     background-color: ${$bgColor};
     border-top: 2px solid #000000;
+    box-shadow:
+      rgba(0, 0, 0, 0.19) 0px -5px 30px 30px,
+      rgba(0, 0, 0, 0.23) 0px -3px 6px;
     height: 5px;
     bottom: 0;
     position: absolute;
@@ -48,6 +51,7 @@ const InnerShippingWrapper = styled.div<InnerShippingWrapperTypes>`
     border: 1px solid #000000;
     display: flex;
     justify-content: center;
+    overflow: hidden;
     position: relative;
     height: ${shippingContainer.mobile.height};
     width: ${shippingContainer.mobile.width};
@@ -76,6 +80,7 @@ const LeftBorder = styled.div<BorderTypes>`
     left: 0;
     position: absolute;
     width: 15px;
+    z-index: 1;
 
     ${mediaQuery('lg')(`
       width: 30px;
@@ -122,6 +127,7 @@ const RightBorder = styled.div<BorderTypes>`
     right: 0;
     position: absolute;
     width: 15px;
+    z-index: 1;
 
     ${mediaQuery('lg')(`
       width: 30px;
@@ -170,6 +176,9 @@ const TopBorder = styled.div<BorderTypes>`
   ${({ $bgColor, theme: { mediaQuery } }) => css`
     background-color: ${$bgColor};
     border-bottom: 2px solid #000000;
+    box-shadow:
+      rgba(0, 0, 0, 0.19) 0px 5px 20px 20px,
+      rgba(0, 0, 0, 0.23) 0px 3px 6px;
     height: 5px;
     top: 0;
     position: absolute;
