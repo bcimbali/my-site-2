@@ -118,11 +118,11 @@ export const shippingContainer = {
   },
   desktop: {
     asNumbers: {
-      height: 400,
-      width: 900
+      height: 266,
+      width: 600
     },
-    height: '400px',
-    width: '900px'
+    height: '266px',
+    width: '600px'
   }
 };
 

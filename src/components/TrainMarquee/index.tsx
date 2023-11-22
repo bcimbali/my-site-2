@@ -30,7 +30,6 @@ const MarqueeContainer = styled.div`
     max-width: 100vw;
     overflow: hidden;
     position: relative;
-    user-select: none;
   `}
 `;
 

@@ -103,7 +103,7 @@ const MainText = styled.h2<TextTypes>`
     margin: 0;
 
     ${mediaQuery('lg')(`
-      font-size: ${typography.desktop[7]};
+      font-size: ${typography.desktop[5]};
     `)}
   `}
 `;
@@ -143,7 +143,7 @@ const SmallVerticalText = styled.div<TextTypes>`
 
     ${mediaQuery('lg')(`
       top: 50px;
-      right: 80px;
+      right: 55px;
     `)}
   `}
 `;
@@ -155,7 +155,7 @@ const SubTitle = styled.p<TextTypes>`
     margin: 0;
 
     ${mediaQuery('lg')(`
-      font-size: ${typography.desktop[2]};
+      font-size: ${typography.desktop[1]};
     `)}
   `}
 `;
