@@ -25,16 +25,20 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
     height: 100svh;
     max-height: 0;
     overflow: hidden;
+    opacity: 0;
     padding: 0 ${layout.xs.margin};
     position: absolute;
     top: ${nav.mobileHeight};
-    transition: max-height 0.2s;
+    transition:
+      max-height 0.2s,
+      opacity 0.2s;
     width: 100%;
     z-index: 1;
 
     ${$isOpen &&
     css`
       max-height: 2000px;
+      opacity: 1;
     `}
 
     ${mediaQuery('md')(`
