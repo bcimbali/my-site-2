@@ -197,7 +197,7 @@ const SubTitle = styled.p<TextTypes>`
   `}
 `;
 
-const TitleContainer = styled.div`
+const ContentContainer = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -249,7 +249,7 @@ const ShippingContainer = ({
       <InnerShippingWrapper $bgColor={bgColor}>
         <TopBorder $bgColor={bgColor} />
         <LeftBorder $bgColor={bgColor} />
-        <TitleContainer>
+        <ContentContainer>
           {logo && (
             <LogoWrapper $desktopWidth={logo?.desktopWidth} $mobileWidth={logo?.mobileWidth}>
               <logo.src color={logo.color} fill={logo.fill} width="100%" />
@@ -257,13 +257,15 @@ const ShippingContainer = ({
           )}
           {title && <MainText $textColor={textColor}>{title}</MainText>}
           {subtitle && <SubTitle $textColor={textColor}>{subtitle}</SubTitle>}
-        </TitleContainer>
+          {containerNo && (
+            <SmallVerticalText $textColor={textColor}>{containerNo}</SmallVerticalText>
+          )}
+        </ContentContainer>
         <RightBorder $bgColor={bgColor} />
         <BottomBorder $bgColor={bgColor}>
           <BottomGap $desktopLeft={desktopOneThird} $mobileLeft={mobileOneThird} />
           <BottomGap $desktopLeft={desktopTwoThird} $mobileLeft={mobileTwoThird} />
         </BottomBorder>
-        <SmallVerticalText $textColor={textColor}>{containerNo}</SmallVerticalText>
       </InnerShippingWrapper>
     </OuterShippingWrapper>
   );
