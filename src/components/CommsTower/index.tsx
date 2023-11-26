@@ -3,6 +3,10 @@
 import styled, { css, keyframes } from 'styled-components';
 import React, { useMemo } from 'react';
 
+type BlinkingLightTypes = {
+  $noAnimation?: boolean;
+};
+
 type TowerTypes = {
   $height: string;
   $hideOnMobile: boolean;
@@ -16,15 +20,25 @@ const blinking = keyframes`
   100% { height: 2px; width: 2px; opacity: 0.2; }
 `;
 
-const BlinkingLight = styled.div`
-  animation: ${blinking} 4s ease-in-out infinite;
-  background-color: #ec4809;
-  border-radius: 100%;
-  box-shadow: 0px 0px 70px 4px rgba(247, 87, 51, 0.9);
-  filter: blur(3px);
-  margin-left: -3px;
-  top: 150px;
-  z-index: -1;
+const BlinkingLight = styled.div<BlinkingLightTypes>`
+  ${({ $noAnimation }) => css`
+    animation: ${blinking} 4s ease-in-out infinite;
+    background-color: #ec4809;
+    border-radius: 100%;
+    box-shadow: 0px 0px 70px 4px rgba(247, 87, 51, 0.9);
+    filter: blur(3px);
+    margin-left: -3px;
+    top: 150px;
+    z-index: -1;
+
+    ${$noAnimation &&
+    css`
+      animation: unset;
+      height: 8px;
+      opacity: 1;
+      width: 8px;
+    `}
+  `}
 `;
 
 const Tower = styled.div<TowerTypes>`
@@ -63,7 +77,8 @@ const CommsTower = ({
   const lights = useMemo(
     () =>
       [...Array(amountOfLights)].map((_, i) => {
-        return <BlinkingLight key={`${i}-${left}-blinking-light`} />;
+        const isOdd = i % 2 !== 0;
+        return <BlinkingLight $noAnimation={isOdd} key={`${i}-${left}-blinking-light`} />;
       }),
     [amountOfLights, left]
   );
