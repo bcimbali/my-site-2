@@ -14,6 +14,10 @@ type BorderTypes = {
   $bgColor?: string;
 };
 
+type ContentContainerTypes = {
+  $styleOverrides?: string;
+};
+
 type InnerShippingWrapperTypes = {
   $bgColor?: string;
 };
@@ -67,6 +71,16 @@ const BottomGap = styled.div<BottomGapTypes>`
       left: ${$desktopLeft};
       width: ${desktopBttmmGapWidth}px;
     `)}
+  `}
+`;
+
+const ContentContainer = styled.div<ContentContainerTypes>`
+  ${({ $styleOverrides }) => css`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    ${!!$styleOverrides && $styleOverrides}
   `}
 `;
 
@@ -197,12 +211,6 @@ const SubTitle = styled.p<TextTypes>`
   `}
 `;
 
-const ContentContainer = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-`;
-
 const TopBorder = styled.div<BorderTypes>`
   ${({ $bgColor, theme: { mediaQuery } }) => css`
     background-color: ${$bgColor};
@@ -223,6 +231,7 @@ const TopBorder = styled.div<BorderTypes>`
 
 const ShippingContainer = ({
   bgColor = '#FF69B4',
+  containerCss,
   containerNo = 'H3T-L MRT',
   subtitle,
   textColor = '#FFFFFF',
@@ -230,6 +239,7 @@ const ShippingContainer = ({
   logo
 }: {
   bgColor?: string;
+  containerCss?: string;
   containerNo?: string;
   subtitle?: string;
   textColor?: string;
@@ -249,16 +259,30 @@ const ShippingContainer = ({
       <InnerShippingWrapper $bgColor={bgColor}>
         <TopBorder $bgColor={bgColor} />
         <LeftBorder $bgColor={bgColor} />
-        <ContentContainer>
+        <ContentContainer $styleOverrides={containerCss}>
           {logo && (
-            <LogoWrapper $desktopWidth={logo?.desktopWidth} $mobileWidth={logo?.mobileWidth}>
+            <LogoWrapper
+              className="logo"
+              $desktopWidth={logo?.desktopWidth}
+              $mobileWidth={logo?.mobileWidth}
+            >
               <logo.src color={logo.color} fill={logo.fill} width="100%" />
             </LogoWrapper>
           )}
-          {title && <MainText $textColor={textColor}>{title}</MainText>}
-          {subtitle && <SubTitle $textColor={textColor}>{subtitle}</SubTitle>}
+          {title && (
+            <MainText className="title" $textColor={textColor}>
+              {title}
+            </MainText>
+          )}
+          {subtitle && (
+            <SubTitle className="subtitle" $textColor={textColor}>
+              {subtitle}
+            </SubTitle>
+          )}
           {containerNo && (
-            <SmallVerticalText $textColor={textColor}>{containerNo}</SmallVerticalText>
+            <SmallVerticalText className="vertical-text" $textColor={textColor}>
+              {containerNo}
+            </SmallVerticalText>
           )}
         </ContentContainer>
         <RightBorder $bgColor={bgColor} />

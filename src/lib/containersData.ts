@@ -1,10 +1,29 @@
 import { Vmr } from '@/icons/tsx';
+import { css } from 'styled-components';
 
 const containersData = [
   {
     id: 'DTTX-1197',
     containers: [
       {
+        containerCss: css`
+          ${({ theme: { mediaQuery, colors } }) => css`
+            display: flex;
+            flex-direction: row;
+            .logo {
+              border: 3px dotted orange;
+            }
+            .title {
+              color: ${colors.blue};
+            }
+
+            ${mediaQuery('lg')(`
+              .logo {
+                border: 4px dotted black;
+              }
+            `)}
+          `}
+        `,
         containerNo: 'H3T-L MRT',
         logo: {
           color: '#FFFFFF',
@@ -12,7 +31,8 @@ const containersData = [
           fill: '#FFFFFF',
           mobileWidth: '100px',
           src: Vmr
-        }
+        },
+        title: 'TEST'
       },
       {
         containerNo: 'D6V-X IZI',
