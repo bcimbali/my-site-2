@@ -1,4 +1,4 @@
-import { Vmr } from '@/icons/tsx';
+import { Vmr, Onyx } from '@/icons/tsx';
 import { css } from 'styled-components';
 
 const containersData = [
@@ -6,33 +6,31 @@ const containersData = [
     id: 'DTTX-1197',
     containers: [
       {
+        bgColor: '#FFD700',
         containerCss: css`
-          ${({ theme: { mediaQuery, colors } }) => css`
+          ${({ theme: { mediaQuery } }) => css`
             display: flex;
             flex-direction: row;
             .logo {
-              border: 3px dotted orange;
+              position: absolute;
+              left: 35px;
             }
-            .title {
-              color: ${colors.blue};
-            }
-
             ${mediaQuery('lg')(`
               .logo {
-                border: 4px dotted black;
+                left: 60px;
               }
             `)}
           `}
         `,
         containerNo: 'H3T-L MRT',
         logo: {
-          color: '#FFFFFF',
-          desktopWidth: '130px',
-          fill: '#FFFFFF',
-          mobileWidth: '100px',
-          src: Vmr
+          color: '#222831',
+          desktopWidth: '45px',
+          fill: '#222831',
+          mobileWidth: '34px',
+          src: Onyx
         },
-        title: 'TEST'
+        textColor: '#222831'
       },
       {
         containerNo: 'D6V-X IZI',

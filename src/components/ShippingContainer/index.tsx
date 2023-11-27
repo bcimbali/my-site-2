@@ -222,6 +222,7 @@ const TopBorder = styled.div<BorderTypes>`
     top: 0;
     position: absolute;
     width: 100%;
+    z-index: 1;
 
     ${mediaQuery('lg')(`
       height: 10px;
