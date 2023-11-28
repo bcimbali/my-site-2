@@ -1,4 +1,4 @@
-import { Vmr, Onyx } from '@/icons/tsx';
+import { Vmr, Onyx, StarBox } from '@/icons/tsx';
 import { css } from 'styled-components';
 
 const containersData = [
@@ -33,14 +33,39 @@ const containersData = [
         textColor: '#222831'
       },
       {
+        bgColor: '#9a2be4',
+        containerCss: css`
+          ${({ theme: { mediaQuery } }) => css`
+            display: flex;
+            flex-direction: row;
+            .logo {
+              position: absolute;
+              right: 35px;
+            }
+            .vertical-text {
+              left: 35px;
+              right: unset;
+            }
+            ${mediaQuery('lg')(`
+            .logo {
+              right: 60px;
+            }
+            .vertical-text {
+              left: 50px;
+              right: unset;
+            }
+          `)}
+          `}
+        `,
         containerNo: 'D6V-X IZI',
         logo: {
-          color: '#FFFFFF',
+          color: '#59dcf6',
           desktopWidth: '130px',
-          fill: '#FFFFFF',
+          fill: '#59dcf6',
           mobileWidth: '100px',
-          src: Vmr
-        }
+          src: StarBox
+        },
+        textColor: '#59dcf6'
       }
     ]
   },
@@ -60,11 +85,10 @@ const containersData = [
         textColor: '#002244'
       },
       {
-        bgColor: '#BADA55',
+        bgColor: '#68c7ab',
         containerNo: 'F61-N REQ',
         subtitle: '23',
-        textColor: '#002244',
-        title: 'T R T'
+        textColor: '#002244'
       }
     ],
     flatcarColor: '#7b3c3c'
@@ -78,9 +102,9 @@ const containersData = [
         title: 'E M P'
       },
       {
-        bgColor: '#6050DC',
+        bgColor: '#6483ff',
         containerNo: 'Z3I-B VLV',
-        title: 'E M P'
+        subtitle: 'CST'
       }
     ]
   },
@@ -94,10 +118,16 @@ const containersData = [
         title: 'S W'
       },
       {
-        bgColor: '#66FF00',
+        bgColor: '#1B4D3E',
         containerNo: 'E9A-A KJG',
-        textColor: '#1B4D3E',
-        title: 'S W'
+        logo: {
+          color: 'none',
+          desktopWidth: '130px',
+          fill: '#EEEEEE',
+          mobileWidth: '100px',
+          src: Vmr
+        },
+        textColor: '#EEEEEE'
       }
     ]
   },
@@ -121,16 +151,20 @@ const containersData = [
     id: 'DTTX-0702',
     containers: [
       {
-        bgColor: '#A52A2A',
-        containerNo: 'N7W-M ZFD',
-        textColor: '#CCCCFF',
-        title: 'L R - N W'
+        title: 'CATT',
+        containerNo: 'E0W-E SJX'
       },
       {
         bgColor: '#A52A2A',
         containerNo: 'T0V-E SJT',
-        textColor: '#CCCCFF',
-        title: 'L R - N W'
+        logo: {
+          color: 'none',
+          desktopWidth: '130px',
+          fill: '#CCCCFF',
+          mobileWidth: '100px',
+          src: Vmr
+        },
+        textColor: '#CCCCFF'
       }
     ]
   },
@@ -146,7 +180,7 @@ const containersData = [
         bgColor: '#F4F0EC',
         containerNo: 'I7T-S ACY',
         textColor: '#111111',
-        title: 'V   A   M   I'
+        title: 'V   M'
       }
     ]
   }
