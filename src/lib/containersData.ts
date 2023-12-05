@@ -34,6 +34,73 @@ const containersData = [
         textColor: '#222831'
       },
       {
+        bgColor: '#6082B6',
+        containerNo: 'Z3I-B VLV',
+        logo: {
+          color: '#1d1160',
+          fill: '#1d1160',
+          src: Wish
+        }
+      }
+    ]
+  },
+  {
+    id: 'DTTX-7201',
+    containers: [
+      {
+        bgColor: '#BADA55',
+        containerNo: 'R2G-E DUP',
+        logo: {
+          color: 'none',
+          desktopWidth: '130px',
+          fill: '#002244',
+          mobileWidth: '100px',
+          src: Vmr
+        },
+        textColor: '#002244'
+      },
+      {
+        bgColor: '#222222',
+        containerNo: 'F61-N REQ',
+        containerCss: css`
+          ${({ theme: { mediaQuery } }) => css`
+            .logo {
+              position: absolute;
+              left: 35px;
+            }
+            ${mediaQuery('lg')(`
+            .logo {
+              left: 60px;
+            }
+          `)}
+          `}
+        `,
+        logo: {
+          color: '#EE82EE',
+          desktopWidth: '130px',
+          fill: '#EE82EE',
+          mobileWidth: '100px',
+          src: Win
+        },
+        textColor: '#EE82EE'
+      }
+    ],
+    flatcarColor: '#7b3c3c'
+  },
+  {
+    id: 'DTTX-4719',
+    containers: [
+      {
+        bgColor: '#6050DC',
+        containerNo: 'Q1P-O LKY',
+        logo: {
+          color: '#CD5700',
+          fill: '#CD5700',
+          src: Caret
+        },
+        textColor: '#CD5700'
+      },
+      {
         bgColor: '#9a2be4',
         containerCss: css`
           ${({ theme: { mediaQuery } }) => css`
@@ -60,64 +127,11 @@ const containersData = [
         `,
         containerNo: 'D6V-X IZI',
         logo: {
-          color: '#59dcf6',
+          color: '#545AA7',
           desktopWidth: '130px',
-          fill: '#59dcf6',
+          fill: '#545AA7',
           mobileWidth: '100px',
           src: StarBox
-        },
-        textColor: '#59dcf6'
-      }
-    ]
-  },
-  {
-    id: 'DTTX-7201',
-    containers: [
-      {
-        bgColor: '#BADA55',
-        containerNo: 'R2G-E DUP',
-        logo: {
-          color: 'none',
-          desktopWidth: '130px',
-          fill: '#002244',
-          mobileWidth: '100px',
-          src: Vmr
-        },
-        textColor: '#002244'
-      },
-      {
-        bgColor: '#222222',
-        containerNo: 'F61-N REQ',
-        logo: {
-          color: '#EE82EE',
-          fill: '#EE82EE',
-          src: Win
-        },
-        textColor: '#EE82EE'
-      }
-    ],
-    flatcarColor: '#7b3c3c'
-  },
-  {
-    id: 'DTTX-4719',
-    containers: [
-      {
-        bgColor: '#6050DC',
-        containerNo: 'Q1P-O LKY',
-        logo: {
-          color: '#CD5700',
-          fill: '#CD5700',
-          src: Caret
-        },
-        textColor: '#CD5700'
-      },
-      {
-        bgColor: '#6483ff',
-        containerNo: 'Z3I-B VLV',
-        logo: {
-          color: '#3EB489',
-          fill: '#3EB489',
-          src: Wish
         }
       }
     ]
@@ -143,11 +157,11 @@ const containersData = [
         logo: {
           color: 'none',
           desktopWidth: '130px',
-          fill: '#EEEEEE',
+          fill: '#AAAAAA',
           mobileWidth: '100px',
           src: Vmr
         },
-        textColor: '#EEEEEE'
+        textColor: '#AAAAAA'
       }
     ]
   },
@@ -199,7 +213,7 @@ const containersData = [
     containers: [
       {
         bgColor: '#6F00FF',
-        containerNo: '112',
+        containerNo: 'ETY-W 376',
         logo: {
           color: 'none',
           containerCss: css`
@@ -216,12 +230,12 @@ const containersData = [
             `)}
             `}
           `,
-          desktopWidth: shippingContainer.desktop.width,
-          fill: '#B0C4DE',
-          mobileWidth: shippingContainer.mobile.width,
+          desktopWidth: '300px',
+          fill: '#FEBE10',
+          mobileWidth: '200px',
           src: Dove
         },
-        textColor: '#ca1a10'
+        textColor: '#FEBE10'
       },
       {
         bgColor: '#A52A2A',
@@ -251,7 +265,7 @@ const containersData = [
           ${({ theme: { mediaQuery, typography } }) => css`
             .container-no {
               bottom: 15px;
-              font-size: ${typography.mobile[0]};
+              font-size: ${typography.mobile[-1]};
               font-weight: bold;
               left: 35px;
               right: unset;
