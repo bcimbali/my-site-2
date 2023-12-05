@@ -1,4 +1,4 @@
-import { East, Mkd, Onyx, StarBox, Vmr } from '@/icons/tsx';
+import { East, FtLogistics, Mkd, Onyx, StarBox, Vmr } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 
@@ -115,8 +115,14 @@ const containersData = [
       {
         bgColor: '#66FF00',
         containerNo: 'C8W-I ZEZ',
-        textColor: '#1B4D3E',
-        title: 'S W'
+        logo: {
+          color: '#1B4D3E',
+          desktopWidth: shippingContainer.desktop.width,
+          fill: '#1B4D3E',
+          mobileWidth: shippingContainer.mobile.width,
+          src: FtLogistics
+        },
+        textColor: '#1B4D3E'
       },
       {
         bgColor: '#1B4D3E',
