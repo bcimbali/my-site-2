@@ -1,4 +1,4 @@
-import { Caret, East, FtLogistics, Mkd, Onyx, StarBox, Vmr, Wish } from '@/icons/tsx';
+import { Caret, East, FtLogistics, Mkd, Onyx, StarBox, Vmr, Win, Wish } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 
@@ -86,10 +86,14 @@ const containersData = [
         textColor: '#002244'
       },
       {
-        bgColor: '#68c7ab',
+        bgColor: '#222222',
         containerNo: 'F61-N REQ',
-        subtitle: '23',
-        textColor: '#002244'
+        logo: {
+          color: '#EE82EE',
+          fill: '#EE82EE',
+          src: Win
+        },
+        textColor: '#EE82EE'
       }
     ],
     flatcarColor: '#7b3c3c'
