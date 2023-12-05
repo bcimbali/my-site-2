@@ -281,7 +281,7 @@ const ShippingContainer = ({
             </SubTitle>
           )}
           {containerNo && (
-            <SmallVerticalText className="vertical-text" $textColor={textColor}>
+            <SmallVerticalText className="container-no" $textColor={textColor}>
               {containerNo}
             </SmallVerticalText>
           )}
