@@ -1,4 +1,4 @@
-import { Caret, East, FtLogistics, Mkd, Onyx, StarBox, Vmr, Win, Wish } from '@/icons/tsx';
+import { Caret, Dove, East, FtLogistics, Mkd, Onyx, StarBox, Vmr, Win, Wish } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 
@@ -198,8 +198,30 @@ const containersData = [
     id: 'DTTX-0702',
     containers: [
       {
-        title: 'CATT',
-        containerNo: 'E0W-E SJX'
+        bgColor: '#6F00FF',
+        containerNo: '112',
+        logo: {
+          color: 'none',
+          containerCss: css`
+            ${({ theme: { mediaQuery } }) => css`
+              .container-no {
+                left: 35px;
+                right: unset;
+              }
+              ${mediaQuery('lg')(`
+                .container-no {
+                  left: 50px;
+                  right: unset;
+                }
+            `)}
+            `}
+          `,
+          desktopWidth: shippingContainer.desktop.width,
+          fill: '#B0C4DE',
+          mobileWidth: shippingContainer.mobile.width,
+          src: Dove
+        },
+        textColor: '#ca1a10'
       },
       {
         bgColor: '#A52A2A',
