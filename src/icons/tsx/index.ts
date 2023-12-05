@@ -7,3 +7,4 @@ export { default as MobileXIcon } from './mobileXIcon';
 export { default as Onyx } from './onyx';
 export { default as StarBox } from './starBox';
 export { default as Vmr } from './vmr';
+export { default as Wish } from './wish';
