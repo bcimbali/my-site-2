@@ -8,6 +8,8 @@ import IntermodalWrapper from '@/components/IntermodalWrapper';
 import containersData from '@/lib/containersData';
 import CommsTower from '@/components/CommsTower';
 
+const PageSubtitle = styled.h3``;
+
 const StyledDiv = styled.div`
   align-items: center;
   display: flex;
@@ -17,10 +19,19 @@ const StyledDiv = styled.div`
   position: relative;
 `;
 
+const TitleContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+`;
+
 const HomePage = () => {
   return (
     <StyledDiv>
-      <PageTitle>{''}</PageTitle>
+      <TitleContainer>
+        <PageTitle noMargin>{'Brett Cimbalik'}</PageTitle>
+        <PageSubtitle>Web Developer</PageSubtitle>
+      </TitleContainer>
       <TrainMarquee>
         {containersData.map((item, idx) => (
           <IntermodalWrapper

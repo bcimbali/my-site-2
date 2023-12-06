@@ -171,7 +171,7 @@ const Navbar = () => {
           </MobileNavBttn>
 
           <StyledLink href="/">
-            <Logo>Brett Cimbalik</Logo>
+            <Logo>BC</Logo>
           </StyledLink>
 
           <DesktopLinkContainer>

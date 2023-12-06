@@ -2,18 +2,28 @@
 
 import styled, { css } from 'styled-components';
 
-const Title = styled.h1`
-  ${({ theme: { mediaQuery, spacing, themeColors } }) => css`
+type TitleTypes = {
+  $noMargin?: boolean;
+};
+
+const Title = styled.h1<TitleTypes>`
+  ${({ $noMargin, theme: { mediaQuery, spacing, themeColors } }) => css`
     color: ${themeColors.fg};
-    margin-bottom: ${spacing[0]};
+    margin-bottom: ${$noMargin ? 0 : spacing[0]};
     text-align: center;
 
     ${mediaQuery('lg')(`
-      margin-bottom: ${spacing[4]};
+      margin-bottom: ${$noMargin ? 0 : spacing[4]};
     `)}
   `}
 `;
 
-const PageTitle = ({ children }: { children: React.ReactNode }) => <Title>{children}</Title>;
+const PageTitle = ({
+  children,
+  noMargin = false
+}: {
+  children: React.ReactNode;
+  noMargin?: boolean;
+}) => <Title $noMargin={noMargin}>{children}</Title>;
 
 export default PageTitle;
