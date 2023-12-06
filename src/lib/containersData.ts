@@ -1,4 +1,15 @@
-import { Caret, Dove, East, FtLogistics, Mkd, Onyx, StarBox, Vmr, Win, Wish } from '@/icons/tsx';
+import {
+  Caret,
+  Dove,
+  East,
+  FtLogistics,
+  Mkd,
+  Onyx,
+  StarBox,
+  Sunshine,
+  Vmr,
+  Wish
+} from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 
@@ -65,11 +76,13 @@ const containersData = [
         containerCss: css`
           ${({ theme: { mediaQuery } }) => css`
             .logo {
-              position: absolute;
+              bottom: 20px;
               left: 35px;
+              position: absolute;
             }
             ${mediaQuery('lg')(`
             .logo {
+              bottom: 30px;
               left: 60px;
             }
           `)}
@@ -77,10 +90,9 @@ const containersData = [
         `,
         logo: {
           color: '#EE82EE',
-          desktopWidth: '130px',
           fill: '#EE82EE',
-          mobileWidth: '100px',
-          src: Win
+          mobileWidth: '200px',
+          src: Sunshine
         },
         textColor: '#EE82EE'
       }
