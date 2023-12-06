@@ -7,6 +7,6 @@ export { default as Mkd } from './mkd';
 export { default as MobileXIcon } from './mobileXIcon';
 export { default as Onyx } from './onyx';
 export { default as StarBox } from './starBox';
+export { default as Sunshine } from './sunshine';
 export { default as Vmr } from './vmr';
-export { default as Win } from './win';
 export { default as Wish } from './wish';
