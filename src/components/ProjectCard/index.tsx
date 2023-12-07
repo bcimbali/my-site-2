@@ -17,32 +17,6 @@ const CardContainer = styled.li`
   `}
 `;
 
-// const ChipsContainer = styled.ul`
-//   ${({ theme: { mediaQuery } }) => css`
-//     display: flex;
-//     flex-wrap: wrap;
-//     gap: 0.5rem;
-//     justify-content: center;
-//     list-style-type: none;
-//     padding: 0;
-
-//     ${mediaQuery('md')`
-//       justify-content: unset
-//     `}
-//   `}
-// `;
-
-// const Chip = styled.li`
-//   ${({ theme: { themeColors } }) => css`
-//     border: 1px solid ${themeColors.body};
-//     border-radius: 2px;
-//     color: ${themeColors.body};
-//     padding: 0.25rem;
-//   `}
-// `;
-
-// const ChipText = styled.p``;
-
 const Description = styled.p`
   ${({ theme: { colors, mediaQuery } }) => css`
     color: ${colors.white};
@@ -82,13 +56,9 @@ const OuterCardLink = styled(Link)`
 `;
 
 const Title = styled.h3`
-  ${({ theme: { colors, mediaQuery } }) => css`
+  ${({ theme: { colors } }) => css`
     color: ${colors.white};
     text-align: center;
-
-    ${mediaQuery('lg')`
-      
-    `}
   `}
 `;
 
@@ -101,19 +71,10 @@ type ProjectCardTypes = {
   title: string;
 };
 
-const ProjectCard = ({
-  codeLink,
-  description,
-  image,
-  liveLink,
-  techStack,
-  title
-}: ProjectCardTypes) => {
-  console.log('In index.tsx, this is codeLink: ', codeLink);
-  console.log('In index.tsx, this is techStack: ', techStack);
+const ProjectCard = ({ description, image, title }: ProjectCardTypes) => {
   return (
     <CardContainer>
-      <OuterCardLink href={liveLink} target="_blank">
+      <OuterCardLink href={`/projects/${title}`}>
         {!!image && (
           <ImgContainer>
             <Image alt={title} src={image} fill={true} />
@@ -122,13 +83,6 @@ const ProjectCard = ({
         <InnerContentContainer>
           <Title>{title}</Title>
           <Description>{description}</Description>
-          {/* <ChipsContainer>
-            {techStack.map((technology) => (
-              <Chip key={`${title}-${technology}`}>
-                <ChipText>{technology}</ChipText>
-              </Chip>
-            ))}
-          </ChipsContainer> */}
         </InnerContentContainer>
       </OuterCardLink>
     </CardContainer>
