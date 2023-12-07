@@ -7,7 +7,8 @@ import Image from 'next/image';
 
 const CardContainer = styled.li`
   ${({ theme: { colors } }) => css`
-    background: ${colors.black};
+    background: ${colors.blue};
+    border: 1px solid ${colors.white};
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -43,12 +44,12 @@ const CardContainer = styled.li`
 // const ChipText = styled.p``;
 
 const Description = styled.p`
-  ${({ theme: { mediaQuery, themeColors } }) => css`
-    color: ${themeColors.body};
+  ${({ theme: { colors, mediaQuery } }) => css`
+    color: ${colors.white};
     text-align: center;
 
     ${mediaQuery('md')`
-      text-align: unset;
+      text-align: center;
     `}
   `}
 `;
@@ -81,8 +82,8 @@ const OuterCardLink = styled(Link)`
 `;
 
 const Title = styled.h3`
-  ${({ theme: { mediaQuery, themeColors } }) => css`
-    color: ${themeColors.headings};
+  ${({ theme: { colors, mediaQuery } }) => css`
+    color: ${colors.white};
     text-align: center;
 
     ${mediaQuery('lg')`
