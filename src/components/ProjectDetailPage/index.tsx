@@ -5,18 +5,36 @@ import React, { useMemo } from 'react';
 import PageTitle from '@/components/PageTitle';
 import projectsData from '@/lib/projectsData';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type ProjectPageTypes = {
   projectName: string;
 };
 
-const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+const ButtonLink = styled(Link)`
+  ${({ theme: { colors, mediaQuery, spacing, typography } }) => css`
+    border: 1px solid ${colors.white};
+    border-radius: 0.5rem;
+    font-size: ${typography.mobile[0]};
+    padding: ${spacing[-3]};
+    text-align: center;
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[0]};
+    `)}
+  `}
 `;
 
-const Description = styled.p``;
+const ContentContainer = styled.div`
+  ${({ theme: { spacing } }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing[1]};
+    width: 100%;
+  `}
+`;
+
+const Description = styled.h3``;
 
 const ImgContainer = styled.div`
   ${({ theme: { colors, mediaQuery } }) => css`
@@ -45,6 +63,18 @@ const InnerContainer = styled.div`
   `}
 `;
 
+const LinkContainer = styled.div`
+  ${({ theme: { mediaQuery, spacing } }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing[1]};
+
+    ${mediaQuery('sm')(`
+      flex-direction: row;
+    `)}
+  `}
+`;
+
 const OuterContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,6 +97,18 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
         )}
         <ContentContainer>
           <Description>{project?.description}</Description>
+          <LinkContainer>
+            {project?.liveLink && (
+              <ButtonLink href={project.liveLink} target="_blank">
+                Live Link
+              </ButtonLink>
+            )}
+            {project?.codeLink && (
+              <ButtonLink href={project.codeLink} target="_blank">
+                Code Link
+              </ButtonLink>
+            )}
+          </LinkContainer>
         </ContentContainer>
       </InnerContainer>
     </OuterContainer>
