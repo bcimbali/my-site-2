@@ -13,8 +13,10 @@ type ProjectPageTypes = {
 
 const ButtonLink = styled(Link)`
   ${({ theme: { colors, mediaQuery, spacing, typography } }) => css`
+    background: ${colors.white};
     border: 1px solid ${colors.white};
     border-radius: 0.5rem;
+    color: ${colors.blue};
     font-size: ${typography.mobile[0]};
     padding: ${spacing[-3]};
     text-align: center;
@@ -25,6 +27,31 @@ const ButtonLink = styled(Link)`
   `}
 `;
 
+const ChipsContainer = styled.ul`
+  ${({ theme: { mediaQuery } }) => css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding: 0;
+
+    ${mediaQuery('md')`
+      justify-content: unset
+    `}
+  `}
+`;
+
+const Chip = styled.li`
+  ${({ theme: { themeColors } }) => css`
+    border: 1px solid ${themeColors.body};
+    border-radius: 2px;
+    color: ${themeColors.body};
+    padding: 0.25rem;
+  `}
+`;
+
+const ChipText = styled.p``;
+
 const ContentContainer = styled.div`
   ${({ theme: { spacing } }) => css`
     display: flex;
@@ -33,6 +60,8 @@ const ContentContainer = styled.div`
     width: 100%;
   `}
 `;
+
+const ContentHeading = styled.h4``;
 
 const Description = styled.h3``;
 
@@ -64,14 +93,10 @@ const InnerContainer = styled.div`
 `;
 
 const LinkContainer = styled.div`
-  ${({ theme: { mediaQuery, spacing } }) => css`
+  ${({ theme: { spacing } }) => css`
     display: flex;
     flex-direction: column;
     gap: ${spacing[1]};
-
-    ${mediaQuery('sm')(`
-      flex-direction: row;
-    `)}
   `}
 `;
 
@@ -109,6 +134,15 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
               </ButtonLink>
             )}
           </LinkContainer>
+
+          <ContentHeading>Built with:</ContentHeading>
+          <ChipsContainer>
+            {project?.techStack.map((technology) => (
+              <Chip key={`${project?.title}-${technology}`}>
+                <ChipText>{technology}</ChipText>
+              </Chip>
+            ))}
+          </ChipsContainer>
         </ContentContainer>
       </InnerContainer>
     </OuterContainer>
