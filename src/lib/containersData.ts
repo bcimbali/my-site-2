@@ -37,7 +37,7 @@ const containersData = [
         containerNo: 'H3T-L MRT',
         logo: {
           color: '#222831',
-          desktopWidth: '45px',
+          desktopWidth: '35px',
           fill: '#222831',
           mobileWidth: '34px',
           src: Onyx
