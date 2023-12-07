@@ -121,7 +121,7 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
   );
   return (
     <OuterContainer>
-      <PageTitle>{project?.title}</PageTitle>
+      <PageTitle backButtonLink="/projects">{project?.title}</PageTitle>
       <InnerContainer>
         {!!project?.image && (
           <ImgContainer>
