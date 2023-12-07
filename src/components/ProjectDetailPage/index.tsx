@@ -1,15 +1,51 @@
 'use client';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import React, { useMemo } from 'react';
 import PageTitle from '@/components/PageTitle';
 import projectsData from '@/lib/projectsData';
+import Image from 'next/image';
 
 type ProjectPageTypes = {
   projectName: string;
 };
 
-const StyledDiv = styled.div`
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const Description = styled.p``;
+
+const ImgContainer = styled.div`
+  ${({ theme: { colors, mediaQuery } }) => css`
+    background-color: ${colors.blue};
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding-bottom: 56%;
+    position: relative;
+    width: 100%;
+
+    ${mediaQuery('md')(`
+      padding-bottom: 32%;
+    `)}
+  `}
+`;
+
+const InnerContainer = styled.div`
+  ${({ theme: { mediaQuery, spacing } }) => css`
+    display: flex;
+    flex-direction: column;
+    gap: ${spacing[1]};
+
+    ${mediaQuery('md')(`
+      flex-direction: row;
+    `)}
+  `}
+`;
+
+const OuterContainer = styled.div`
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
@@ -21,9 +57,19 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
     [projectName]
   );
   return (
-    <StyledDiv>
+    <OuterContainer>
       <PageTitle>{project?.title}</PageTitle>
-    </StyledDiv>
+      <InnerContainer>
+        {!!project?.image && (
+          <ImgContainer>
+            <Image alt={project?.title} src={project?.image} fill={true} />
+          </ImgContainer>
+        )}
+        <ContentContainer>
+          <Description>{project?.description}</Description>
+        </ContentContainer>
+      </InnerContainer>
+    </OuterContainer>
   );
 };
 
