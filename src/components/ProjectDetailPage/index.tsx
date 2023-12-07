@@ -20,6 +20,14 @@ const ButtonLink = styled(Link)`
     font-size: ${typography.mobile[0]};
     padding: ${spacing[-3]};
     text-align: center;
+    transition:
+      background 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background: ${colors.blue};
+      color: ${colors.white};
+    }
 
     ${mediaQuery('lg')(`
       font-size: ${typography.desktop[0]};
@@ -74,7 +82,7 @@ const ImgContainer = styled.div`
     position: relative;
     width: 100%;
 
-    ${mediaQuery('md')(`
+    ${mediaQuery('lg')(`
       padding-bottom: 32%;
     `)}
   `}
@@ -86,7 +94,7 @@ const InnerContainer = styled.div`
     flex-direction: column;
     gap: ${spacing[1]};
 
-    ${mediaQuery('md')(`
+    ${mediaQuery('lg')(`
       flex-direction: row;
     `)}
   `}
