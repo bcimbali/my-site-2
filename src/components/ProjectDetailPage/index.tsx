@@ -75,7 +75,7 @@ const Description = styled.h3``;
 
 const ImgContainer = styled(Link)`
   ${({ theme: { colors, mediaQuery } }) => css`
-    background-color: ${colors.blue};
+    background-color: ${colors.gray};
     border-radius: 0.5rem;
     overflow: hidden;
     padding-bottom: 56%;

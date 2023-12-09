@@ -30,7 +30,7 @@ const Description = styled.p`
 
 const ImgContainer = styled.div`
   ${({ theme: { colors } }) => css`
-    background-color: ${colors.purple};
+    background-color: ${colors.gray};
     padding-bottom: 56%;
     position: relative;
     width: 100%;
