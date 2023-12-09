@@ -7,9 +7,5 @@ type PageTypes = {
 };
 
 export default function Projects({ params: { project } }: PageTypes) {
-  return (
-    <>
-      <ProjectDetailPage projectName={project} />
-    </>
-  );
+  return <ProjectDetailPage projectName={project} />;
 }
