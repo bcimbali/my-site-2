@@ -27,7 +27,7 @@ const Main = styled.main`
     padding: 0 ${layout.xs.margin};
     margin-top: ${nav.mobileHeight};
 
-    background-image: url('transmission-lines-and-stars.svg');
+    background-image: url('/transmission-lines-and-stars.svg');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
