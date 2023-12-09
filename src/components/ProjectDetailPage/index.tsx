@@ -125,7 +125,7 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
       <InnerContainer>
         {!!project?.image && (
           <ImgContainer href={project.liveLink} target="_blank">
-            <Image alt={project?.title} src={project?.image} fill={true} />
+            <Image alt={project?.title} src={project?.image} fill={true} priority />
           </ImgContainer>
         )}
         <ContentContainer>
