@@ -101,7 +101,7 @@ const MobileLinkTitle = styled.h4`
 const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
   <LinksContainer>
     <MobileLinkItem>
-      <MobileLink href="/" tabIndex={isOpen ? 0 : -1}>
+      <MobileLink href="/" $isDisabled={'/' === pathname} tabIndex={isOpen ? 0 : -1}>
         <MobileLinkNumber>00</MobileLinkNumber>
         <MobileLinkTitle>Home</MobileLinkTitle>
       </MobileLink>
@@ -118,7 +118,11 @@ const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
       );
     })}
     <MobileLinkItem>
-      <MobileLink href="/typography" tabIndex={isOpen ? 0 : -1}>
+      <MobileLink
+        href="/typography"
+        $isDisabled={'/typography' === pathname}
+        tabIndex={isOpen ? 0 : -1}
+      >
         <MobileLinkNumber>05</MobileLinkNumber>
         <MobileLinkTitle>Typography</MobileLinkTitle>
       </MobileLink>
