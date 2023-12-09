@@ -100,6 +100,12 @@ const MobileLinkTitle = styled.h4`
 
 const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
   <LinksContainer>
+    <MobileLinkItem>
+      <MobileLink href="/" tabIndex={isOpen ? 0 : -1}>
+        <MobileLinkNumber>00</MobileLinkNumber>
+        <MobileLinkTitle>Home</MobileLinkTitle>
+      </MobileLink>
+    </MobileLinkItem>
     {pageData.map(({ name, number, path }) => {
       const isDisabled = path === pathname;
       return (
@@ -111,12 +117,6 @@ const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
         </MobileLinkItem>
       );
     })}
-    <MobileLinkItem>
-      <MobileLink href="/" tabIndex={isOpen ? 0 : -1}>
-        <MobileLinkNumber>04</MobileLinkNumber>
-        <MobileLinkTitle>Home</MobileLinkTitle>
-      </MobileLink>
-    </MobileLinkItem>
     <MobileLinkItem>
       <MobileLink href="/typography" tabIndex={isOpen ? 0 : -1}>
         <MobileLinkNumber>05</MobileLinkNumber>
