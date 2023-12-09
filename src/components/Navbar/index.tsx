@@ -6,6 +6,7 @@ import MobileCloseIcon from '@/icons/tsx/mobileXIcon';
 import pageData from '@/lib/pageData';
 import MobileDropdown from '@/components/MobileDropdown';
 import { usePathname } from 'next/navigation';
+import { BcLogo } from '@/icons/tsx';
 
 type DesktopLinkTypes = {
   $isDisabled: boolean;
@@ -69,8 +70,6 @@ const InnerNav = styled.div`
   `}
 `;
 
-const Logo = styled.h3``;
-
 const MobileNavBttn = styled.button`
   ${({ theme: { mediaQuery } }) => css`
     align-self: center;
@@ -127,8 +126,19 @@ const OuterNav = styled.nav`
 `;
 
 const StyledLink = styled(Link)`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, themeColors } }) => css`
+    align-items: center;
     color: ${themeColors.headings};
+    display: flex;
+    svg {
+      height: 24px;
+    }
+
+    ${mediaQuery('lg')(`
+      svg {
+        height: 36px;
+      }
+    `)}
   `}
 `;
 
@@ -171,7 +181,7 @@ const Navbar = () => {
           </MobileNavBttn>
 
           <StyledLink href="/">
-            <Logo>BC</Logo>
+            <BcLogo color="#FFFFFF" fill="#FFFFFF" />
           </StyledLink>
 
           <DesktopLinkContainer>

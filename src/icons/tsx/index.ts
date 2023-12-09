@@ -1,3 +1,4 @@
+export { default as BcLogo } from './bcLogo';
 export { default as Caret } from './caret';
 export { default as Dove } from './dove';
 export { default as East } from './east';
