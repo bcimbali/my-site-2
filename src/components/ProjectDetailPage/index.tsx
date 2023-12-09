@@ -73,7 +73,7 @@ const ContentHeading = styled.h4``;
 
 const Description = styled.h3``;
 
-const ImgContainer = styled.div`
+const ImgContainer = styled(Link)`
   ${({ theme: { colors, mediaQuery } }) => css`
     background-color: ${colors.blue};
     border-radius: 0.5rem;
@@ -124,7 +124,7 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
       <PageTitle backButtonLink="/projects">{project?.title}</PageTitle>
       <InnerContainer>
         {!!project?.image && (
-          <ImgContainer>
+          <ImgContainer href={project.liveLink} target="_blank">
             <Image alt={project?.title} src={project?.image} fill={true} />
           </ImgContainer>
         )}
