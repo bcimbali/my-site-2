@@ -3,6 +3,7 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
 import PageTitle from '@/components/PageTitle';
+import Image from 'next/image';
 
 const ContentContainer = styled.div`
   ${({ theme: { spacing } }) => css`
@@ -43,6 +44,7 @@ const InnerContainer = styled.div`
 `;
 
 const OuterContainer = styled.div`
+  align-self: start;
   display: flex;
   flex-direction: column;
   grid-column: 1/-1;
@@ -54,7 +56,9 @@ const AboutPage = () => {
     <OuterContainer>
       <PageTitle>About</PageTitle>
       <InnerContainer>
-        <ImgContainer />
+        <ImgContainer>
+          <Image src="/brett_smiling_at_camera.jpg" fill priority alt="brett smiling" />
+        </ImgContainer>
         <ContentContainer>
           <Description>
             {`I am a software engineer based in Chicago. Since 2019, I've been at Graveflex, a
