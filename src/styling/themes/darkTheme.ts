@@ -54,7 +54,8 @@ const theme = {
     mobileDropdownFg: colors.white,
     // navbarBg: '#004694',
     navbarBg: colors.blue,
-    secondary: '#380D8B'
+    secondary: '#380D8B',
+    warning: colors.red
   },
   layout: gridValues,
   linkHover,
