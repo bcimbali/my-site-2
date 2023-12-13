@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import contactFormSubmit from '@/lib/contactFormSubmit';
 
 type Inputs = {
   subject: string;
@@ -46,14 +47,16 @@ const ContactForm = () => {
     formState: { errors, isSubmitSuccessful, isSubmitting }
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const myFormSubmit = async (data: Inputs) => {
+    await contactFormSubmit(data);
+  };
 
   return (
     <OuterContainer>
       {isSubmitSuccessful ? (
         <SuccessText>Thanks for reaching out!</SuccessText>
       ) : (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit((data) => myFormSubmit(data))}>
           <InputWrapper>
             <Label htmlFor="subject">Subject</Label>
             <input defaultValue="" {...register('subject', { required: true })} />
