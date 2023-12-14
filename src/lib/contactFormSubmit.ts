@@ -1,14 +1,9 @@
 'use server';
 
 import { SubmitHandler } from 'react-hook-form';
+import { ContactFormFields } from '@/components/ContactForm';
 
-type Inputs = {
-  subject: string;
-  email: string;
-  message: string;
-};
-
-const contactFormSubmit: SubmitHandler<Inputs> = (data) => {
+const contactFormSubmit: SubmitHandler<ContactFormFields> = (data) => {
   console.log('in onSubmit, data is: ', data);
 };
 
