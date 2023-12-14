@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { css } from 'styled-components';
-import { useForm } from 'react-hook-form';
-import contactFormSubmit from '@/lib/contactFormSubmit';
+import { useForm, FieldPath } from 'react-hook-form';
+import contactFormSubmit, { State } from '@/lib/contactFormSubmit';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useFormState } from 'react-dom';
+import FormContent from './FormContent';
+import { formSchema } from './validation';
+
+export interface FormValues {
+  subject: string;
+  email: string;
+  message: string;
+}
 
 export const contactFormSchema = z.object({
   subject: z.string().min(1, { message: 'Must enter a subject' }),
@@ -13,12 +22,6 @@ export const contactFormSchema = z.object({
 
 export type ContactFormFields = z.infer<typeof contactFormSchema>;
 
-const Error = styled.span`
-  ${({ theme: { themeColors } }) => css`
-    color: ${themeColors.warning};
-  `}
-`;
-
 const Form = styled.form`
   ${({ theme: { spacing } }) => css`
     display: grid;
@@ -26,60 +29,42 @@ const Form = styled.form`
   `}
 `;
 
-const InputWrapper = styled.div`
-  display: grid;
-`;
-
-const Label = styled.label`
-  ${({ theme: { colors } }) => css`
-    color: ${colors.white};
-  `}
-`;
-
 const OuterContainer = styled.div`
   width: 100%;
-`;
-
-const SuccessText = styled.h3`
-  text-align: center;
 `;
 
 const ContactForm = () => {
   const {
     register,
-    handleSubmit,
-    formState: { errors, isSubmitSuccessful, isSubmitting }
-  } = useForm<ContactFormFields>({ resolver: zodResolver(contactFormSchema) });
+    formState: { errors, isValid, isSubmitSuccessful },
+    setError
+  } = useForm<ContactFormFields>({ mode: 'all', resolver: zodResolver(formSchema) });
+  const [state, formAction] = useFormState<State, FormData>(contactFormSubmit, null);
 
-  const myFormSubmit = async (data: ContactFormFields) => {
-    await contactFormSubmit(data);
-  };
+  useEffect(() => {
+    if (!state) {
+      return;
+    }
+    // In case our form action returns `error` we can now `setError`s
+    if (state.status === 'error') {
+      state.errors?.forEach((error) => {
+        setError(error.path as FieldPath<FormValues>, {
+          message: error.message
+        });
+      });
+    }
+    if (state.status === 'success') {
+      alert(state.message);
+    }
+  }, [state, setError]);
 
   return (
     <OuterContainer>
       {isSubmitSuccessful ? (
-        <SuccessText>Thanks for reaching out!</SuccessText>
+        <h3>Thank you for reaching out!</h3>
       ) : (
-        <Form onSubmit={handleSubmit((data) => myFormSubmit(data))}>
-          <InputWrapper>
-            <Label htmlFor="subject">Subject</Label>
-            <input {...register('subject', { required: true })} />
-            {errors.subject && <Error>{errors?.subject?.message}</Error>}
-          </InputWrapper>
-
-          <InputWrapper>
-            <Label htmlFor="email">Email</Label>
-            <input {...register('email', { required: true })} />
-            {errors.email && <Error>{errors?.email?.message}</Error>}
-          </InputWrapper>
-
-          <InputWrapper>
-            <Label htmlFor="message">Message</Label>
-            <textarea {...register('message', { required: true })} />
-            {errors.message && <Error>{errors?.message?.message}</Error>}
-          </InputWrapper>
-
-          <input type="submit" disabled={isSubmitting} />
+        <Form action={formAction}>
+          <FormContent register={register} isValid={isValid} errors={errors} />
         </Form>
       )}
     </OuterContainer>
