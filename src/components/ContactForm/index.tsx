@@ -2,12 +2,16 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { useForm } from 'react-hook-form';
 import contactFormSubmit from '@/lib/contactFormSubmit';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
-type Inputs = {
-  subject: string;
-  email: string;
-  message: string;
-};
+export const contactFormSchema = z.object({
+  subject: z.string().min(1, { message: 'Must enter a subject' }),
+  email: z.string().email(),
+  message: z.string().min(1, { message: 'Must enter a message' })
+});
+
+export type ContactFormFields = z.infer<typeof contactFormSchema>;
 
 const Error = styled.span`
   ${({ theme: { themeColors } }) => css`
@@ -45,9 +49,9 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitSuccessful, isSubmitting }
-  } = useForm<Inputs>();
+  } = useForm<ContactFormFields>({ resolver: zodResolver(contactFormSchema) });
 
-  const myFormSubmit = async (data: Inputs) => {
+  const myFormSubmit = async (data: ContactFormFields) => {
     await contactFormSubmit(data);
   };
 
@@ -59,20 +63,20 @@ const ContactForm = () => {
         <Form onSubmit={handleSubmit((data) => myFormSubmit(data))}>
           <InputWrapper>
             <Label htmlFor="subject">Subject</Label>
-            <input defaultValue="" {...register('subject', { required: true })} />
-            {errors.subject && <Error>This field is required</Error>}
+            <input {...register('subject', { required: true })} />
+            {errors.subject && <Error>{errors?.subject?.message}</Error>}
           </InputWrapper>
 
           <InputWrapper>
             <Label htmlFor="email">Email</Label>
-            <input defaultValue="" {...register('email', { required: true })} />
-            {errors.email && <Error>This field is required</Error>}
+            <input {...register('email', { required: true })} />
+            {errors.email && <Error>{errors?.email?.message}</Error>}
           </InputWrapper>
 
           <InputWrapper>
             <Label htmlFor="message">Message</Label>
-            <textarea defaultValue="" {...register('message', { required: true })} />
-            {errors.message && <Error>This field is required</Error>}
+            <textarea {...register('message', { required: true })} />
+            {errors.message && <Error>{errors?.message?.message}</Error>}
           </InputWrapper>
 
           <input type="submit" disabled={isSubmitting} />
