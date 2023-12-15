@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useForm, FieldPath } from 'react-hook-form';
 import contactFormSubmit, { State } from '@/lib/contactFormSubmit';
@@ -33,13 +33,18 @@ const OuterContainer = styled.div`
   width: 100%;
 `;
 
+const StateText = styled.h4`
+  text-align: center;
+`;
+
 const ContactForm = () => {
   const {
     register,
-    formState: { errors, isValid, isSubmitSuccessful },
+    formState: { errors, isValid },
     setError
   } = useForm<ContactFormFields>({ mode: 'all', resolver: zodResolver(formSchema) });
   const [state, formAction] = useFormState<State, FormData>(contactFormSubmit, null);
+  const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
   useEffect(() => {
     if (!state) {
@@ -54,6 +59,7 @@ const ContactForm = () => {
       });
     }
     if (state.status === 'success') {
+      setIsSubmitSuccessful(true);
       alert(state.message);
     }
   }, [state, setError]);
@@ -65,6 +71,7 @@ const ContactForm = () => {
       ) : (
         <Form action={formAction}>
           <FormContent register={register} isValid={isValid} errors={errors} />
+          <StateText>{state?.message}</StateText>
         </Form>
       )}
     </OuterContainer>
