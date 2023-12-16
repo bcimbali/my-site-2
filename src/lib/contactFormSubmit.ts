@@ -19,11 +19,18 @@ export type State =
   | null;
 
 const contactFormSubmit = async (prevState: State | null, data: FormData): Promise<State> => {
-  console.log('in onSubmit, data is: ', data);
+  console.log('In contactFormSubmit, data is: ', data);
 
   // Outer try catch only works for errors
   // thrown by the fetch function itself:
   try {
+    // Validate our form data server-side:
+    await formSchema.safeParseAsync(data).then((res) => {
+      if (!res?.success) {
+        throw res?.error;
+      }
+    });
+
     const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -32,20 +39,17 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
       }
     }).then((res) => res);
 
-    // Handle server-side errors:
+    // Handle server-side fetch errors:
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    // Validate our data - Move this above try catch?
-    const { subject, email } = formSchema.parse(data);
-
     return {
       status: 'success',
-      message: `Welcome, ${subject} ${email ? email : ''}!`
+      message: `Thanks for reaching out!`
     };
   } catch (e) {
-    // In case of a ZodError (caused by our validation) we're adding issues to our response
+    // In case of a ZodError (caused by our validation) we're adding issues to our response:
     if (e instanceof ZodError) {
       return {
         status: 'error',
