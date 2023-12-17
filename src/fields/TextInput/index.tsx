@@ -14,11 +14,16 @@ type InputTypes = {
 };
 
 const Input = styled.input.attrs({ type: 'text' })`
-  ${({ theme: { colors } }) => css`
+  ${({ theme: { colors, mediaQuery, typography } }) => css`
     background: ${colors.blue};
     border: 1px solid ${colors.white};
     border-radius: 4px;
     color: ${colors.white};
+    padding: ${typography.mobile[-3]};
+
+    ${mediaQuery('lg')(`
+      padding: ${typography.desktop[-3]};
+    `)}
   `}
 `;
 

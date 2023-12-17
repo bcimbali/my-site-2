@@ -56,7 +56,7 @@ const FormContent = ({
 
       <InputWrapper>
         <Label htmlFor="email">Email</Label>
-        <input {...register('email', { required: true })} />
+        <TextInput input={{ ...register('email', { required: true }) }} />
         <ErrorMessage name="email" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
