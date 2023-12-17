@@ -17,19 +17,28 @@ type InputTypes = {
   label?: string;
 };
 
+type InputComponentTypes = {
+  $hasErrors?: boolean;
+};
+
 const ErrorComponent = styled.span`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.warning};
   `}
 `;
 
-const Input = styled.input.attrs({ type: 'text' })`
-  ${({ theme: { colors, mediaQuery, typography } }) => css`
+const Input = styled.input.attrs({ type: 'text' })<InputComponentTypes>`
+  ${({ $hasErrors, theme: { colors, mediaQuery, themeColors, typography } }) => css`
     background: ${colors.blue};
     border: 1px solid ${colors.white};
     border-radius: 4px;
     color: ${colors.white};
     padding: ${typography.mobile[-3]};
+
+    ${$hasErrors &&
+    css`
+      border-color: ${themeColors?.danger};
+    `}
 
     ${mediaQuery('lg')(`
       padding: ${typography.desktop[-3]};
@@ -48,11 +57,11 @@ const Label = styled.label`
 `;
 
 const TextInput = ({ errors, input, label }: InputTypes) => {
-  console.log('In index.tsx, this is input: ', input);
+  const hasErrors = !!errors?.[`${input?.name}`];
   return (
     <InputWrapper>
       <Label htmlFor={input?.name}>{label}</Label>
-      <Input {...input} />
+      <Input {...input} $hasErrors={hasErrors} />
       {errors && <ErrorMessage name={input.name} errors={errors} as={ErrorComponent} />}
     </InputWrapper>
   );
