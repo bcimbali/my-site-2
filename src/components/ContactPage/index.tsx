@@ -5,10 +5,6 @@ import React from 'react';
 import PageTitle from '@/components/PageTitle';
 import ContactForm from '@/components/ContactForm';
 
-const ContentSide = styled.h3`
-  width: 100%;
-`;
-
 const InnerContainer = styled.div`
   ${({ theme: { mediaQuery, spacing } }) => css`
     display: flex;
@@ -22,11 +18,25 @@ const InnerContainer = styled.div`
 `;
 
 const OuterContainer = styled.div`
-  align-self: start;
-  display: flex;
-  flex-direction: column;
-  grid-column: 1/-1;
-  justify-content: center;
+  ${({ theme: { mediaQuery } }) => css`
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+    justify-content: center;
+
+    ${mediaQuery('md')(`
+      grid-column: 2/8;
+    `)}
+
+    ${mediaQuery('lg')(`
+      grid-column: 3/11;
+    `)}
+
+    ${mediaQuery('xl')(`
+      grid-column: 4/10;
+    `)}
+  `}
 `;
 
 const ContactPage = () => {
@@ -34,7 +44,6 @@ const ContactPage = () => {
     <OuterContainer>
       <PageTitle>Contact</PageTitle>
       <InnerContainer>
-        <ContentSide>Content Side</ContentSide>
         <ContactForm />
       </InnerContainer>
     </OuterContainer>
