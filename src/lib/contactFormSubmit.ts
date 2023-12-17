@@ -39,18 +39,18 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
     const formEmail = data?.get('email')?.toString() || '';
 
     // Send email via Resend:
-    // const { error: resendError } = await resend.emails.send({
-    //   from: `${process.env.CONTACT_FORM_EMAIL_FROM}`,
-    //   to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
-    //   subject: `${formSubject}`,
-    //   text: '',
-    //   react: ContactFormEmail({ formEmail, formMessage })
-    // });
+    const { error: resendError } = await resend.emails.send({
+      from: `${process.env.CONTACT_FORM_EMAIL_FROM}`,
+      to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
+      subject: `${formSubject}`,
+      text: '',
+      react: ContactFormEmail({ formEmail, formMessage })
+    });
 
-    // // Handle server-side errors:
-    // if (resendError) {
-    //   throw new Error(`Error sending email thru Resend.`);
-    // }
+    // Handle server-side errors:
+    if (resendError) {
+      throw new Error(`Error sending email thru Resend.`);
+    }
 
     return {
       status: 'success',
