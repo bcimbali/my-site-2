@@ -5,6 +5,7 @@ import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import { useFormStatus } from 'react-dom';
 import { ErrorMessage } from '@hookform/error-message';
+import TextInput from '@/fields/TextInput';
 
 export interface FormValues {
   subject: string;
@@ -49,7 +50,7 @@ const FormContent = ({
     <>
       <InputWrapper>
         <Label htmlFor="subject">Subject</Label>
-        <input {...register('subject', { required: true })} />
+        <TextInput input={{ ...register('subject', { required: true }) }} />
         <ErrorMessage name="subject" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
