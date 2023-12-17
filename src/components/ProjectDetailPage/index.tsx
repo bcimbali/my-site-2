@@ -6,34 +6,11 @@ import PageTitle from '@/components/PageTitle';
 import projectsData from '@/lib/projectsData';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/components/Button';
 
 type ProjectPageTypes = {
   projectName: string;
 };
-
-const ButtonLink = styled(Link)`
-  ${({ theme: { colors, mediaQuery, spacing, typography } }) => css`
-    background: ${colors.white};
-    border: 1px solid ${colors.white};
-    border-radius: 0.5rem;
-    color: ${colors.blue};
-    font-size: ${typography.mobile[0]};
-    padding: ${spacing[-3]};
-    text-align: center;
-    transition:
-      background 0.2s,
-      color 0.2s;
-
-    &:hover {
-      background: ${colors.blue};
-      color: ${colors.white};
-    }
-
-    ${mediaQuery('lg')(`
-      font-size: ${typography.desktop[0]};
-    `)}
-  `}
-`;
 
 const ChipsContainer = styled.ul`
   ${({ theme: { mediaQuery } }) => css`
@@ -132,14 +109,10 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
           <Description>{project?.description}</Description>
           <LinkContainer>
             {project?.liveLink && (
-              <ButtonLink href={project.liveLink} target="_blank">
-                Live Link
-              </ButtonLink>
+              <Button href={project.liveLink} label="Live Link" target="_blank" />
             )}
             {project?.codeLink && (
-              <ButtonLink href={project.codeLink} target="_blank">
-                Code Link
-              </ButtonLink>
+              <Button href={project.codeLink} label="Code Link" target="_blank" />
             )}
           </LinkContainer>
 
