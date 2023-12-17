@@ -49,17 +49,17 @@ const FormContent = ({
 
   return (
     <>
-      <InputWrapper>
-        <Label htmlFor="subject">Subject</Label>
-        <TextInput input={{ ...register('subject', { required: true }) }} />
-        <ErrorMessage name="subject" errors={errors} as={ErrorComponent} />
-      </InputWrapper>
+      <TextInput
+        input={{ ...register('subject', { required: true }) }}
+        errors={errors}
+        label="Subject"
+      />
 
-      <InputWrapper>
-        <Label htmlFor="email">Email</Label>
-        <TextInput input={{ ...register('email', { required: true }) }} />
-        <ErrorMessage name="email" errors={errors} as={ErrorComponent} />
-      </InputWrapper>
+      <TextInput
+        input={{ ...register('email', { required: true }) }}
+        errors={errors}
+        label="Email"
+      />
 
       <InputWrapper>
         <Label htmlFor="message">Message</Label>

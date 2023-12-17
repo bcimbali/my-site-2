@@ -2,16 +2,26 @@
 
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ChangeHandler, RefCallBack } from 'react-hook-form';
+import { ChangeHandler, FieldErrors, RefCallBack } from 'react-hook-form';
+import { FormValues } from '@/components/ContactForm';
+import { ErrorMessage } from '@hookform/error-message';
 
 type InputTypes = {
+  errors?: FieldErrors<FormValues>;
   input: {
-    name: string;
+    name: keyof FormValues;
     onBlur: ChangeHandler;
     onChange: ChangeHandler;
     ref: RefCallBack;
   };
+  label?: string;
 };
+
+const ErrorComponent = styled.span`
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.warning};
+  `}
+`;
 
 const Input = styled.input.attrs({ type: 'text' })`
   ${({ theme: { colors, mediaQuery, typography } }) => css`
@@ -27,9 +37,25 @@ const Input = styled.input.attrs({ type: 'text' })`
   `}
 `;
 
-const TextInput = ({ input }: InputTypes) => {
+const InputWrapper = styled.div`
+  display: grid;
+`;
+
+const Label = styled.label`
+  ${({ theme: { colors } }) => css`
+    color: ${colors.white};
+  `}
+`;
+
+const TextInput = ({ errors, input, label }: InputTypes) => {
   console.log('In index.tsx, this is input: ', input);
-  return <Input {...input} />;
+  return (
+    <InputWrapper>
+      <Label htmlFor={input?.name}>{label}</Label>
+      <Input {...input} />
+      {errors && <ErrorMessage name={input.name} errors={errors} as={ErrorComponent} />}
+    </InputWrapper>
+  );
 };
 
 export default TextInput;
