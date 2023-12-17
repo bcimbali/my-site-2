@@ -3,6 +3,7 @@
 import { formSchema } from '@/components/ContactForm/validation';
 import { ZodError } from 'zod';
 import { Resend } from 'resend';
+import ContactFormEmail from '@/components/ContactFormEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -32,16 +33,17 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
       }
     });
 
-    const formSubject = data?.get('subject');
-    const formMessage = data?.get('message');
-    const formEmail = data?.get('email');
+    const formSubject = data?.get('subject')?.toString() || '';
+    const formMessage = data?.get('message')?.toString() || '';
+    const formEmail = data?.get('email')?.toString() || '';
 
     // Send email via Resend:
     const { error: resendError } = await resend.emails.send({
       from: `${process.env.CONTACT_FORM_EMAIL_FROM}`,
       to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
       subject: `${formSubject}`,
-      text: `From: ${formEmail}.  Message: ${formMessage}`
+      text: '',
+      react: ContactFormEmail({ formEmail, formMessage })
     });
 
     // Handle server-side errors:
