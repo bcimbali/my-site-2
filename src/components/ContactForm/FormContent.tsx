@@ -12,7 +12,7 @@ export interface FormValues {
   message: string;
 }
 
-const Error = styled.div`
+const ErrorComponent = styled.span`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.warning};
   `}
@@ -50,25 +50,19 @@ const FormContent = ({
       <InputWrapper>
         <Label htmlFor="subject">Subject</Label>
         <input {...register('subject', { required: true })} />
-        <Error>
-          <ErrorMessage name="subject" errors={errors} />
-        </Error>
+        <ErrorMessage name="subject" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
       <InputWrapper>
         <Label htmlFor="email">Email</Label>
         <input {...register('email', { required: true })} />
-        <Error>
-          <ErrorMessage name="email" errors={errors} />
-        </Error>
+        <ErrorMessage name="email" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
       <InputWrapper>
         <Label htmlFor="message">Message</Label>
         <textarea {...register('message', { required: true })} />
-        <Error>
-          <ErrorMessage name="message" errors={errors} />
-        </Error>
+        <ErrorMessage name="message" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
       <input type="submit" disabled={pending || !isValid} />
