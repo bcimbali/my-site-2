@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 import { useFormStatus } from 'react-dom';
 import TextInput from '@/fields/TextInput';
 import TextAreaInput from '@/fields/TextArea';
+import Button from '@/components/Button';
 
 export interface FormValues {
   subject: string;
@@ -50,7 +51,7 @@ const FormContent = ({
         label="Message"
       />
 
-      <input type="submit" disabled={pending || !isValid} />
+      <Button type="submit" label="Submit" disabled={pending || !isValid} />
       {pending && <LoadingText>Loading...</LoadingText>}
     </>
   );
