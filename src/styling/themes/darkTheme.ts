@@ -55,7 +55,8 @@ const theme = {
     // navbarBg: '#004694',
     navbarBg: colors.blue,
     secondary: '#380D8B',
-    warning: colors.red
+    warning: colors.red,
+    danger: colors.red
   },
   layout: gridValues,
   linkHover,
