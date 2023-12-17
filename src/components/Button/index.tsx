@@ -6,6 +6,7 @@ type ButtonTypes = {
   disabled?: boolean;
   href?: string;
   label?: string;
+  target?: string;
   type?: 'button' | 'reset' | 'submit';
 };
 
@@ -50,10 +51,10 @@ const ButtonComponent = styled.button`
   ${buttonStyles};
 `;
 
-const Button = ({ disabled, href, label = 'submit', type = 'submit' }: ButtonTypes) => {
+const Button = ({ disabled, href, label = 'submit', target, type = 'submit' }: ButtonTypes) => {
   if (!!href) {
     return (
-      <ButtonLink href="href" type="button" disabled={disabled}>
+      <ButtonLink href={href} disabled={disabled} target={target} type="button">
         {label}
       </ButtonLink>
     );
