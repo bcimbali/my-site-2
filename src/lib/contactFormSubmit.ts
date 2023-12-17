@@ -2,6 +2,9 @@
 
 import { formSchema } from '@/components/ContactForm/validation';
 import { ZodError } from 'zod';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export type State =
   | {
@@ -19,8 +22,6 @@ export type State =
   | null;
 
 const contactFormSubmit = async (prevState: State | null, data: FormData): Promise<State> => {
-  console.log('In contactFormSubmit, data is: ', data);
-
   // Outer try catch only works for errors
   // thrown by the fetch function itself:
   try {
@@ -31,17 +32,21 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
       }
     });
 
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8'
-      }
-    }).then((res) => res);
+    const formSubject = data?.get('subject');
+    const formMessage = data?.get('message');
+    const formEmail = data?.get('email');
 
-    // Handle server-side fetch errors:
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    // Send email via Resend:
+    const { error: resendError } = await resend.emails.send({
+      from: `${process.env.CONTACT_FORM_EMAIL_FROM}`,
+      to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
+      subject: `${formSubject}`,
+      text: `From: ${formEmail}.  Message: ${formMessage}`
+    });
+
+    // Handle server-side errors:
+    if (resendError) {
+      throw new Error(`Error sending email thru Resend.`);
     }
 
     return {
