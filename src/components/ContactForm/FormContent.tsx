@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components';
 import { useFormStatus } from 'react-dom';
 import { ErrorMessage } from '@hookform/error-message';
 import TextInput from '@/fields/TextInput';
+import TextAreaInput from '@/fields/TextArea';
 
 export interface FormValues {
   subject: string;
@@ -62,7 +63,7 @@ const FormContent = ({
 
       <InputWrapper>
         <Label htmlFor="message">Message</Label>
-        <textarea {...register('message', { required: true })} />
+        <TextAreaInput input={{ ...register('message', { required: true }) }} />
         <ErrorMessage name="message" errors={errors} as={ErrorComponent} />
       </InputWrapper>
 
