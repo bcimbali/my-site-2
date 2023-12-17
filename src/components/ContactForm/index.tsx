@@ -37,6 +37,10 @@ const StateText = styled.h4`
   text-align: center;
 `;
 
+const SuccessText = styled.h3`
+  text-align: center;
+`;
+
 const ContactForm = () => {
   const {
     register,
@@ -60,14 +64,13 @@ const ContactForm = () => {
     }
     if (state.status === 'success') {
       setIsSubmitSuccessful(true);
-      alert(state.message);
     }
   }, [state, setError]);
 
   return (
     <OuterContainer>
       {isSubmitSuccessful ? (
-        <h3>Thank you for reaching out!</h3>
+        <SuccessText>Thank you for reaching out!</SuccessText>
       ) : (
         <Form action={formAction}>
           <FormContent register={register} isValid={isValid} errors={errors} />
