@@ -36,23 +36,26 @@ const FormContent = ({
       <TextInput
         input={{ ...register('subject', { required: true }) }}
         errors={errors}
-        label="Subject"
+        label="Subject *"
       />
 
       <TextInput
         input={{ ...register('email', { required: true }) }}
         errors={errors}
-        label="Email"
+        label="Email *"
       />
 
       <TextAreaInput
         input={{ ...register('message', { required: true }) }}
         errors={errors}
-        label="Message"
+        label="Message *"
       />
 
-      <Button type="submit" label="Submit" disabled={pending || !isValid} />
-      {pending && <LoadingText>Loading...</LoadingText>}
+      <Button
+        type="submit"
+        label={pending ? 'Loading...' : 'Submit'}
+        disabled={pending || !isValid}
+      />
     </>
   );
 };

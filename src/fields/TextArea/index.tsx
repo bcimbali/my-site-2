@@ -46,11 +46,11 @@ const Input = styled.textarea<InputComponentTypes>`
   `}
 `;
 
-const InputWrapper = styled.div`
+const LabelWrapper = styled.label`
   display: grid;
 `;
 
-const Label = styled.label`
+const LabelText = styled.span`
   ${({ theme: { colors } }) => css`
     color: ${colors.white};
   `}
@@ -59,11 +59,11 @@ const Label = styled.label`
 const TextAreaInput = ({ errors, input, label }: InputTypes) => {
   const hasErrors = !!errors?.[`${input?.name}`];
   return (
-    <InputWrapper>
-      <Label htmlFor={input?.name}>{label}</Label>
+    <LabelWrapper>
+      <LabelText>{label}</LabelText>
       <Input {...input} $hasErrors={hasErrors} />
       {errors && <ErrorMessage name={input.name} errors={errors} as={ErrorComponent} />}
-    </InputWrapper>
+    </LabelWrapper>
   );
 };
 
