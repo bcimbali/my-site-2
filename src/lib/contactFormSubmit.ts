@@ -40,7 +40,7 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
 
     // Send email via Resend:
     const { error: resendError } = await resend.emails.send({
-      from: `${process.env.CONTACT_FORM_EMAIL_FROM}`,
+      from: `BC Contact Form <${process.env.CONTACT_FORM_EMAIL_FROM}>`,
       to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
       subject: `${formSubject}`,
       text: '',
