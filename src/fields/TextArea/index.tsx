@@ -31,7 +31,7 @@ const Input = styled.textarea<InputComponentTypes>`
   ${({ $hasErrors, theme: { colors, mediaQuery, themeColors, typography } }) => css`
     background: ${colors.blue};
     border: 1px solid ${colors.white};
-    border-radius: 4px;
+    border-radius: 0.5rem;
     color: ${colors.white};
     padding: ${typography.mobile[-3]};
 

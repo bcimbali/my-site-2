@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
-import styled, { css } from 'styled-components';
 import { useFormStatus } from 'react-dom';
 import TextInput from '@/fields/TextInput';
 import TextAreaInput from '@/fields/TextArea';
@@ -13,12 +12,6 @@ export interface FormValues {
   email: string;
   message: string;
 }
-
-const LoadingText = styled.div`
-  ${({ theme: { colors } }) => css`
-    color: ${colors.white};
-  `}
-`;
 
 const FormContent = ({
   register,
