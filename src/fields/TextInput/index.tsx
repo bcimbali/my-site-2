@@ -7,6 +7,7 @@ import { FormValues } from '@/components/ContactForm';
 import { ErrorMessage } from '@hookform/error-message';
 
 type InputTypes = {
+  disabled?: boolean;
   errors?: FieldErrors<FormValues>;
   input: {
     name: keyof FormValues;
@@ -19,6 +20,10 @@ type InputTypes = {
 
 type InputComponentTypes = {
   $hasErrors?: boolean;
+};
+
+type LabelWrapperTypes = {
+  $disabled?: boolean;
 };
 
 const ErrorComponent = styled.span`
@@ -46,8 +51,18 @@ const Input = styled.input.attrs({ type: 'text' })<InputComponentTypes>`
   `}
 `;
 
-const LabelWrapper = styled.label`
+const LabelWrapper = styled.label<LabelWrapperTypes>`
   display: grid;
+
+  ${({ $disabled }) =>
+    $disabled &&
+    css`
+      opacity: 0.5;
+
+      :hover {
+        cursor: not-allowed;
+      }
+    `}
 `;
 
 const LabelText = styled.span`
@@ -56,12 +71,12 @@ const LabelText = styled.span`
   `}
 `;
 
-const TextInput = ({ errors, input, label }: InputTypes) => {
+const TextInput = ({ disabled, errors, input, label }: InputTypes) => {
   const hasErrors = !!errors?.[`${input?.name}`];
   return (
-    <LabelWrapper>
+    <LabelWrapper $disabled={disabled}>
       <LabelText>{label}</LabelText>
-      <Input {...input} $hasErrors={hasErrors} />
+      <Input {...input} $hasErrors={hasErrors} disabled={disabled} />
       {errors && <ErrorMessage name={input.name} errors={errors} as={ErrorComponent} />}
     </LabelWrapper>
   );
