@@ -27,18 +27,21 @@ const FormContent = ({
   return (
     <>
       <TextInput
+        disabled={pending}
         input={{ ...register('subject', { required: true }) }}
         errors={errors}
         label="Subject *"
       />
 
       <TextInput
+        disabled={pending}
         input={{ ...register('email', { required: true }) }}
         errors={errors}
         label="Email *"
       />
 
       <TextAreaInput
+        disabled={pending}
         input={{ ...register('message', { required: true }) }}
         errors={errors}
         label="Message *"
