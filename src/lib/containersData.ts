@@ -15,42 +15,42 @@ import {
 
 const containersData = [
   {
-    id: 'DTTX-1197',
+    id: 'RVVX-1197',
     containers: [onyxContainer, wishContainer]
   },
   {
-    id: 'DTTX-7201',
+    id: 'RVVX-7201',
     containers: [vmrOneContainer, sunshineContainer],
     flatcarColor: '#7b3c3c'
   },
   {
-    id: 'DTTX-4719',
+    id: 'RVVX-4719',
     containers: [caretContainer, starboxContainer]
   },
   {
-    id: 'DTTX-9209',
+    id: 'RVVX-9209',
     containers: [ftLogisticsContainer, vmrTwoContainer]
   },
   {
-    id: 'DTTX-7789',
+    id: 'RVVX-7789',
     containers: [eastContainer],
     flatcarColor: '#4B5320'
   },
   {
-    id: 'DTTX-5142',
+    id: 'RVVX-5142',
     containers: []
   },
   {
-    id: 'DTTX-0702',
+    id: 'RVVX-0702',
     containers: [doveContainer, vmrThreeContainer]
   },
   {
-    id: 'DTTX-8244',
+    id: 'RVVX-8244',
     containers: [],
     flatcarColor: '#71797E'
   },
   {
-    id: 'DTTX-4132',
+    id: 'RVVX-4132',
     containers: [mkdContainer]
   }
 ];
