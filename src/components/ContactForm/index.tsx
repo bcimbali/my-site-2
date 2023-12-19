@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useForm, FieldPath } from 'react-hook-form';
-import contactFormSubmit, { State } from '@/lib/contactFormSubmit';
+import contactFormSubmit, { State } from '@/server_actions/contactFormSubmit';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFormState } from 'react-dom';
