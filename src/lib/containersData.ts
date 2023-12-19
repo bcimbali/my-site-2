@@ -1,8 +1,9 @@
-import { Dove, Mkd, Vmr } from '@/icons/tsx';
+import { Mkd } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 import {
   caretContainer,
+  doveContainer,
   eastContainer,
   ftLogisticsContainer,
   onyxContainer,
@@ -10,6 +11,7 @@ import {
   sunshineContainer,
   wishContainer,
   vmrOneContainer,
+  vmrThreeContainer,
   vmrTwoContainer
 } from '@/shipping_containers';
 
@@ -42,46 +44,7 @@ const containersData = [
   },
   {
     id: 'DTTX-0702',
-    containers: [
-      {
-        bgColor: '#6F00FF',
-        containerNo: 'ETY-W 376',
-        logo: {
-          color: 'none',
-          containerCss: css`
-            ${({ theme: { mediaQuery } }) => css`
-              .container-no {
-                left: 35px;
-                right: unset;
-              }
-              ${mediaQuery('lg')(`
-                .container-no {
-                  left: 50px;
-                  right: unset;
-                }
-            `)}
-            `}
-          `,
-          desktopWidth: '300px',
-          fill: '#FEBE10',
-          mobileWidth: '200px',
-          src: Dove
-        },
-        textColor: '#FEBE10'
-      },
-      {
-        bgColor: '#A52A2A',
-        containerNo: 'T0V-E SJT',
-        logo: {
-          color: 'none',
-          desktopWidth: '130px',
-          fill: '#CCCCFF',
-          mobileWidth: '100px',
-          src: Vmr
-        },
-        textColor: '#CCCCFF'
-      }
-    ]
+    containers: [doveContainer, vmrThreeContainer]
   },
   {
     id: 'DTTX-8244',
