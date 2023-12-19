@@ -1,13 +1,15 @@
-import { Dove, East, FtLogistics, Mkd, Vmr } from '@/icons/tsx';
+import { Dove, East, Mkd, Vmr } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 import {
   caretContainer,
+  ftLogisticsContainer,
   onyxContainer,
   starboxContainer,
   sunshineContainer,
   wishContainer,
-  vmrOneContainer
+  vmrOneContainer,
+  vmrTwoContainer
 } from '@/shipping_containers';
 
 const containersData = [
@@ -26,32 +28,7 @@ const containersData = [
   },
   {
     id: 'DTTX-9209',
-    containers: [
-      {
-        bgColor: '#66FF00',
-        containerNo: 'C8W-I ZEZ',
-        logo: {
-          color: '#1B4D3E',
-          desktopWidth: shippingContainer.desktop.width,
-          fill: '#1B4D3E',
-          mobileWidth: shippingContainer.mobile.width,
-          src: FtLogistics
-        },
-        textColor: '#1B4D3E'
-      },
-      {
-        bgColor: '#1B4D3E',
-        containerNo: 'E9A-A KJG',
-        logo: {
-          color: 'none',
-          desktopWidth: '130px',
-          fill: '#AAAAAA',
-          mobileWidth: '100px',
-          src: Vmr
-        },
-        textColor: '#AAAAAA'
-      }
-    ]
+    containers: [ftLogisticsContainer, vmrTwoContainer]
   },
   {
     id: 'DTTX-7789',
