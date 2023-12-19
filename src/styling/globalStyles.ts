@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { brunoAceSc } from '@/app/fonts';
 
 // Global Css default styles:
 const GlobalStyles = createGlobalStyle`
@@ -43,14 +44,17 @@ const GlobalStyles = createGlobalStyle`
 
     /* Mobile Typography Settings: */
     h1 {
+      ${brunoAceSc?.style};
       font-size: ${typography.tags.h1.xs.fontSize};
       line-height: ${typography.tags.h1.xs.lineHeight};
     }
     h2 {
+      ${brunoAceSc?.style};
       font-size: ${typography.tags.h2.xs.fontSize};
       line-height: ${typography.tags.h2.xs.lineHeight};
     }
     h3 {
+      ${brunoAceSc?.style};
       font-size: ${typography.tags.h3.xs.fontSize};
       line-height: ${typography.tags.h3.xs.lineHeight};
     }

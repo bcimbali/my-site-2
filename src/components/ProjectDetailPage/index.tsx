@@ -48,7 +48,7 @@ const ContentContainer = styled.div`
 
 const ContentHeading = styled.h4``;
 
-const Description = styled.h3``;
+const Description = styled.h4``;
 
 const ImgContainer = styled(Link)`
   ${({ theme: { colors, mediaQuery } }) => css`
