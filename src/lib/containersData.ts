@@ -1,8 +1,10 @@
-import { Caret, Dove, East, FtLogistics, Mkd, StarBox, Sunshine, Vmr } from '@/icons/tsx';
+import { Dove, East, FtLogistics, Mkd, Vmr } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
 import {
+  caretContainer,
   onyxContainer,
+  starboxContainer,
   sunshineContainer,
   wishContainer,
   vmrOneContainer
@@ -20,52 +22,7 @@ const containersData = [
   },
   {
     id: 'DTTX-4719',
-    containers: [
-      {
-        bgColor: '#6050DC',
-        containerNo: 'Q1P-O LKY',
-        logo: {
-          color: '#CD5700',
-          fill: '#CD5700',
-          src: Caret
-        },
-        textColor: '#CD5700'
-      },
-      {
-        bgColor: '#9a2be4',
-        containerCss: css`
-          ${({ theme: { mediaQuery } }) => css`
-            display: flex;
-            flex-direction: row;
-            .logo {
-              position: absolute;
-              right: 35px;
-            }
-            .container-no {
-              left: 35px;
-              right: unset;
-            }
-            ${mediaQuery('lg')(`
-            .logo {
-              right: 60px;
-            }
-            .container-no {
-              left: 50px;
-              right: unset;
-            }
-          `)}
-          `}
-        `,
-        containerNo: 'D6V-X IZI',
-        logo: {
-          color: '#545AA7',
-          desktopWidth: '130px',
-          fill: '#545AA7',
-          mobileWidth: '100px',
-          src: StarBox
-        }
-      }
-    ]
+    containers: [caretContainer, starboxContainer]
   },
   {
     id: 'DTTX-9209',
