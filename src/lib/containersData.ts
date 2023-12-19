@@ -1,23 +1,12 @@
-import { Caret, Dove, East, FtLogistics, Mkd, StarBox, Sunshine, Vmr, Wish } from '@/icons/tsx';
+import { Caret, Dove, East, FtLogistics, Mkd, StarBox, Sunshine, Vmr } from '@/icons/tsx';
 import { css } from 'styled-components';
 import { shippingContainer } from '@/styling/layout';
-import { onyxContainer } from '@/shipping_containers';
+import { onyxContainer, wishContainer } from '@/shipping_containers';
 
 const containersData = [
   {
     id: 'DTTX-1197',
-    containers: [
-      onyxContainer,
-      {
-        bgColor: '#6082B6',
-        containerNo: 'Z3I-B VLV',
-        logo: {
-          color: '#1d1160',
-          fill: '#1d1160',
-          src: Wish
-        }
-      }
-    ]
+    containers: [onyxContainer, wishContainer]
   },
   {
     id: 'DTTX-7201',
