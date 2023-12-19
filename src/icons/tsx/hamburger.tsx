@@ -5,7 +5,7 @@ const SvgHamburger = (props: SVGProps<SVGSVGElement>) => (
     <path
       stroke={props.color || '#ffffff'}
       strokeWidth={2}
-      d="M0 23h24M0 12h24M0 1h24"
+      d="M0 23h24M0 12h12M0 1h18"
       fill={props.fill || 'none'}
     />
   </svg>
