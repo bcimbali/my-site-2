@@ -6,9 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const CardContainer = styled.li`
-  ${({ theme: { colors } }) => css`
+  ${({ theme: { colors, themeColors } }) => css`
     background: ${colors.blue};
-    border: 1px solid ${colors.white};
+    border: 1px solid ${themeColors.body};
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -18,8 +18,8 @@ const CardContainer = styled.li`
 `;
 
 const Description = styled.p`
-  ${({ theme: { colors, mediaQuery } }) => css`
-    color: ${colors.white};
+  ${({ theme: { themeColors, mediaQuery } }) => css`
+    color: ${themeColors.body};
     text-align: center;
 
     ${mediaQuery('md')`
@@ -56,8 +56,8 @@ const OuterCardLink = styled(Link)`
 `;
 
 const Title = styled.h3`
-  ${({ theme: { colors } }) => css`
-    color: ${colors.white};
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.headings};
     text-align: center;
   `}
 `;
