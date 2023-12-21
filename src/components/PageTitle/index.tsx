@@ -30,8 +30,7 @@ const BackButton = styled(Link)`
 `;
 
 const Title = styled.h1<TitleTypes>`
-  ${({ $noMargin, theme: { mediaQuery, spacing, themeColors } }) => css`
-    color: ${themeColors.fg};
+  ${({ $noMargin, theme: { mediaQuery, spacing } }) => css`
     margin-bottom: ${$noMargin ? 0 : spacing[0]};
     text-align: center;
 

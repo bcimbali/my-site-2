@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Hamburger from 'src/icons/tsx/hamburger';
@@ -145,6 +145,7 @@ const StyledLink = styled(Link)`
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const pathname = usePathname();
+  const theme = useTheme();
 
   // Close menu if page changes:
   useEffect(() => {
@@ -174,14 +175,19 @@ const Navbar = () => {
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
           >
             {isMobileNavOpen ? (
-              <MobileCloseIcon fill="#FFFFFF" color="#FFFFFF" width="24px" height="24px" />
+              <MobileCloseIcon
+                fill={theme.themeColors.headings}
+                color={theme.themeColors.headings}
+                width="24px"
+                height="24px"
+              />
             ) : (
               <Hamburger width="24px" height="24px" />
             )}
           </MobileNavBttn>
 
           <StyledLink href="/">
-            <BcLogo color="#FFFFFF" fill="#FFFFFF" />
+            <BcLogo color={theme.themeColors.headings} fill={theme.themeColors.headings} />
           </StyledLink>
 
           <DesktopLinkContainer>
