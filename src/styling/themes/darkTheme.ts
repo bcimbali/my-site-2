@@ -35,7 +35,8 @@ const colors = {
   brown: '#483C32',
   black: '#111111',
   gray: '#222222',
-  white: '#FFFFFF',
+  // For white shades: https://www.jootoor.com/shades-white-color-codes/
+  white: '#E3DAC9',
   // bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
   bg: 'linear-gradient(180deg, #00154A 0%, #001242 26.56%, #001C54 55.21%, #00377A 80.73%, #3C4280 100%)',
   fg: '#FFFFFF'
@@ -46,10 +47,10 @@ const theme = {
   colors,
   themeColors: {
     bg: colors.bg,
-    body: colors.purple,
+    body: colors.white,
     fg: colors.white,
     footerBg: colors.gray,
-    headings: colors.purple,
+    headings: colors.white,
     mobileDropdownBg: colors.blue,
     mobileDropdownFg: colors.white,
     // navbarBg: '#004694',
