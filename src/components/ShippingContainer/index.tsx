@@ -1,10 +1,11 @@
 'use client';
 
 import type { SVGProps } from 'react';
-import React, { useMemo } from 'react';
+import React, { useContext, useMemo } from 'react';
 import styled from 'styled-components';
 import ContainerContent from './components/ContainerContent';
 import Link from 'next/link';
+import { TrainContext } from '@/context/trainContext';
 
 const OuterShippingLink = styled(Link)`
   align-items: center;
@@ -48,10 +49,14 @@ const ShippingContainer = ({
   };
 }) => {
   const hasLink = useMemo(() => !!link, [link]);
-
+  const { setTrainState } = useContext(TrainContext);
   if (hasLink) {
     return (
-      <OuterShippingLink href={link as string}>
+      <OuterShippingLink
+        href={link as string}
+        onMouseEnter={() => setTrainState('paused')}
+        onMouseLeave={() => setTrainState('running')}
+      >
         <ContainerContent
           bgColor={bgColor}
           containerCss={containerCss}

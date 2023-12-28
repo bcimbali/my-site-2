@@ -1,7 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import styled, { css, keyframes } from 'styled-components';
+import { TrainContext } from '@/context/trainContext';
+
+type MarqueeContainerTypes = {
+  $isPaused: boolean;
+};
 
 const scroll = keyframes`
   from {
@@ -21,8 +26,8 @@ const scrollAbs = keyframes`
   }
 `;
 
-const MarqueeContainer = styled.div`
-  ${() => css`
+const MarqueeContainer = styled.div<MarqueeContainerTypes>`
+  ${({ $isPaused }) => css`
     --gap: 1rem;
     animation-direction: reverse;
     display: flex;
@@ -30,6 +35,15 @@ const MarqueeContainer = styled.div`
     max-width: 100vw;
     overflow: hidden;
     position: relative;
+
+    ${$isPaused &&
+    css`
+      &:hover {
+        * {
+          animation-play-state: paused;
+        }
+      }
+    `}
   `}
 `;
 
@@ -51,8 +65,10 @@ const MarqueeContent = styled.div`
 `;
 
 const TrainMarquee = ({ children }: { children: React.ReactNode }) => {
+  const { trainState } = useContext(TrainContext);
+  console.log('In TrainMarquee, this is trainState: ', trainState);
   return (
-    <MarqueeContainer>
+    <MarqueeContainer $isPaused={trainState === 'paused'}>
       <MarqueeContent>{children}</MarqueeContent>
       <MarqueeContent aria-hidden="true">{children}</MarqueeContent>
     </MarqueeContainer>
