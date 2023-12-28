@@ -9,12 +9,13 @@ import {
   ftLogisticsContainer,
   // mkdContainer,
   onyxContainer,
+  projectsContainer,
   spNextSiteContainer,
   starboxContainer,
   sunshineContainer,
   // wishContainer,
   // vmrOneContainer,
-  vmrThreeContainer,
+  // vmrThreeContainer,
   vmrTwoContainer
 } from '@/shipping_containers';
 
@@ -47,7 +48,7 @@ const containersData = [
   },
   {
     id: 'RVVX-0702',
-    containers: [doveContainer, vmrThreeContainer]
+    containers: [doveContainer, projectsContainer]
   },
   {
     id: 'RVVX-8244',
