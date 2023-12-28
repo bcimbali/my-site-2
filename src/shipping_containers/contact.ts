@@ -1,4 +1,4 @@
-import { About } from '@/icons/tsx';
+import { Contact } from '@/icons/tsx';
 
 const contact = {
   bgColor: '#ADD8E6',
@@ -7,7 +7,7 @@ const contact = {
   logo: {
     color: '#191970',
     fill: '#191970',
-    src: About
+    src: Contact
   },
   textColor: '#191970'
 };
