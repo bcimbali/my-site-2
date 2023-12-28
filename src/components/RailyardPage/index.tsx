@@ -10,6 +10,7 @@ import {
   bc010Container,
   caretContainer,
   ckSiteContainer,
+  contactContainer,
   doveContainer,
   eastContainer,
   ftLogisticsContainer,
@@ -35,6 +36,7 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
+      <ShippingContainer {...contactContainer} />
       <ShippingContainer {...aboutContainer} />
       <ShippingContainer {...spNextSiteContainer} />
       <ShippingContainer {...ckSiteContainer} />
