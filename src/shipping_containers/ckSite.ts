@@ -1,15 +1,16 @@
-import { Bc010 } from '@/icons/tsx';
+import { CkSite } from '@/icons/tsx';
+import theme from '@/styling/themes/darkTheme';
 
 const ckSite = {
   bgColor: 'rgb(177, 176, 229)',
   containerNo: 'CK-32 LPQ',
   link: '/projects/ck-site',
   logo: {
-    color: '#FFFFFF',
-    fill: '#FFFFFF',
-    src: Bc010
+    color: theme.colors.white,
+    fill: theme.colors.white,
+    src: CkSite
   },
-  textColor: '#FFFFFF'
+  textColor: theme.colors.white
 };
 
 export default ckSite;
