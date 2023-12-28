@@ -3,6 +3,7 @@ import {
   bc010Container,
   caretContainer,
   ckSiteContainer,
+  contactContainer,
   doveContainer,
   eastContainer,
   ftLogisticsContainer,
@@ -24,7 +25,7 @@ const containersData = [
   },
   {
     id: 'RVVX-7201',
-    containers: [vmrOneContainer, sunshineContainer],
+    containers: [contactContainer, sunshineContainer],
     flatcarColor: '#7b3c3c'
   },
   {
