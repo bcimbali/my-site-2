@@ -1,4 +1,4 @@
-import { Caret } from '@/icons/tsx';
+import { Bc010 } from '@/icons/tsx';
 
 const bc010 = {
   bgColor: 'rgb(178, 255, 90)',
@@ -7,7 +7,7 @@ const bc010 = {
   logo: {
     color: 'rgb(64, 82, 45)',
     fill: 'rgb(64, 82, 45)',
-    src: Caret
+    src: Bc010
   },
   textColor: 'rgb(64, 82, 45)'
 };
