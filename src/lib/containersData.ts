@@ -1,4 +1,5 @@
 import {
+  bc010Container,
   caretContainer,
   doveContainer,
   eastContainer,
@@ -7,7 +8,7 @@ import {
   onyxContainer,
   starboxContainer,
   sunshineContainer,
-  wishContainer,
+  // wishContainer,
   vmrOneContainer,
   vmrThreeContainer,
   vmrTwoContainer
@@ -16,7 +17,7 @@ import {
 const containersData = [
   {
     id: 'RVVX-1197',
-    containers: [onyxContainer, wishContainer]
+    containers: [bc010Container, onyxContainer]
   },
   {
     id: 'RVVX-7201',
