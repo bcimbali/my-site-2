@@ -1,3 +1,4 @@
+export { default as aboutContainer } from './about';
 export { default as bc010Container } from './bc010';
 export { default as caretContainer } from './caret';
 export { default as ckSiteContainer } from './ckSite';

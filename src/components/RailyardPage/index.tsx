@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import React from 'react';
 import PageTitle from '@/components/PageTitle';
 import {
+  aboutContainer,
   bc010Container,
   caretContainer,
   ckSiteContainer,
@@ -34,6 +35,7 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
+      <ShippingContainer {...aboutContainer} />
       <ShippingContainer {...spNextSiteContainer} />
       <ShippingContainer {...ckSiteContainer} />
       <ShippingContainer {...bc010Container} />
