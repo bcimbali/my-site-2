@@ -11,6 +11,7 @@ export { default as Hamburger } from './hamburger';
 export { default as Mkd } from './mkd';
 export { default as MobileXIcon } from './mobileXIcon';
 export { default as Onyx } from './onyx';
+export { default as Projects } from './projects';
 export { default as SpNextSite } from './spNextSite';
 export { default as StarBox } from './starBox';
 export { default as Sunshine } from './sunshine';

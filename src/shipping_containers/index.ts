@@ -8,6 +8,7 @@ export { default as eastContainer } from './east';
 export { default as ftLogisticsContainer } from './ftLogistics';
 export { default as mkdContainer } from './mkd';
 export { default as onyxContainer } from './onyx';
+export { default as projectsContainer } from './projects';
 export { default as spNextSiteContainer } from './spNextSite';
 export { default as starboxContainer } from './starbox';
 export { default as sunshineContainer } from './sunshine';
