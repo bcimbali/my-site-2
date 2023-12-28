@@ -1,15 +1,15 @@
-import { Bc010 } from '@/icons/tsx';
+import { SpNextSite } from '@/icons/tsx';
 
-const bc010 = {
+const spSite = {
   bgColor: '#333333',
   containerNo: 'BC-O10 LKY',
   link: '/projects/sp-next-site',
   logo: {
     color: '#00BFFF',
     fill: '#00BFFF',
-    src: Bc010
+    src: SpNextSite
   },
   textColor: '#00BFFF'
 };
 
-export default bc010;
+export default spSite;

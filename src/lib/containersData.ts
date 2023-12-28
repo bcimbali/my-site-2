@@ -7,6 +7,7 @@ import {
   ftLogisticsContainer,
   // mkdContainer,
   onyxContainer,
+  spNextSiteContainer,
   starboxContainer,
   sunshineContainer,
   // wishContainer,
@@ -48,12 +49,12 @@ const containersData = [
   },
   {
     id: 'RVVX-8244',
-    containers: [],
+    containers: [onyxContainer],
     flatcarColor: '#71797E'
   },
   {
     id: 'RVVX-4132',
-    containers: [onyxContainer]
+    containers: [spNextSiteContainer]
   }
 ];
 
