@@ -66,7 +66,6 @@ const MarqueeContent = styled.div`
 
 const TrainMarquee = ({ children }: { children: React.ReactNode }) => {
   const { trainState } = useContext(TrainContext);
-  console.log('In TrainMarquee, this is trainState: ', trainState);
   return (
     <MarqueeContainer $isPaused={trainState === 'paused'}>
       <MarqueeContent>{children}</MarqueeContent>
