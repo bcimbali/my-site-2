@@ -49,7 +49,7 @@ const theme = {
     bg: colors.bg,
     body: colors.white,
     fg: colors.white,
-    footerBg: colors.gray,
+    footerBg: colors.black,
     headings: colors.white,
     mobileDropdownBg: colors.blue,
     mobileDropdownFg: colors.white,
