@@ -14,6 +14,7 @@ import {
   ftLogisticsContainer,
   mkdContainer,
   onyxContainer,
+  spNextSiteContainer,
   starboxContainer,
   sunshineContainer,
   wishContainer,
@@ -33,6 +34,7 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
+      <ShippingContainer {...spNextSiteContainer} />
       <ShippingContainer {...ckSiteContainer} />
       <ShippingContainer {...bc010Container} />
       <ShippingContainer {...caretContainer} />
