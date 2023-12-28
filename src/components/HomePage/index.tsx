@@ -1,12 +1,14 @@
 'use client';
 
 import styled from 'styled-components';
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import PageTitle from '@/components/PageTitle';
 import TrainMarquee from '@/components/TrainMarquee';
 import IntermodalWrapper from '@/components/IntermodalWrapper';
 import containersData from '@/lib/containersData';
 import CommsTower from '@/components/CommsTower';
+import { TrainContext } from '@/context/trainContext';
+import { usePathname } from 'next/navigation';
 
 const PageSubtitle = styled.h3``;
 
@@ -26,6 +28,12 @@ const TitleContainer = styled.div`
 `;
 
 const HomePage = () => {
+  const pathname = usePathname();
+  const { setTrainState } = useContext(TrainContext);
+
+  // Make sure train is running in back navigation on mobile:
+  useEffect(() => setTrainState('running'), [pathname, setTrainState]);
+
   return (
     <StyledDiv>
       <TitleContainer>
