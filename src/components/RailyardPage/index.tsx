@@ -8,6 +8,7 @@ import PageTitle from '@/components/PageTitle';
 import {
   bc010Container,
   caretContainer,
+  ckSiteContainer,
   doveContainer,
   eastContainer,
   ftLogisticsContainer,
@@ -32,6 +33,7 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
+      <ShippingContainer {...ckSiteContainer} />
       <ShippingContainer {...bc010Container} />
       <ShippingContainer {...caretContainer} />
       <ShippingContainer {...doveContainer} />
