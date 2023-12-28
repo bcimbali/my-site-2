@@ -1,13 +1,13 @@
-import { Bc010 } from '@/icons/tsx';
+import { About } from '@/icons/tsx';
 
 const about = {
   bgColor: '#7B3F00',
-  containerNo: 'BC-O10 LKY',
+  containerNo: 'AB-O1T EKL',
   link: '/about',
   logo: {
     color: '#FFBF00',
     fill: '#FFBF00',
-    src: Bc010
+    src: About
   },
   textColor: '#FFBF00'
 };

@@ -1,3 +1,4 @@
+export { default as About } from './about';
 export { default as BcLogo } from './bcLogo';
 export { default as Bc010 } from './bc010';
 export { default as Caret } from './caret';
