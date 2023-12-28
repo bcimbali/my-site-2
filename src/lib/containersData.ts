@@ -1,4 +1,5 @@
 import {
+  aboutContainer,
   bc010Container,
   caretContainer,
   ckSiteContainer,
@@ -49,7 +50,7 @@ const containersData = [
   },
   {
     id: 'RVVX-8244',
-    containers: [onyxContainer],
+    containers: [aboutContainer, onyxContainer],
     flatcarColor: '#71797E'
   },
   {
