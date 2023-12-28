@@ -13,7 +13,7 @@ import {
   starboxContainer,
   sunshineContainer,
   // wishContainer,
-  vmrOneContainer,
+  // vmrOneContainer,
   vmrThreeContainer,
   vmrTwoContainer
 } from '@/shipping_containers';
