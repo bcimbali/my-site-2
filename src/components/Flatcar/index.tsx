@@ -57,7 +57,7 @@ const Container = styled.div<ContainerTypes>`
 const Label = styled.div`
   ${({ theme: { colors, mediaQuery, typography } }) => css`
     background-color: ${colors.black};
-    color: #ffffff;
+    color: ${colors.white};
     font-size: ${typography.mobile[-2]};
     padding: 0px 8px;
     position: absolute;
