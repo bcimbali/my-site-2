@@ -47,17 +47,19 @@ const TitleWrapper = styled.div`
 const PageTitle = ({
   children,
   noMargin = false,
-  backButtonLink
+  backButtonLink,
+  backButtonText = 'Back'
 }: {
   children: React.ReactNode;
   noMargin?: boolean;
   backButtonLink?: string;
+  backButtonText?: string;
 }) => (
   <TitleWrapper>
     <Title $noMargin={noMargin} $hasBackButton={!!backButtonLink}>
       {children}
     </Title>
-    {!!backButtonLink && <BackButton href={backButtonLink}>{`< Back`}</BackButton>}
+    {!!backButtonLink && <BackButton href={backButtonLink}>{`< ` + backButtonText}</BackButton>}
   </TitleWrapper>
 );
 

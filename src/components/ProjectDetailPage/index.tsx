@@ -98,7 +98,9 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
   );
   return (
     <OuterContainer>
-      <PageTitle backButtonLink="/projects">{project?.title}</PageTitle>
+      <PageTitle backButtonLink="/projects" backButtonText="Projects">
+        {project?.title}
+      </PageTitle>
       <InnerContainer>
         {!!project?.image && (
           <ImgContainer href={project.liveLink} target="_blank">
