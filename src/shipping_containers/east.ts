@@ -1,12 +1,13 @@
 import { css } from 'styled-components';
 import { East } from '@/icons/tsx';
+import theme from '@/styling/themes/darkTheme';
 
 const east = {
   bgColor: '#e9692c',
   containerCss: css`
     ${({ theme: { mediaQuery } }) => css`
       .container-no {
-        border-bottom: 1px solid #ffffff;
+        border-bottom: 1px solid ${theme.colors.white};
         bottom: 15px;
         left: 35px;
         right: unset;
@@ -32,7 +33,7 @@ const east = {
     mobileWidth: '300px',
     src: East
   },
-  textColor: '#FFFFFF'
+  textColor: theme.colors.white
 };
 
 export default east;

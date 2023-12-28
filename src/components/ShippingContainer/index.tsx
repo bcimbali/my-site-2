@@ -2,7 +2,7 @@
 
 import type { SVGProps } from 'react';
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { shippingContainer as shipContainer } from '@/styling/layout';
 
 type BottomGapTypes = {
@@ -235,7 +235,7 @@ const ShippingContainer = ({
   containerCss,
   containerNo = 'H3T-L MRT',
   subtitle,
-  textColor = '#FFFFFF',
+  textColor,
   title,
   logo
 }: {
@@ -255,6 +255,8 @@ const ShippingContainer = ({
   color?: string;
   fill?: string;
 }) => {
+  const theme = useTheme();
+  const textColorWithFallback = textColor || theme?.colors?.white;
   return (
     <OuterShippingWrapper>
       <InnerShippingWrapper $bgColor={bgColor}>
@@ -271,17 +273,17 @@ const ShippingContainer = ({
             </LogoWrapper>
           )}
           {title && (
-            <MainText className="title" $textColor={textColor}>
+            <MainText className="title" $textColor={textColorWithFallback}>
               {title}
             </MainText>
           )}
           {subtitle && (
-            <SubTitle className="subtitle" $textColor={textColor}>
+            <SubTitle className="subtitle" $textColor={textColorWithFallback}>
               {subtitle}
             </SubTitle>
           )}
           {containerNo && (
-            <SmallVerticalText className="container-no" $textColor={textColor}>
+            <SmallVerticalText className="container-no" $textColor={textColorWithFallback}>
               {containerNo}
             </SmallVerticalText>
           )}
