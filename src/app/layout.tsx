@@ -3,6 +3,7 @@ import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import ThemeProvider from '@/app/theme-provider';
 import PageContainer from '@/components/PageContainer';
+import TrainProvider from '@/app/train-provider';
 
 export const metadata: Metadata = {
   title: 'My Site 2',
@@ -13,9 +14,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <StyledComponentsRegistry>
-        <ThemeProvider>
-          <PageContainer>{children}</PageContainer>
-        </ThemeProvider>
+        <TrainProvider>
+          <ThemeProvider>
+            <PageContainer>{children}</PageContainer>
+          </ThemeProvider>
+        </TrainProvider>
       </StyledComponentsRegistry>
     </html>
   );
