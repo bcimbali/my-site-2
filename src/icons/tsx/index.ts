@@ -1,6 +1,7 @@
 export { default as BcLogo } from './bcLogo';
 export { default as Bc010 } from './bc010';
 export { default as Caret } from './caret';
+export { default as CkSite } from './ckSite';
 export { default as Dove } from './dove';
 export { default as East } from './east';
 export { default as FtLogistics } from './ftLogistics';

@@ -1,10 +1,11 @@
 import {
   bc010Container,
   caretContainer,
+  ckSiteContainer,
   doveContainer,
   eastContainer,
   ftLogisticsContainer,
-  mkdContainer,
+  // mkdContainer,
   onyxContainer,
   starboxContainer,
   sunshineContainer,
@@ -17,7 +18,7 @@ import {
 const containersData = [
   {
     id: 'RVVX-1197',
-    containers: [bc010Container, onyxContainer]
+    containers: [bc010Container, ckSiteContainer]
   },
   {
     id: 'RVVX-7201',
@@ -52,7 +53,7 @@ const containersData = [
   },
   {
     id: 'RVVX-4132',
-    containers: [mkdContainer]
+    containers: [onyxContainer]
   }
 ];
 
