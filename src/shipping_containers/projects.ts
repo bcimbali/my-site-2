@@ -1,15 +1,15 @@
 import { Projects } from '@/icons/tsx';
 
 const projects = {
-  bgColor: '#393e46',
+  bgColor: '#e9692c',
   containerNo: 'PR-3267 REK',
   link: '/projects',
   logo: {
-    color: '#f8b500',
-    fill: '#f8b500',
+    color: '#511010',
+    fill: '#511010',
     src: Projects
   },
-  textColor: '#f8b500'
+  textColor: '#511010'
 };
 
 export default projects;

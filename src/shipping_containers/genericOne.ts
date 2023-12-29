@@ -1,13 +1,13 @@
 import { css } from 'styled-components';
 
 const genericOne = {
-  bgColor: '#222831',
+  bgColor: '#484540',
   containerCss: css`
     display: flex;
     flex-direction: row;
   `,
   containerNo: 'H3T-L MRT',
-  textColor: 'rgba(166, 129, 35, 1)'
+  textColor: '#EF952A'
 };
 
 export default genericOne;

@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import theme from 'src/styling/themes/darkTheme';
 
 const genericTwo = {
-  bgColor: '#222831',
+  bgColor: '#484540',
   containerCss: css`
     ${({ theme: { mediaQuery } }) => css`
       .container-no {
