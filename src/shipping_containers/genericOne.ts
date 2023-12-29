@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 const genericOne = {
-  bgColor: '#484540',
+  bgColor: '#394750',
   containerCss: css`
     display: flex;
     flex-direction: row;
