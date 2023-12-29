@@ -6,6 +6,7 @@ export { default as contactContainer } from './contact';
 export { default as doveContainer } from './dove';
 export { default as eastContainer } from './east';
 export { default as ftLogisticsContainer } from './ftLogistics';
+export { default as grayOneContainer } from './grayOne';
 export { default as mkdContainer } from './mkd';
 export { default as onyxContainer } from './onyx';
 export { default as projectsContainer } from './projects';
