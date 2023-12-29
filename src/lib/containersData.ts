@@ -8,7 +8,7 @@ import {
   // eastContainer,
   // ftLogisticsContainer,
   genericOneContainer,
-  genericTwoContainer,
+  // genericTwoContainer,
   // mkdContainer,
   // onyxContainer,
   projectsContainer,
@@ -32,8 +32,8 @@ const containersData = [
     flatcarColor: '#7b3c3c'
   },
   {
-    id: 'RVVX-4719',
-    containers: [genericOneContainer, genericTwoContainer]
+    id: 'RVVX-1123',
+    containers: []
   },
   {
     id: 'RVVX-7789',
@@ -51,6 +51,10 @@ const containersData = [
   {
     id: 'RVVX-0702',
     containers: [genericOneContainer, projectsContainer]
+  },
+  {
+    id: 'RVVX-9765',
+    containers: []
   },
   {
     id: 'RVVX-8244',
