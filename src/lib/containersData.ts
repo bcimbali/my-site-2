@@ -36,13 +36,13 @@ const containersData = [
     containers: [genericOneContainer, genericTwoContainer]
   },
   {
-    id: 'RVVX-9209',
-    containers: [genericOneContainer, ckSiteContainer]
-  },
-  {
     id: 'RVVX-7789',
     containers: [genericOneContainer],
     flatcarColor: '#4B5320'
+  },
+  {
+    id: 'RVVX-9209',
+    containers: [ckSiteContainer, genericOneContainer]
   },
   {
     id: 'RVVX-5142',
