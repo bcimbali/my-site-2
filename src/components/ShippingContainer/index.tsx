@@ -23,6 +23,10 @@ const OuterShippingWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    cursor: not-allowed;
+  }
 `;
 
 const ShippingContainer = ({
