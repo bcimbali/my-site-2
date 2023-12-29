@@ -1,27 +1,14 @@
 import {
   aboutContainer,
   bc010Container,
-  // caretContainer,
   ckSiteContainer,
   contactContainer,
-  // doveContainer,
-  // eastContainer,
-  // ftLogisticsContainer,
   genericOneContainer,
-  // genericTwoContainer,
-  // mkdContainer,
-  // onyxContainer,
   projectsContainer,
   spNextSiteContainer
-  // starboxContainer,
-  // sunshineContainer,
-  // wishContainer,
-  // vmrOneContainer,
-  // vmrThreeContainer,
-  // vmrTwoContainer
 } from '@/shipping_containers';
 
-const containersData = [
+const homepageTrainData = [
   {
     id: 'RVVX-1197',
     containers: [bc010Container, genericOneContainer]
@@ -67,4 +54,4 @@ const containersData = [
   }
 ];
 
-export default containersData;
+export default homepageTrainData;

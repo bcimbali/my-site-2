@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from 'react';
 import PageTitle from '@/components/PageTitle';
 import TrainMarquee from '@/components/TrainMarquee';
 import IntermodalWrapper from '@/components/IntermodalWrapper';
-import containersData from '@/lib/containersData';
+import homepageTrainData from 'src/lib/homepageTrainData';
 import CommsTower from '@/components/CommsTower';
 import { TrainContext } from '@/context/trainContext';
 import { usePathname } from 'next/navigation';
@@ -41,7 +41,7 @@ const HomePage = () => {
         <PageSubtitle>Web Developer</PageSubtitle>
       </TitleContainer>
       <TrainMarquee>
-        {containersData.map((item, idx) => (
+        {homepageTrainData.map((item, idx) => (
           <IntermodalWrapper
             key={`${item?.id}-${idx}-intermodal`}
             containers={item?.containers}
