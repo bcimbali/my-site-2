@@ -16,5 +16,6 @@ export { default as Projects } from './projects';
 export { default as SpNextSite } from './spNextSite';
 export { default as StarBox } from './starBox';
 export { default as Sunshine } from './sunshine';
+export { default as VerticalStrip } from './verticalStrip';
 export { default as Vmr } from './vmr';
 export { default as Wish } from './wish';

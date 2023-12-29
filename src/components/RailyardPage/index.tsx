@@ -14,7 +14,8 @@ import {
   doveContainer,
   eastContainer,
   ftLogisticsContainer,
-  grayOneContainer,
+  genericOneContainer,
+  genericTwoContainer,
   mkdContainer,
   onyxContainer,
   projectsContainer,
@@ -38,7 +39,8 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
-      <ShippingContainer {...grayOneContainer} />
+      <ShippingContainer {...genericTwoContainer} />
+      <ShippingContainer {...genericOneContainer} />
       <ShippingContainer {...projectsContainer} />
       <ShippingContainer {...contactContainer} />
       <ShippingContainer {...aboutContainer} />
