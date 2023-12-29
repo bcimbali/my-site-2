@@ -1,7 +1,7 @@
 import { Contact } from '@/icons/tsx';
 
 const contact = {
-  bgColor: '#ADD8E6',
+  bgColor: '#73C2FB',
   containerNo: 'AB-O1T EKL',
   link: '/contact',
   logo: {
