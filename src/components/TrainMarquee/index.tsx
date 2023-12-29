@@ -33,7 +33,6 @@ const MarqueeContainer = styled.div<MarqueeContainerTypes>`
     display: flex;
     gap: var(--gap);
     max-width: 100vw;
-    overflow: hidden;
     position: relative;
 
     ${$isPaused &&
