@@ -34,6 +34,7 @@ const MarqueeContainer = styled.div<MarqueeContainerTypes>`
     gap: var(--gap);
     max-width: 100vw;
     position: relative;
+    overflow: hidden;
 
     ${$isPaused &&
     css`

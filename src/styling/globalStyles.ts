@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { brunoAce } from '@/app/fonts';
 
 // Global Css default styles:
 const GlobalStyles = createGlobalStyle`
@@ -43,10 +44,12 @@ const GlobalStyles = createGlobalStyle`
 
     /* Mobile Typography Settings: */
     h1 {
+      ${brunoAce?.style};
       font-size: ${typography.tags.h1.xs.fontSize};
       line-height: ${typography.tags.h1.xs.lineHeight};
     }
     h2 {
+      ${brunoAce?.style};
       font-size: ${typography.tags.h2.xs.fontSize};
       line-height: ${typography.tags.h2.xs.lineHeight};
     }
