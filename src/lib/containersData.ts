@@ -7,7 +7,8 @@ import {
   // doveContainer,
   // eastContainer,
   // ftLogisticsContainer,
-  grayOneContainer,
+  genericOneContainer,
+  genericTwoContainer,
   // mkdContainer,
   // onyxContainer,
   projectsContainer,
@@ -23,24 +24,24 @@ import {
 const containersData = [
   {
     id: 'RVVX-1197',
-    containers: [bc010Container, grayOneContainer]
+    containers: [bc010Container, genericOneContainer]
   },
   {
     id: 'RVVX-7201',
-    containers: [grayOneContainer, contactContainer],
+    containers: [genericOneContainer, contactContainer],
     flatcarColor: '#7b3c3c'
   },
   {
     id: 'RVVX-4719',
-    containers: [grayOneContainer, grayOneContainer]
+    containers: [genericOneContainer, genericTwoContainer]
   },
   {
     id: 'RVVX-9209',
-    containers: [grayOneContainer, ckSiteContainer]
+    containers: [genericOneContainer, ckSiteContainer]
   },
   {
     id: 'RVVX-7789',
-    containers: [grayOneContainer],
+    containers: [genericOneContainer],
     flatcarColor: '#4B5320'
   },
   {
@@ -49,11 +50,11 @@ const containersData = [
   },
   {
     id: 'RVVX-0702',
-    containers: [grayOneContainer, projectsContainer]
+    containers: [genericOneContainer, projectsContainer]
   },
   {
     id: 'RVVX-8244',
-    containers: [aboutContainer, grayOneContainer],
+    containers: [aboutContainer, genericOneContainer],
     flatcarColor: '#71797E'
   },
   {
