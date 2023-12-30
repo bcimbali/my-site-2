@@ -36,6 +36,10 @@ const MarqueeContainer = styled.div<MarqueeContainerTypes>`
     position: relative;
     overflow: hidden;
 
+    // Factor in space at top for the box-shadow
+    // effect on shippingContainer hover state:
+    padding-top: 1rem;
+
     ${$isPaused &&
     css`
       &:hover {
