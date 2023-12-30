@@ -1,54 +1,108 @@
-import styled, { css, useTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import { Linkedin } from 'src/icons/tsx';
+import { Github, Linkedin } from 'src/icons/tsx';
 
 const FooterContainer = styled.footer`
   ${({
     theme: {
       components: { footer },
+      layout,
       mediaQuery,
-      themeColors
+      themeColors,
+      typography
     }
   }) => css`
-    align-items: center;
     align-self: end;
     background-color: ${themeColors.footerBg};
     display: flex;
-    flex-direction: column;
+    gap: ${typography.mobile[-3]};
     height: ${footer.mobileHeight};
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem ${layout.xs.margin};
     width: 100%;
+
+    ${mediaQuery('md')(`
+      padding: 0 ${layout.md.margin};
+    `)}
 
     ${mediaQuery('lg')(`
       height: ${footer.desktopHeight};
+      gap: ${typography.desktop[-2]};
+    `)}
+
+    ${mediaQuery('xxl')(`
+      padding: 0 ${layout.xxl.margin};
     `)}
   `}
 `;
 
 const FooterText = styled.p`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { mediaQuery, themeColors, typography } }) => css`
     color: ${themeColors.fg};
+    font-size: ${typography.mobile[-3]};
     text-align: center;
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[-2]};
+    `)}
+  `}
+`;
+
+const InnerFooter = styled.div`
+  ${({ theme: { maxWidth } }) => css`
+    align-items: center;
+    display: flex;
+    max-width: ${maxWidth};
+    justify-content: space-between;
+    width: 100%;
   `}
 `;
 
 const LinksContainer = styled.div`
-  display: flex;
-  gap: 1rem;
+  ${({ theme: { mediaQuery, typography } }) => css`
+    display: flex;
+    gap: ${typography.mobile[0]};
+
+    ${mediaQuery('lg')(`
+      gap: ${typography.desktop[0]};
+    `)}
+  `}
+`;
+
+const StyledLink = styled(Link)`
+  ${({ theme: { colors, mediaQuery, typography } }) => css`
+    svg {
+      color: ${colors.white};
+      width: ${typography.mobile[1]};
+
+      path {
+        fill: ${colors.white};
+      }
+    }
+
+    ${mediaQuery('lg')(`
+    svg {
+      width: ${typography.desktop[1]}
+    }
+    `)}
+  `}
 `;
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const theme = useTheme();
   return (
     <FooterContainer>
-      <LinksContainer>
-        <Link href="/about">
-          <Linkedin color={theme.colors.white} fill={theme.colors.white} width={25} />
-        </Link>
-      </LinksContainer>
-      <FooterText>{`Brett Cimbalik © ${currentYear}`}</FooterText>
+      <InnerFooter>
+        <FooterText>{`Brett Cimbalik © ${currentYear}`}</FooterText>
+        <LinksContainer>
+          <StyledLink href="https://www.linkedin.com/in/brett-cimbalik/" target="_blank">
+            <Linkedin />
+          </StyledLink>
+          <StyledLink href="https://github.com/bcimbali" target="_blank">
+            <Github />
+          </StyledLink>
+        </LinksContainer>
+      </InnerFooter>
     </FooterContainer>
   );
 };

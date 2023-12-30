@@ -8,6 +8,7 @@ export { default as DoubleDiamond } from './doubleDiamond';
 export { default as Dove } from './dove';
 export { default as East } from './east';
 export { default as FtLogistics } from './ftLogistics';
+export { default as Github } from './github';
 export { default as Hamburger } from './hamburger';
 export { default as Linkedin } from './linkedin';
 export { default as Mkd } from './mkd';
