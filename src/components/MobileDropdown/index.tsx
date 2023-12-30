@@ -41,7 +41,7 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
 
     ${$isOpen &&
     css`
-      max-height: calc(${`100dvh - ${nav.mobileHeight}`});
+      max-height: calc(${`100lvh - ${nav.mobileHeight}`});
       opacity: 1;
     `}
 
