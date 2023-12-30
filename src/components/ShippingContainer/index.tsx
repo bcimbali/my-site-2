@@ -14,8 +14,8 @@ const OuterShippingLink = styled(Link)`
 
   &:hover {
     box-shadow:
-      rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
-      rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+      rgba(136, 165, 191, 0.48) 0.375rem 0.125rem 1rem 0rem,
+      rgba(255, 255, 255, 0.8) -0.375rem -0.125rem 1rem 0rem;
   }
 `;
 
