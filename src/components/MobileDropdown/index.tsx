@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import Link from 'next/link';
 import pageData from '@/lib/pageData';
 import { usePathname } from 'next/navigation';
+import { Github, Linkedin } from 'src/icons/tsx';
 
 type DropdownContainerTypes = {
   $isOpen: boolean;
@@ -22,11 +23,14 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
     $isOpen
   }) => css`
     background-color: ${themeColors.mobileDropdownBg};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100svh;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    padding: 0 ${layout.xs.margin};
+    padding: 0 ${layout.xs.margin} 1rem ${layout.xs.margin};
     position: absolute;
     top: ${nav.mobileHeight};
     transition:
@@ -37,16 +41,28 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
 
     ${$isOpen &&
     css`
-      max-height: 2000px;
+      max-height: calc(${`100svh - ${nav.mobileHeight}`});
       opacity: 1;
     `}
 
     ${mediaQuery('md')(`
-      padding: 0 ${layout.md.margin};
+      padding: 0 ${layout.md.margin} 1rem ${layout.md.margin};
     `)}
 
     ${mediaQuery('lg')(`
       display: none;
+    `)}
+  `}
+`;
+
+const IconContainer = styled.div`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    align-self: flex-end;
+    display: flex;
+    gap: ${typography.mobile[0]};
+
+    ${mediaQuery('lg')(`
+      gap: ${typography.desktop[0]};
     `)}
   `}
 `;
@@ -98,6 +114,20 @@ const MobileLinkTitle = styled.h4`
   `}
 `;
 
+const StyledLink = styled(Link)`
+  ${({ theme: { colors, typography } }) => css`
+    svg {
+      color: ${colors.white};
+      width: ${typography.mobile[2]};
+
+      path {
+        stroke: ${colors.white};
+        fill: ${colors.white};
+      }
+    }
+  `}
+`;
+
 const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
   <LinksContainer>
     <MobileLinkItem>
@@ -117,16 +147,6 @@ const Links = ({ isOpen, pathname }: { isOpen: boolean; pathname: string }) => (
         </MobileLinkItem>
       );
     })}
-    <MobileLinkItem>
-      <MobileLink
-        href="/typography"
-        $isDisabled={'/typography' === pathname}
-        tabIndex={isOpen ? 0 : -1}
-      >
-        <MobileLinkNumber>05</MobileLinkNumber>
-        <MobileLinkTitle>Typography</MobileLinkTitle>
-      </MobileLink>
-    </MobileLinkItem>
   </LinksContainer>
 );
 
@@ -135,6 +155,14 @@ const MobileDropdown = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <DropdownContainer $isOpen={isOpen}>
       <Links pathname={pathname} isOpen={isOpen} />
+      <IconContainer>
+        <StyledLink href="https://www.linkedin.com/in/brett-cimbalik/" target="_blank">
+          <Linkedin />
+        </StyledLink>
+        <StyledLink href="https://github.com/bcimbali" target="_blank">
+          <Github />
+        </StyledLink>
+      </IconContainer>
     </DropdownContainer>
   );
 };
