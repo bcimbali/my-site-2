@@ -76,6 +76,7 @@ const StyledLink = styled(Link)`
       width: ${typography.mobile[1]};
 
       path {
+        stroke: ${colors.white};
         fill: ${colors.white};
       }
     }
