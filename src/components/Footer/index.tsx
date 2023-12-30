@@ -1,4 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
+import Link from 'next/link';
+import { Linkedin } from 'src/icons/tsx';
 
 const FooterContainer = styled.footer`
   ${({
@@ -31,10 +33,21 @@ const FooterText = styled.p`
   `}
 `;
 
+const LinksContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const theme = useTheme();
   return (
     <FooterContainer>
+      <LinksContainer>
+        <Link href="/about">
+          <Linkedin color={theme.colors.white} fill={theme.colors.white} width={25} />
+        </Link>
+      </LinksContainer>
       <FooterText>{`Brett Cimbalik © ${currentYear}`}</FooterText>
     </FooterContainer>
   );
