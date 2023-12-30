@@ -25,7 +25,7 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
     background-color: ${themeColors.mobileDropdownBg};
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100svh;
     max-height: 0;
     overflow: hidden;
