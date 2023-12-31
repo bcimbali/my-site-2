@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import React from 'react';
 import PageTitle from '@/components/PageTitle';
 import Image from 'next/image';
+import { Location, User } from '@/icons/tsx';
 
 const ContentContainer = styled.div`
   ${({ theme: { spacing } }) => css`
@@ -39,6 +40,28 @@ const ImgContainer = styled.div`
   `}
 `;
 
+const IconContainer = styled.div`
+  ${({ theme: { colors, mediaQuery, typography } }) => css`
+    border-bottom: 1px solid ${colors.white};
+    padding-bottom: 1rem;
+    svg {
+      color: ${colors.white};
+      width: ${typography.mobile[3]};
+
+      path {
+        stroke: ${colors.white};
+        fill: ${colors.white};
+      }
+    }
+
+    ${mediaQuery('lg')(`
+    svg {
+      width: ${typography.desktop[3]}
+    }
+    `)}
+  `}
+`;
+
 const InnerContainer = styled.div`
   ${({ theme: { mediaQuery, spacing } }) => css`
     display: flex;
@@ -68,11 +91,15 @@ const AboutPage = () => {
           <Image src="/brett_smiling_at_camera.jpg" fill priority alt="brett smiling" />
         </ImgContainer>
         <ContentContainer>
-          <h3>Who:</h3>
+          <IconContainer>
+            <User />
+          </IconContainer>
           <Description>
             {`I am a software engineer that enjoys building pixel-perfect user interfaces with cutting edge technologies.`}
           </Description>
-          <h3>Where:</h3>
+          <IconContainer>
+            <Location />
+          </IconContainer>
           <Description>
             {`I currently reside in Chicago. Since 2019, I've been at Graveflex, a fast-moving digital agency that creates custom software for web and mobile platforms.`}
           </Description>
