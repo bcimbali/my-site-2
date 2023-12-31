@@ -2,7 +2,14 @@ import { createGlobalStyle, css } from 'styled-components';
 
 // Global Css default styles:
 const GlobalStyles = createGlobalStyle`
-  ${({ theme: { mediaQuery, opacityHover, themeColors, typography } }) => css`
+  ${({
+    theme: {
+      mediaQuery,
+      themeColors,
+      typography,
+      utils: { opacityHover }
+    }
+  }) => css`
     /* Defaults for all a tags: */
     a {
       ${opacityHover}
