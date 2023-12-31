@@ -60,9 +60,7 @@ const theme = {
     danger: colors.red
   },
   layout: gridValues,
-  linkHover,
   maxWidth,
-  opacityHover,
   mediaQuery: mediaQueries,
   components: {
     nav: {
@@ -77,8 +75,12 @@ const theme = {
   },
   spacing,
   textSizes,
-  transitionSpeed,
-  typography
+  typography,
+  utils: {
+    linkHover,
+    opacityHover,
+    transitionSpeed
+  }
 } as const;
 
 export default theme;
