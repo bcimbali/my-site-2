@@ -14,7 +14,15 @@ const ContentContainer = styled.div`
   `}
 `;
 
-const Description = styled.h4``;
+const Description = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[0]};
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[0]};
+    `)}
+  `}
+`;
 
 const ImgContainer = styled.div`
   ${({ theme: { colors, mediaQuery } }) => css`
@@ -60,11 +68,13 @@ const AboutPage = () => {
           <Image src="/brett_smiling_at_camera.jpg" fill priority alt="brett smiling" />
         </ImgContainer>
         <ContentContainer>
+          <h3>Who:</h3>
           <Description>
-            {`I am a software engineer based in Chicago. Since 2019, I've been at Graveflex, a
-            fast-moving digital agency, where I juggle projects and guide small teams of developers.
-            Together we work with clients to create sites and apps that are fast, optimized, and
-            elegant.`}
+            {`I am a software engineer that enjoys building pixel-perfect user interfaces with cutting edge technologies.`}
+          </Description>
+          <h3>Where:</h3>
+          <Description>
+            {`I currently reside in Chicago. Since 2019, I've been at Graveflex, a fast-moving digital agency that creates custom software for web and mobile platforms.`}
           </Description>
         </ContentContainer>
       </InnerContainer>
