@@ -6,6 +6,12 @@ type PageTypes = {
   };
 };
 
+export async function generateMetadata({ params: { project } }: PageTypes) {
+  return {
+    title: `Brett Cimbalik | ${project}`
+  };
+}
+
 export default function Projects({ params: { project } }: PageTypes) {
   return <ProjectDetailPage projectName={project} />;
 }
