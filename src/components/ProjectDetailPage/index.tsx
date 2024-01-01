@@ -66,29 +66,14 @@ const Description = styled.p`
   `}
 `;
 
-const ImgContainer = styled(Link)`
-  ${({ theme: { colors, mediaQuery } }) => css`
-    background-color: ${colors.gray};
-    border-radius: 0.5rem;
-    overflow: hidden;
-    padding-bottom: 56%;
-    position: relative;
-    width: 100%;
-
-    ${mediaQuery('lg')(`
-      padding-bottom: 32%;
-    `)}
-  `}
-`;
-
 const InnerContainer = styled.div`
   ${({ theme: { mediaQuery, spacing } }) => css`
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: ${spacing[1]};
 
     ${mediaQuery('lg')(`
       flex-direction: row;
+      grid-template-columns: 1fr 1fr;
     `)}
   `}
 `;
@@ -119,9 +104,19 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
       </PageTitle>
       <InnerContainer>
         {!!project?.image && (
-          <ImgContainer href={project.liveLink} target="_blank">
-            <Image alt={project?.title} src={project?.image} fill={true} priority />
-          </ImgContainer>
+          <Link aria-label={project.title} href={project.liveLink} target="_blank">
+            <Image
+              src={project.image}
+              alt={project.title}
+              priority
+              sizes="100vw"
+              style={{
+                borderRadius: '0.5rem',
+                height: 'auto',
+                width: '100%'
+              }}
+            />
+          </Link>
         )}
         <ContentContainer>
           <Description>{project?.description}</Description>
