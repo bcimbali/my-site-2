@@ -186,7 +186,7 @@ const Navbar = () => {
             )}
           </MobileNavBttn>
 
-          <StyledLink href="/">
+          <StyledLink href="/" aria-label="Brett Cimbalik portfolio homepage.">
             <BcLogo color={theme.themeColors.headings} fill={theme.themeColors.headings} />
           </StyledLink>
 
