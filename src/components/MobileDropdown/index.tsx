@@ -26,7 +26,7 @@ const DropdownContainer = styled.div<DropdownContainerTypes>`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100svh;
+    height: 100vh;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
