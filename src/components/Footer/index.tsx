@@ -96,10 +96,18 @@ const Footer = () => {
       <InnerFooter>
         <FooterText>{`Brett Cimbalik © ${currentYear}`}</FooterText>
         <LinksContainer>
-          <StyledLink href="https://www.linkedin.com/in/brett-cimbalik/" target="_blank">
+          <StyledLink
+            aria-label="Brett Cimbalik LinkedIn Profile."
+            href="https://www.linkedin.com/in/brett-cimbalik/"
+            target="_blank"
+          >
             <Linkedin />
           </StyledLink>
-          <StyledLink href="https://github.com/bcimbali" target="_blank">
+          <StyledLink
+            aria-label="Brett Cimbalik Github Profile."
+            href="https://github.com/bcimbali"
+            target="_blank"
+          >
             <Github />
           </StyledLink>
         </LinksContainer>
