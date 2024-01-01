@@ -5,6 +5,7 @@ import React from 'react';
 import PageTitle from '@/components/PageTitle';
 import Image from 'next/image';
 import { Location, User } from '@/icons/tsx';
+import aboutPhoto from '@/../public/brett_with_fox.jpg';
 
 const ContentContainer = styled.div`
   ${({ theme: { spacing } }) => css`
@@ -21,21 +22,6 @@ const Description = styled.p`
 
     ${mediaQuery('lg')(`
       font-size: ${typography.desktop[0]};
-    `)}
-  `}
-`;
-
-const ImgContainer = styled.div`
-  ${({ theme: { colors, mediaQuery } }) => css`
-    background-color: ${colors.gray};
-    border-radius: 0.5rem;
-    overflow: hidden;
-    padding-bottom: 56%;
-    position: relative;
-    width: 100%;
-
-    ${mediaQuery('lg')(`
-      padding-bottom: 32%;
     `)}
   `}
 `;
@@ -87,9 +73,18 @@ const AboutPage = () => {
     <OuterContainer>
       <PageTitle>About</PageTitle>
       <InnerContainer>
-        <ImgContainer>
-          <Image src="/brett_smiling_at_camera.jpg" fill priority alt="brett smiling" />
-        </ImgContainer>
+        <Image
+          src={aboutPhoto}
+          alt="Brett holding a fox"
+          sizes="100vw"
+          style={{
+            alignSelf: 'center',
+            borderRadius: '1rem',
+            height: 'auto',
+            maxWidth: '705px',
+            width: '100%'
+          }}
+        />
         <ContentContainer>
           <IconContainer>
             <User />
