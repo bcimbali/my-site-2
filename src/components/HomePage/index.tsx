@@ -1,6 +1,6 @@
 'use client';
 
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import React, { useContext, useEffect } from 'react';
 import PageTitle from '@/components/PageTitle';
 import TrainMarquee from '@/components/TrainMarquee';
@@ -10,7 +10,15 @@ import CommsTower from '@/components/CommsTower';
 import { TrainContext } from '@/context/trainContext';
 import { usePathname } from 'next/navigation';
 
-const PageSubtitle = styled.h3``;
+const PageSubtitle = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[1]};
+
+    ${mediaQuery('lg')(`
+        font-size: ${typography.desktop[1]};
+    `)}
+  `}
+`;
 
 const StyledDiv = styled.div`
   align-items: center;
