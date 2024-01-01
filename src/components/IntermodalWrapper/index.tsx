@@ -23,16 +23,18 @@ type Container = {
 const IntermodalWrapper = ({
   containers = [],
   flatcarColor,
-  id = 'DTTX-0092'
+  id = 'RVVX-0092',
+  isHidden = false
 }: {
   containers?: Container[];
   flatcarColor?: string;
   id: string;
+  isHidden?: boolean;
 }) => {
   return (
     <Wrapper>
       {containers.map((box, idx) => (
-        <ShippingContainer key={`${box?.title}-${idx}`} {...box} />
+        <ShippingContainer isHidden={isHidden} key={`${box?.title}-${idx}`} {...box} />
       ))}
       <Flatcar carNo={id} flatcarColor={flatcarColor} />
     </Wrapper>

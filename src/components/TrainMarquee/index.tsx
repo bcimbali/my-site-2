@@ -68,12 +68,19 @@ const MarqueeContent = styled.div`
   `}
 `;
 
-const TrainMarquee = ({ children }: { children: React.ReactNode }) => {
+const TrainMarquee = ({
+  children,
+  hiddenTrainMarkup
+}: {
+  children: React.ReactNode;
+  hiddenTrainMarkup: React.ReactNode;
+}) => {
   const { trainState } = useContext(TrainContext);
+
   return (
     <MarqueeContainer $isPaused={trainState === 'paused'}>
       <MarqueeContent>{children}</MarqueeContent>
-      <MarqueeContent aria-hidden="true">{children}</MarqueeContent>
+      <MarqueeContent aria-hidden="true">{hiddenTrainMarkup}</MarqueeContent>
     </MarqueeContainer>
   );
 };
