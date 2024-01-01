@@ -46,9 +46,25 @@ const ContentContainer = styled.div`
   `}
 `;
 
-const ContentHeading = styled.h4``;
+const ContentHeading = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[1]};
 
-const Description = styled.h4``;
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[1]};
+    `)}
+  `}
+`;
+
+const Description = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[1]};
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[1]};
+    `)}
+  `}
+`;
 
 const ImgContainer = styled(Link)`
   ${({ theme: { colors, mediaQuery } }) => css`
