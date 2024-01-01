@@ -3,7 +3,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 const CardContainer = styled.li`
   ${({ theme: { colors, themeColors } }) => css`
@@ -25,15 +25,6 @@ const Description = styled.p`
     ${mediaQuery('md')`
       text-align: center;
     `}
-  `}
-`;
-
-const ImgContainer = styled.div`
-  ${({ theme: { colors } }) => css`
-    background-color: ${colors.gray};
-    padding-bottom: 56%;
-    position: relative;
-    width: 100%;
   `}
 `;
 
@@ -65,7 +56,7 @@ const Title = styled.h2`
 type ProjectCardTypes = {
   codeLink: string;
   description: string;
-  image?: string;
+  image?: StaticImageData;
   liveLink: string;
   techStack: string[];
   title: string;
@@ -76,9 +67,16 @@ const ProjectCard = ({ description, image, title }: ProjectCardTypes) => {
     <CardContainer>
       <OuterCardLink href={`/projects/${title}`}>
         {!!image && (
-          <ImgContainer>
-            <Image alt={title} src={image} fill={true} />
-          </ImgContainer>
+          <Image
+            src={image}
+            alt={title}
+            priority
+            sizes="100vw"
+            style={{
+              height: 'auto',
+              width: '100%'
+            }}
+          />
         )}
         <InnerContentContainer>
           <Title>{title}</Title>
