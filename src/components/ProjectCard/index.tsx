@@ -55,7 +55,7 @@ const OuterCardLink = styled(Link)`
   flex-direction: column;
 `;
 
-const Title = styled.h3`
+const Title = styled.h2`
   ${({ theme: { themeColors } }) => css`
     color: ${themeColors.headings};
     text-align: center;
