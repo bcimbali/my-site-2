@@ -76,6 +76,7 @@ const AboutPage = () => {
         <Image
           src={aboutPhoto}
           alt="Brett holding a fox"
+          priority
           sizes="100vw"
           style={{
             alignSelf: 'center',
