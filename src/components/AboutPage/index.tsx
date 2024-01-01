@@ -48,8 +48,74 @@ const IconContainer = styled.div`
   `}
 `;
 
+const IdCard = styled.div`
+  ${({ theme: { colors, mediaQuery } }) => css`
+    border: 1px solid ${colors.white};
+    border-radius: 1rem;
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+
+    ${mediaQuery('sm')(`
+      grid-template-columns: 1fr 1fr;
+      max-width: 600px;
+      align-self: center;
+    `)}
+
+    ${mediaQuery('lg')(`
+      align-self: unset;
+      max-width: unset;
+    `)}
+  `}
+`;
+
+const IdContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const IdImage = styled(Image)`
+  align-self: flex-start;
+`;
+
+const IdName = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[2]};
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[1]};
+    `)}
+
+    ${mediaQuery('xl')(`
+      font-size: ${typography.desktop[2]};
+    `)}
+  `}
+`;
+
+const IdLocation = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[-1]};
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[-1]};
+    `)}
+  `}
+`;
+
+const IdTitle = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[0]};
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[0]};
+    `)}
+  `}
+`;
+
 const InnerContainer = styled.div`
   ${({ theme: { mediaQuery, spacing } }) => css`
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: ${spacing[1]};
@@ -73,19 +139,24 @@ const AboutPage = () => {
     <OuterContainer>
       <PageTitle>About</PageTitle>
       <InnerContainer>
-        <Image
-          src={aboutPhoto}
-          alt="Brett holding a fox"
-          priority
-          sizes="100vw"
-          style={{
-            alignSelf: 'center',
-            borderRadius: '1rem',
-            height: 'auto',
-            maxWidth: '705px',
-            width: '100%'
-          }}
-        />
+        <IdCard>
+          <IdImage
+            src={aboutPhoto}
+            alt="Brett holding a fox"
+            priority
+            sizes="100vw"
+            style={{
+              borderRadius: '1rem',
+              height: 'auto',
+              width: '100%'
+            }}
+          />
+          <IdContent>
+            <IdName>Brett Cimbalik</IdName>
+            <IdTitle>Software Engineer</IdTitle>
+            <IdLocation>Chicago, IL</IdLocation>
+          </IdContent>
+        </IdCard>
         <ContentContainer>
           <IconContainer>
             <User />
