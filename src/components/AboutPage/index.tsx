@@ -5,7 +5,7 @@ import React from 'react';
 import PageTitle from '@/components/PageTitle';
 import Image from 'next/image';
 import { Location, User } from '@/icons/tsx';
-import aboutPhoto from '@/../public/brett_with_fox.jpg';
+import aboutPhoto from '@/../public/brett_smiling_800x800.jpg';
 
 const ContentContainer = styled.div`
   ${({ theme: { spacing } }) => css`
