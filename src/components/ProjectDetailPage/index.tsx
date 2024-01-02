@@ -12,6 +12,42 @@ type ProjectPageTypes = {
   projectName: string;
 };
 
+const BrowserBar = styled.div`
+  ${({ theme: { colors, mediaQuery, typography } }) => css`
+    border-bottom: 1px solid ${colors.white};
+    display: flex;
+    padding: ${typography.mobile[-1]};
+
+    ${mediaQuery('lg')(`
+      padding: ${typography.desktop[-1]};
+    `)}
+  `}
+`;
+
+const BrowserButton = styled.div`
+  ${({ theme: { colors } }) => css`
+    background: ${colors.white};
+    border-radius: 100%;
+    height: 12px;
+    width: 12px;
+  `}
+`;
+
+const BrowserWindow = styled(Link)`
+  ${({ theme: { colors } }) => css`
+    border: 1px solid ${colors.white};
+    border-radius: 1rem;
+    overflow: hidden;
+  `}
+`;
+
+const ButtonContainer = styled.div`
+  ${({ theme: { spacing } }) => css`
+    display: flex;
+    gap: ${spacing[-2]};
+  `}
+`;
+
 const ChipsContainer = styled.ul`
   ${({ theme: { mediaQuery } }) => css`
     display: flex;
@@ -68,6 +104,7 @@ const Description = styled.p`
 
 const InnerContainer = styled.div`
   ${({ theme: { mediaQuery, spacing } }) => css`
+    align-items: flex-start;
     display: grid;
     gap: ${spacing[1]};
 
@@ -104,19 +141,25 @@ const ProjectDetailPage = ({ projectName }: ProjectPageTypes) => {
       </PageTitle>
       <InnerContainer>
         {!!project?.image && (
-          <Link aria-label={project.title} href={project.liveLink} target="_blank">
+          <BrowserWindow aria-label={project.title} href={project.liveLink} target="_blank">
+            <BrowserBar>
+              <ButtonContainer>
+                <BrowserButton />
+                <BrowserButton />
+                <BrowserButton />
+              </ButtonContainer>
+            </BrowserBar>
             <Image
               src={project.image}
               alt={project.title}
               priority
               sizes="100vw"
               style={{
-                borderRadius: '0.5rem',
                 height: 'auto',
                 width: '100%'
               }}
             />
-          </Link>
+          </BrowserWindow>
         )}
         <ContentContainer>
           <Description>{project?.description}</Description>
