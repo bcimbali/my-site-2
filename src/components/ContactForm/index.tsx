@@ -33,8 +33,15 @@ const OuterContainer = styled.div`
   width: 100%;
 `;
 
-const StateText = styled.h4`
-  text-align: center;
+const StateText = styled.p`
+  ${({ theme: { mediaQuery, typography } }) => css`
+    font-size: ${typography.mobile[1]};
+    text-align: center;
+
+    ${mediaQuery('lg')(`
+      font-size: ${typography.desktop[1]};
+    `)}
+  `}
 `;
 
 const SuccessText = styled.h3`
