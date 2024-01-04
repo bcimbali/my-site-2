@@ -37,7 +37,7 @@ const homepageTrainData = [
   },
   {
     id: 'RVVX-9209',
-    containers: [ckSiteContainer, unclickableThree]
+    containers: [spNextSiteContainer, unclickableThree]
   },
   {
     id: 'RVVX-5142',
@@ -45,7 +45,7 @@ const homepageTrainData = [
   },
   {
     id: 'RVVX-0702',
-    containers: [unclickableFour, projectsContainer]
+    containers: [unclickableFour, ckSiteContainer]
   },
   {
     id: 'RVVX-9765',
@@ -53,12 +53,12 @@ const homepageTrainData = [
   },
   {
     id: 'RVVX-8244',
-    containers: [aboutContainer, unclickableFive],
+    containers: [projectsContainer, unclickableFive],
     flatcarColor: '#71797E'
   },
   {
     id: 'RVVX-4132',
-    containers: [spNextSiteContainer]
+    containers: [aboutContainer]
   }
 ];
 
