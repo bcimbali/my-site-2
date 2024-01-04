@@ -33,6 +33,7 @@ const ShippingContainer = ({
   bgColor = '#FF69B4',
   containerCss,
   containerNo = 'H3T-L MRT',
+  externalLink = false,
   isHidden = false,
   link,
   subtitle,
@@ -43,6 +44,7 @@ const ShippingContainer = ({
   bgColor?: string;
   containerCss?: string;
   containerNo?: string;
+  externalLink?: boolean;
   isHidden?: boolean;
   link?: string;
   subtitle?: string;
@@ -65,6 +67,7 @@ const ShippingContainer = ({
         onMouseEnter={() => setTrainState('paused')}
         onMouseLeave={() => setTrainState('running')}
         tabIndex={isHidden ? -1 : 0}
+        target={externalLink ? '_blank' : '_self'}
       >
         <ContainerContent
           bgColor={bgColor}
