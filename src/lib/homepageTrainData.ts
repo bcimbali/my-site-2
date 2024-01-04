@@ -2,6 +2,7 @@ import {
   aboutContainer,
   bc010Container,
   ckSiteContainer,
+  codeContainer,
   connectContainer,
   contactContainer,
   projectsContainer,
@@ -41,7 +42,7 @@ const homepageTrainData = [
   },
   {
     id: 'RVVX-5142',
-    containers: []
+    containers: [codeContainer]
   },
   {
     id: 'RVVX-0702',

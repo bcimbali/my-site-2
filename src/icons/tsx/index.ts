@@ -3,6 +3,7 @@ export { default as BcLogo } from './bcLogo';
 export { default as Bc010 } from './bc010';
 export { default as Caret } from './caret';
 export { default as CkSite } from './ckSite';
+export { default as Code } from './code';
 export { default as Connect } from './connect';
 export { default as Contact } from './contact';
 export { default as DoubleDiamond } from './doubleDiamond';

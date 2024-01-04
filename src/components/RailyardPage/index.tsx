@@ -10,6 +10,7 @@ import {
   bc010Container,
   caretContainer,
   ckSiteContainer,
+  codeContainer,
   connectContainer,
   contactContainer,
   doveContainer,
@@ -40,6 +41,7 @@ const RailyardPage = () => {
   return (
     <OuterContainer>
       <PageTitle>Railyard</PageTitle>
+      <ShippingContainer {...codeContainer} />
       <ShippingContainer {...connectContainer} />
       <ShippingContainer {...genericTwoContainer} />
       <ShippingContainer {...genericOneContainer} />
