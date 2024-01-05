@@ -162,7 +162,7 @@ const AboutPage = () => {
             <User />
           </IconContainer>
           <Description>
-            {`I am a software engineer that enjoys building pixel-perfect user interfaces with cutting edge technologies.`}
+            {`I am a software engineer who enjoys building pixel-perfect user interfaces with cutting-edge technologies.`}
           </Description>
           <IconContainer>
             <Location />
