@@ -156,10 +156,18 @@ const MobileDropdown = ({ isOpen }: { isOpen: boolean }) => {
     <DropdownContainer $isOpen={isOpen}>
       <Links pathname={pathname} isOpen={isOpen} />
       <IconContainer>
-        <StyledLink href="https://www.linkedin.com/in/brett-cimbalik/" target="_blank">
+        <StyledLink
+          aria-label="Brett Cimbalik LinkedIn profile"
+          href="https://www.linkedin.com/in/brett-cimbalik/"
+          target="_blank"
+        >
           <Linkedin />
         </StyledLink>
-        <StyledLink href="https://github.com/bcimbali" target="_blank">
+        <StyledLink
+          aria-label="Brett Cimbalik Github profile"
+          href="https://github.com/bcimbali"
+          target="_blank"
+        >
           <Github />
         </StyledLink>
       </IconContainer>
