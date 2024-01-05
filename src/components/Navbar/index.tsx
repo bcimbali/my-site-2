@@ -171,6 +171,7 @@ const Navbar = () => {
         <InnerNav>
           <MobileNavBttn
             aria-expanded={isMobileNavOpen}
+            aria-label="Navigation dropdown toggle button"
             type="button"
             onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
           >
