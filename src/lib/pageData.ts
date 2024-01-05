@@ -1,13 +1,13 @@
 const pageData = [
   {
-    path: '/projects',
+    path: '/about',
     number: '01',
-    name: 'Projects'
+    name: 'About'
   },
   {
-    path: '/about',
+    path: '/projects',
     number: '02',
-    name: 'About'
+    name: 'Projects'
   },
   {
     path: '/contact',
