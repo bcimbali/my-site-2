@@ -63,11 +63,11 @@ const ChipsContainer = styled.ul`
 `;
 
 const Chip = styled.li`
-  ${({ theme: { themeColors } }) => css`
+  ${({ theme: { spacing, themeColors } }) => css`
     border: 1px solid ${themeColors.body};
-    border-radius: 2px;
+    border-radius: 1rem;
     color: ${themeColors.body};
-    padding: 0.25rem;
+    padding: 0.15rem ${spacing[-2]};
   `}
 `;
 
