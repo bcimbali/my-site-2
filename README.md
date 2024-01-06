@@ -94,7 +94,7 @@ const breakpoints = {
 
 ##### Media Queries 🔎:
 
-All media queries in this project are mobile-first. That means that the global `mediaQuery` function is a `min-width` query.
+All media queries in this project are mobile-first. That means the global `mediaQuery` function is a `min-width` query.
 
 The `mediaQuery` function has one required argument, which is a key of the `breakpoints` - `'md'`, `'xxl'` etc.
 
