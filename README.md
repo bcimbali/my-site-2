@@ -98,7 +98,7 @@ Media queries in this project are mobile-first. This means the global `mediaQuer
 
 The `mediaQuery` function has one required argument, a key of the `breakpoints` - `'md'`, `'xxl'` etc.
 
-and using the `mediaQuery()`:
+and an example using the `mediaQuery()`:
 
 ```jsx
 ${({ theme: { components: { nav }, layout, mediaQuery, nav } }) => css`
