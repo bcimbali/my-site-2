@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import ThemeProvider from '@/app/theme-provider';
@@ -16,7 +17,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <StyledComponentsRegistry>
         <TrainProvider>
           <ThemeProvider>
-            <PageContainer>{children}</PageContainer>
+            <PageContainer>
+              {children}
+              <SpeedInsights />
+            </PageContainer>
           </ThemeProvider>
         </TrainProvider>
       </StyledComponentsRegistry>
