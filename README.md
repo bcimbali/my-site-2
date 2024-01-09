@@ -24,4 +24,4 @@
 
 ## 📚 Documentation📚
 
-For more detailed docs, go into the repo's "docs" folder.
+For more detailed docs -> [Start here](docs).
