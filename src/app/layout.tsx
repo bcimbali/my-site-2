@@ -8,7 +8,8 @@ import TrainProvider from '@/app/train-provider';
 
 export const metadata: Metadata = {
   title: 'Brett Cimbalik',
-  description: 'Web development and software engineering portfolio for Brett Cimbalik.'
+  description: 'Web development and software engineering portfolio for Brett Cimbalik.',
+  creator: 'Brett Cimbalik'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
