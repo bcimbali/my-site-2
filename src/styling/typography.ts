@@ -71,7 +71,6 @@ const multipliers = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
 
 // TODO:
 // Way to override individual tags if need be.
-// Remove mega.
 // Add safe fallbacks / defaults.
 // Add sensible vertical rhythm values based off of verticalRhythmSpacing.
 const typography = ({
@@ -120,16 +119,6 @@ const typography = ({
     desktop,
     mobile,
     tags: {
-      mega: {
-        xs: {
-          fontSize: mobile.asNumbers[5],
-          lineHeight: '100%'
-        },
-        lg: {
-          fontSize: desktop.asNumbers[5],
-          lineHeight: '150%'
-        }
-      },
       h1: {
         xs: {
           fontSize: mobile[4],
