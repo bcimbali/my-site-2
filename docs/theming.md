@@ -2,13 +2,13 @@
 
 A global theme is applied via the Styled Components' `ThemeProvider`.
 
-#### View Current Theme Values
+#### View Current Theme Values 🔬:
 
 A quick way to view the current theme values is to just `console.log` the theme in the `src/app/theme-provider.tsx` file:
 
 ---
 
-#### Theme File Structure
+#### Theme File Structure 🗂️:
 
 All global theming is done inside the `src/styling` directory. Here is a breakdown of the `styling/` dir:
 
@@ -34,7 +34,7 @@ All global theming is done inside the `src/styling` directory. Here is a breakdo
 
 ---
 
-#### Using Theme in Local Components
+#### Using Theme in Local Components 🖍:
 
 To use the global theme in a component local style, import it into your component, and use the theme values directly in your `CSS`:
 
@@ -61,7 +61,7 @@ const OuterNav = styled.nav`
 
 ---
 
-##### Breakpoints 📐:
+#### Breakpoints 📐:
 
 ```jsx
 const breakpoints = {
