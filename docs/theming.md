@@ -1,12 +1,14 @@
-### Theming 🎨
+## Theming 🎨
 
 A global theme is applied via the Styled Components' `ThemeProvider`.
 
-##### View Current Theme Values
+#### View Current Theme Values
 
 A quick way to view the current theme values is to just `console.log` the theme in the `src/app/theme-provider.tsx` file:
 
-##### Theme File Structure
+---
+
+#### Theme File Structure
 
 All global theming is done inside the `src/styling` directory. Here is a breakdown of the `styling/` dir:
 
@@ -16,18 +18,23 @@ All global theming is done inside the `src/styling` directory. Here is a breakdo
  │  │  └────  darkTheme.ts
  │  ├────  globalStyles.ts
  │  ├────  layout.ts
+ │  ├────  typography.ts
  │  └────  utils.ts
 ```
 
-`themes/` - A directory to house all the possible themes in the app. The files in here are essentially the culmination of the other theme files in the parent `styling/` directory. Themes exported from here are inserted into the global ThemeProvider. Currently, there is only the `darkTheme.ts` but more will be added soon.
+`themes/` - A directory to house all the possible themes in the app. The files in here are essentially the culmination of the other theme files in the parent `styling/` directory. Themes exported here are inserted into the global ThemeProvider. Currently, only the `darkTheme.ts` exists, but more will be added soon.
 
-`globalStyles.ts` - All global styles; the global typography is set here, reusable classes, and other global settings live here.
+`globalStyles.ts` - All global styles and style overrides. The global typography is pulled in from `typography.ts` and applied here.
 
-`layout.ts` - All global page layout settings live here; the breakpoints, reusable media queries, global `12, 8, & 4` column grid settings, and the navbar heights live here.
+`typography.ts` - As the name implies, all typography is handled here.
+
+`layout.ts` - All global page layout settings live here; the breakpoints, reusable media queries, global `12, 8, & 4` column grid settings, homepage shipping container sizes, and the navbar heights live here.
 
 `utils.ts` - A catch all for handy/reusable styling settings or functions. Things like global CSS transition speed or things such as resubale hover settings live here.
 
-##### Using Theme in Local Components
+---
+
+#### Using Theme in Local Components
 
 To use the global theme in a component local style, import it into your component, and use the theme values directly in your `CSS`:
 
@@ -52,6 +59,8 @@ const OuterNav = styled.nav`
 `;
 ```
 
+---
+
 ##### Breakpoints 📐:
 
 ```jsx
@@ -66,7 +75,9 @@ const breakpoints = {
 } as const;
 ```
 
-##### Media Queries 🔎:
+---
+
+#### Media Queries 🔎:
 
 All media queries in this project are mobile-first. That means that the global `mediaQuery` function is a `min-width` query.
 
