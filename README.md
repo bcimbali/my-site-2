@@ -20,9 +20,10 @@
 ## 🚦 Getting Started 🚦
 
 1. Clone the repo.
-2. Run a `yarn install`.
-3. Run a `yarn dev`.
-4. View the site in your browser at `http://localhost:3000/`.
+2. Copy the `.env.example` and create an `.env.local` at the root.
+3. Run a `yarn install`.
+4. Run a `yarn dev`.
+5. View the site in your browser at `http://localhost:3000/`.
 
 ## 📚 Documentation📚
 
