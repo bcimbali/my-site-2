@@ -1,4 +1,4 @@
 # Docs
 
-[Theming](theming.md)
-[Icons](icons.md)
+- [Theming](theming.md)
+- [Icons](icons.md)
