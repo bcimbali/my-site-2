@@ -8,6 +8,8 @@
 
 [Live Deploy](https://my-site-2-six.vercel.app/)
 
+![Homepage of my portfolio](public/my-portfolio-homepage-desktop.jpg)
+
 ## 🏗️ Built with 🏗️
 
 - Next.js
