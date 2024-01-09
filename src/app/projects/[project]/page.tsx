@@ -8,7 +8,13 @@ type PageTypes = {
 
 export async function generateMetadata({ params: { project } }: PageTypes) {
   return {
-    title: `Brett Cimbalik | ${project}`
+    title: `Brett Cimbalik | ${project}`,
+    alternates: {
+      canonical: `/projects/${project}`,
+      languages: {
+        'en-US': '/en-US'
+      }
+    }
   };
 }
 
