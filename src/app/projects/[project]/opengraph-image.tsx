@@ -16,6 +16,7 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image({ params: { project } }: PageTypes) {
+  const projectText = `Brett Cimbalik | ${project}`;
   return new ImageResponse(
     (
       <div
@@ -47,7 +48,7 @@ export default async function Image({ params: { project } }: PageTypes) {
             fill-rule="evenodd"
           />
         </svg>
-        <div style={{ marginTop: 24 }}>Brett Cimbalik | {project}</div>
+        <div style={{ marginTop: 24 }}>{projectText}</div>
       </div>
     ),
     {
