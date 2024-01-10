@@ -14,6 +14,14 @@ export async function generateMetadata({ params: { project } }: PageTypes) {
       languages: {
         'en-US': '/en-US'
       }
+    },
+    openGraph: {
+      title: `Brett Cimbalik | ${project}`,
+      description: `Brett Cimbalik ${project} project.`,
+      url: `/projects/${project}`,
+      siteName: 'Brett Cimbalik',
+      locale: 'en_US',
+      type: 'website'
     }
   };
 }
