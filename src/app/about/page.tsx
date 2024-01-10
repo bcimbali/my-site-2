@@ -7,6 +7,14 @@ export const metadata = {
     languages: {
       'en-US': '/en-US'
     }
+  },
+  openGraph: {
+    title: 'Brett Cimbalik | About',
+    description: 'Brett Cimbalik development portfolio about section.',
+    url: '/about',
+    siteName: 'Brett Cimbalik',
+    locale: 'en_US',
+    type: 'website'
   }
 };
 
