@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 // Image metadata:
-export const alt = 'About Brett Cimbalik';
+export const alt = 'Brett Cimbalik';
 export const size = {
   width: 1200,
   height: 630
@@ -41,7 +41,7 @@ export default async function Image() {
             fill-rule="evenodd"
           />
         </svg>
-        <div style={{ marginTop: 24 }}>Brett Cimbalik | About</div>
+        <div style={{ marginTop: 24 }}>Brett Cimbalik</div>
       </div>
     ),
     {
