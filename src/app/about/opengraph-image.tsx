@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import BcLogo from '@/icons/raw/bc-logo.svg';
 // import { play } from '@/app/fonts';
 
 // Image metadata
@@ -14,20 +15,22 @@ export const contentType = 'image/png';
 export default async function Image() {
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           alignItems: 'center',
           background: '#00154A',
           color: '#E3DAC9',
           display: 'flex',
+          flexDirection: 'column',
           fontSize: 48,
           height: '100%',
           justifyContent: 'center',
+          padding: '8px',
           width: '100%'
         }}
       >
-        About Brett Cimbalik
+        <BcLogo />
+        <div>About</div>
       </div>
     ),
     // ImageResponse options
