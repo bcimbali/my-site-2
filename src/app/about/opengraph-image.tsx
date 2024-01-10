@@ -1,5 +1,5 @@
 import { ImageResponse } from 'next/og';
-// import { play } from '@/app/fonts';
+import { play } from '@/app/fonts';
 
 // Image metadata
 export const alt = 'About Brett Cimbalik';
@@ -22,6 +22,7 @@ export default async function Image() {
           color: '#E3DAC9',
           display: 'flex',
           flexDirection: 'column',
+          fontFamily: play.style.fontFamily,
           fontSize: 48,
           height: '100%',
           justifyContent: 'center',
@@ -43,7 +44,9 @@ export default async function Image() {
             fill-rule="evenodd"
           />
         </svg>
-        <div style={{ marginTop: 24 }}>Brett Cimbalik | About</div>
+        <div style={{ fontFamily: play.style.fontFamily, marginTop: 24 }}>
+          Brett Cimbalik | About
+        </div>
       </div>
     ),
     // ImageResponse options
