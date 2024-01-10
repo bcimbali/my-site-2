@@ -1,9 +1,6 @@
 import { ImageResponse } from 'next/og';
 // import { play } from '@/app/fonts';
 
-// Route segment config
-export const runtime = 'edge';
-
 // Image metadata
 export const alt = 'About Brett Cimbalik';
 export const size = {
@@ -24,7 +21,7 @@ export default async function Image() {
           background: '#00154A',
           color: '#E3DAC9',
           display: 'flex',
-          fontSize: 128,
+          fontSize: 48,
           height: '100%',
           justifyContent: 'center',
           width: '100%'
