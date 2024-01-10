@@ -24,7 +24,7 @@ export default async function Image() {
           flexDirection: 'column',
           fontSize: 48,
           height: '100%',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
           padding: 24,
           width: '100%'
         }}
@@ -32,8 +32,8 @@ export default async function Image() {
         <svg
           fill="none"
           viewBox="0 0 37 20"
-          width={600}
-          height={315}
+          width={900}
+          height={473}
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -43,7 +43,7 @@ export default async function Image() {
             fill-rule="evenodd"
           />
         </svg>
-        <div>Brett Cimbalik | About</div>
+        <div style={{ marginTop: 24 }}>Brett Cimbalik | About</div>
       </div>
     ),
     // ImageResponse options
