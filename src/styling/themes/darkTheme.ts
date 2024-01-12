@@ -83,4 +83,6 @@ const theme = {
   }
 } as const;
 
+export const themeColor = colors.blue;
+
 export default theme;
