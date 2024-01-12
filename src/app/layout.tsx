@@ -7,11 +7,11 @@ import PageContainer from '@/components/PageContainer';
 import TrainProvider from '@/app/train-provider';
 import baseUrl from '@/lib/urlHelpers';
 import type { Viewport } from 'next';
-import { themeColor } from '@/styling/themes/darkTheme';
+import { themeColor as themeColorValue } from '@/styling/themes/darkTheme';
 
 export const viewport: Viewport = {
   colorScheme: 'dark',
-  themeColor
+  themeColor: [{ media: '(prefers-color-scheme: dark)', color: themeColorValue }]
 };
 
 export const metadata: Metadata = {
