@@ -6,12 +6,20 @@ import ThemeProvider from '@/app/theme-provider';
 import PageContainer from '@/components/PageContainer';
 import TrainProvider from '@/app/train-provider';
 import baseUrl from '@/lib/urlHelpers';
+import type { Viewport } from 'next';
+import { themeColor } from '@/styling/themes/darkTheme';
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor
+};
 
 export const metadata: Metadata = {
   title: 'Brett Cimbalik',
   description: 'Web development and software engineering portfolio for Brett Cimbalik.',
   creator: 'Brett Cimbalik',
-  metadataBase: new URL(baseUrl)
+  metadataBase: new URL(baseUrl),
+  manifest: `${baseUrl}/manifest.webmanifest`
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
