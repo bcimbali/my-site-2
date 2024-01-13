@@ -20,7 +20,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     about: 'Web development and software engineering portfolio for Brett Cimbalik.',
-    creator: 'Brett Cimbalik',
+    creator: {
+      '@type': 'Person',
+      name: 'Brett Cimbalik'
+    },
     image: '/favicon.ico',
     description: 'Web development and software engineering portfolio for Brett Cimbalik.',
     name: 'Brett Cimbalik'
