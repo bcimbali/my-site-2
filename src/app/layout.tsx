@@ -18,8 +18,7 @@ export const metadata: Metadata = {
   title: 'Brett Cimbalik',
   description: 'Web development and software engineering portfolio for Brett Cimbalik.',
   creator: 'Brett Cimbalik',
-  metadataBase: new URL(baseUrl),
-  manifest: `${baseUrl}/manifest.webmanifest`
+  metadataBase: new URL(baseUrl)
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
