@@ -6,13 +6,6 @@ import ThemeProvider from '@/app/theme-provider';
 import PageContainer from '@/components/PageContainer';
 import TrainProvider from '@/app/train-provider';
 import baseUrl from '@/lib/urlHelpers';
-import type { Viewport } from 'next';
-import { themeColor as themeColorValue } from '@/styling/themes/darkTheme';
-
-export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: [{ media: '(prefers-color-scheme: dark)', color: themeColorValue }]
-};
 
 export const metadata: Metadata = {
   title: 'Brett Cimbalik',
