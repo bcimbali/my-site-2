@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -8,7 +8,7 @@ import pageData from '@/data/pageData';
 import MobileDropdown from '@/components/MobileDropdown';
 import { usePathname } from 'next/navigation';
 import { BcLogo } from '@/icons/tsx';
-import { ThemeStylesContext } from '@/context/themeStylesContext';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 type DesktopLinkTypes = {
   $isDisabled: boolean;
@@ -146,7 +146,6 @@ const StyledLink = styled(Link)`
 
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const { themeState, setThemeState } = useContext(ThemeStylesContext);
   const pathname = usePathname();
   const theme = useTheme();
 
@@ -167,15 +166,6 @@ const Navbar = () => {
       document.body.classList.remove('no-scroll');
     };
   }, [isMobileNavOpen]);
-
-  const toggleThemeState = () => {
-    console.log('toggleThemeState, this is state: ', themeState);
-    if (themeState === 'dark') {
-      setThemeState('light');
-    } else {
-      setThemeState('dark');
-    }
-  };
 
   return (
     <>
@@ -204,7 +194,7 @@ const Navbar = () => {
           </StyledLink>
 
           <DesktopLinkContainer>
-            <button onClick={toggleThemeState}>Theme</button>
+            <ThemeSwitcher />
             {pageData.map(({ name, number, path }) => (
               <DesktopLinkItem key={path}>
                 <DesktopLink href={path} $isDisabled={path === pathname}>
