@@ -3,6 +3,7 @@ import Link from 'next/link';
 import pageData from '@/data/pageData';
 import { usePathname } from 'next/navigation';
 import { Github, Linkedin } from 'src/icons/tsx';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 type DropdownContainerTypes = {
   $isOpen: boolean;
@@ -65,6 +66,11 @@ const IconContainer = styled.div`
       gap: ${typography.desktop[0]};
     `)}
   `}
+`;
+
+const IconThemeWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const LinksContainer = styled.ul`
@@ -155,22 +161,25 @@ const MobileDropdown = ({ isOpen }: { isOpen: boolean }) => {
   return (
     <DropdownContainer $isOpen={isOpen}>
       <Links pathname={pathname} isOpen={isOpen} />
-      <IconContainer>
-        <StyledLink
-          aria-label="Brett Cimbalik LinkedIn profile"
-          href="https://www.linkedin.com/in/brett-cimbalik/"
-          target="_blank"
-        >
-          <Linkedin />
-        </StyledLink>
-        <StyledLink
-          aria-label="Brett Cimbalik Github profile"
-          href="https://github.com/bcimbali"
-          target="_blank"
-        >
-          <Github />
-        </StyledLink>
-      </IconContainer>
+      <IconThemeWrapper>
+        <ThemeSwitcher />
+        <IconContainer>
+          <StyledLink
+            aria-label="Brett Cimbalik LinkedIn profile"
+            href="https://www.linkedin.com/in/brett-cimbalik/"
+            target="_blank"
+          >
+            <Linkedin />
+          </StyledLink>
+          <StyledLink
+            aria-label="Brett Cimbalik Github profile"
+            href="https://github.com/bcimbali"
+            target="_blank"
+          >
+            <Github />
+          </StyledLink>
+        </IconContainer>
+      </IconThemeWrapper>
     </DropdownContainer>
   );
 };
