@@ -3,7 +3,7 @@
 import styled, { css } from 'styled-components';
 import React, { useMemo } from 'react';
 import PageTitle from '@/components/PageTitle';
-import projectsData from '@/lib/projectsData';
+import projectsData from '@/data/projectsData';
 import Image from 'next/image';
 import Link from 'next/link';
 import Button from '@/components/Button';

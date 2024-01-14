@@ -3,7 +3,7 @@
 import styled, { css } from 'styled-components';
 import React from 'react';
 import ProjectCard from '@/components/ProjectCard';
-import projectsData from '@/lib/projectsData';
+import projectsData from '@/data/projectsData';
 import PageTitle from '@/components/PageTitle';
 
 const ProjectsContainer = styled.ul`
