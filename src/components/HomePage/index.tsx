@@ -5,7 +5,7 @@ import React, { useContext, useEffect } from 'react';
 import PageTitle from '@/components/PageTitle';
 import TrainMarquee from '@/components/TrainMarquee';
 import IntermodalWrapper from '@/components/IntermodalWrapper';
-import homepageTrainData from 'src/lib/homepageTrainData';
+import homepageTrainData from '@/data/homepageTrainData';
 import CommsTower from '@/components/CommsTower';
 import { TrainContext } from '@/context/trainContext';
 import { usePathname } from 'next/navigation';
