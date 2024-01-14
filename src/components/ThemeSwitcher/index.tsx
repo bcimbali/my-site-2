@@ -1,5 +1,6 @@
 import React, { useContext, useMemo } from 'react';
 import styled, { css } from 'styled-components';
+import { setCookie } from 'cookies-next';
 import { ThemeStylesContext } from '@/context/themeStylesContext';
 import { Sun, Moon } from '@/icons/tsx';
 
@@ -43,8 +44,10 @@ const ThemeSwitcher = () => {
   const toggleThemeState = () => {
     if (themeState === 'dark') {
       setThemeState('light');
+      setCookie('theme-setting', 'light');
     } else {
       setThemeState('dark');
+      setCookie('theme-setting', 'dark');
     }
   };
 
