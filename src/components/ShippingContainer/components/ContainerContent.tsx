@@ -31,14 +31,17 @@ type LogoWrapperTypes = {
   $mobileWidth?: string;
 };
 
+const ONE_THIRD = 0.333;
+const TWO_THIRDS = 0.666;
+
 const desktopBttmmGapWidth = 40;
 const mobileBttmmGapWidth = 30;
 
 // Get equal divisions of Shipping Containers for Bottom Gap:
-const mobileOneThird = `${shipContainer.mobile.asNumbers.width * 0.333}px`;
-const mobileTwoThird = `${shipContainer.mobile.asNumbers.width * 0.666 - mobileBttmmGapWidth}px`;
-const desktopOneThird = `${shipContainer.desktop.asNumbers.width * 0.333}px`;
-const desktopTwoThird = `${shipContainer.desktop.asNumbers.width * 0.666 - desktopBttmmGapWidth}px`;
+const mobileOneThird = `${shipContainer.mobile.asNumbers.width * ONE_THIRD}px`;
+const mobileTwoThird = `${shipContainer.mobile.asNumbers.width * TWO_THIRDS - mobileBttmmGapWidth}px`;
+const desktopOneThird = `${shipContainer.desktop.asNumbers.width * ONE_THIRD}px`;
+const desktopTwoThird = `${shipContainer.desktop.asNumbers.width * TWO_THIRDS - desktopBttmmGapWidth}px`;
 
 const BottomBorder = styled.div<BorderTypes>`
   ${({ $bgColor, theme: { mediaQuery } }) => css`
