@@ -157,8 +157,8 @@ const StyledLink = styled(Link)`
 `;
 
 const VerticalDivider = styled.div`
-  ${({ theme: { colors, typography } }) => css`
-    background: ${colors.white};
+  ${({ theme: { themeColors, typography } }) => css`
+    background: ${themeColors.body};
     height: ${typography.desktop[0]};
     width: 1px;
   `}

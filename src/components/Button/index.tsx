@@ -11,9 +11,9 @@ type ButtonTypes = {
 };
 
 const buttonStyles = css`
-  ${({ theme: { colors, mediaQuery, spacing, typography } }) => css`
-    background: ${colors.white};
-    border: 1px solid ${colors.white};
+  ${({ theme: { colors, mediaQuery, spacing, themeColors, typography } }) => css`
+    background: ${themeColors.body};
+    border: 1px solid ${themeColors.body};
     border-radius: 0.5rem;
     color: ${colors.blue};
     font-size: ${typography.mobile[0]};
@@ -25,7 +25,7 @@ const buttonStyles = css`
 
     &:disabled,
     &:disabled&:hover {
-      background: ${colors.white};
+      background: ${themeColors.body};
       color: ${colors.blue};
       cursor: not-allowed;
       opacity: 0.5;
@@ -33,7 +33,7 @@ const buttonStyles = css`
 
     &:hover {
       background: ${colors.blue};
-      color: ${colors.white};
+      color: ${themeColors.body};
       cursor: pointer;
     }
 

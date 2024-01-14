@@ -35,9 +35,9 @@ const ErrorComponent = styled.span`
 const Input = styled.textarea<InputComponentTypes>`
   ${({ $hasErrors, theme: { colors, mediaQuery, themeColors, typography } }) => css`
     background: ${colors.blue};
-    border: 1px solid ${colors.white};
+    border: 1px solid ${themeColors.body};
     border-radius: 0.5rem;
-    color: ${colors.white};
+    color: ${themeColors.body};
     padding: ${typography.mobile[-3]};
 
     ${$hasErrors &&
@@ -66,8 +66,8 @@ const LabelWrapper = styled.label<LabelWrapperTypes>`
 `;
 
 const LabelText = styled.span`
-  ${({ theme: { colors } }) => css`
-    color: ${colors.white};
+  ${({ theme: { themeColors } }) => css`
+    color: ${themeColors.body};
   `}
 `;
 

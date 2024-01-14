@@ -13,8 +13,8 @@ type ProjectPageTypes = {
 };
 
 const BrowserBar = styled.div`
-  ${({ theme: { colors, mediaQuery, typography } }) => css`
-    border-bottom: 1px solid ${colors.white};
+  ${({ theme: { mediaQuery, themeColors, typography } }) => css`
+    border-bottom: 1px solid ${themeColors.body};
     display: flex;
     padding: ${typography.mobile[-1]};
 
@@ -25,8 +25,8 @@ const BrowserBar = styled.div`
 `;
 
 const BrowserButton = styled.div`
-  ${({ theme: { colors } }) => css`
-    background: ${colors.white};
+  ${({ theme: { themeColors } }) => css`
+    background: ${themeColors.body};
     border-radius: 100%;
     height: 12px;
     width: 12px;
@@ -34,8 +34,8 @@ const BrowserButton = styled.div`
 `;
 
 const BrowserWindow = styled(Link)`
-  ${({ theme: { colors } }) => css`
-    border: 1px solid ${colors.white};
+  ${({ theme: { themeColors } }) => css`
+    border: 1px solid ${themeColors.body};
     border-radius: 1rem;
     overflow: hidden;
   `}

@@ -46,10 +46,10 @@ const theme = {
   colors,
   themeColors: {
     bg: colors.bg,
-    body: colors.white,
+    body: colors.black,
     fg: colors.white,
     footerBg: colors.black,
-    headings: colors.white,
+    headings: colors.black,
     mobileDropdownBg: colors.blue,
     mobileDropdownFg: colors.white,
     navbarBg: colors.blue,
