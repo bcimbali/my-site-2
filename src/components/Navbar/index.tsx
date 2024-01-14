@@ -31,10 +31,10 @@ const DesktopLink = styled(Link)<DesktopLinkTypes>`
 `;
 
 const DesktopLinkContainer = styled.ul`
-  ${({ theme: { mediaQuery } }) => css`
+  ${({ theme: { mediaQuery, typography } }) => css`
     align-items: center;
     display: none;
-    gap: 1.5rem;
+    gap: ${typography.desktop[0]};
     list-style-type: none;
     padding: 0;
 
@@ -58,10 +58,10 @@ const DesktopLinkNumber = styled.span`
 `;
 
 const DesktopLinkThemeWrapper = styled.div`
-  ${({ theme: { mediaQuery } }) => css`
+  ${({ theme: { mediaQuery, typography } }) => css`
     align-items: center;
     display: none;
-    gap: 1.5rem;
+    gap: ${typography.desktop[0]};
 
     ${mediaQuery('lg')(`
       display: flex;
