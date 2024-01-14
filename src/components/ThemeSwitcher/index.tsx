@@ -14,15 +14,19 @@ const Button = styled.button`
     }
   }) => css`
     ${opacityHover}
-    background: ${colors.white};
-    border: none;
-    border-bottom: 0.0625rem solid ${colors.white};
+    align-items: center;
+    background: transparent;
+    border: 1px solid ${colors.white};
     border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
     padding: 0;
+    width: 32px;
+
     svg {
       width: ${typography.mobile[1]};
       path {
-        fill: ${colors.blue};
+        fill: ${colors.white};
       }
     }
 
@@ -31,8 +35,12 @@ const Button = styled.button`
     }
 
     ${mediaQuery('lg')(`
+      background: ${colors.white};
       svg {
         width: ${typography.desktop[1]};
+        path {
+          fill: ${colors.blue};
+        }
       }
     `)}
   `}
