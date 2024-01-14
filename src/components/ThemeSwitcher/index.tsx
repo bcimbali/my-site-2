@@ -9,6 +9,7 @@ const Button = styled.button`
     theme: {
       colors,
       mediaQuery,
+      themeColors,
       typography,
       utils: { opacityHover }
     }
@@ -16,7 +17,7 @@ const Button = styled.button`
     ${opacityHover}
     align-items: center;
     background: transparent;
-    border: 1px solid ${colors.white};
+    border: 1px solid ${themeColors.body};
     border-radius: 0.25rem;
     display: flex;
     justify-content: center;
@@ -26,7 +27,7 @@ const Button = styled.button`
     svg {
       width: ${typography.mobile[1]};
       path {
-        fill: ${colors.white};
+        fill: ${themeColors.body};
       }
     }
 
@@ -35,7 +36,7 @@ const Button = styled.button`
     }
 
     ${mediaQuery('lg')(`
-      background: ${colors.white};
+      background: ${themeColors.body};
       svg {
         width: ${typography.desktop[1]};
         path {

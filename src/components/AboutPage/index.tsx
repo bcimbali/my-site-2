@@ -27,16 +27,16 @@ const Description = styled.p`
 `;
 
 const IconContainer = styled.div`
-  ${({ theme: { colors, mediaQuery, typography } }) => css`
-    border-bottom: 1px solid ${colors.white};
+  ${({ theme: { mediaQuery, themeColors, typography } }) => css`
+    border-bottom: 1px solid ${themeColors.body};
     padding-bottom: 1rem;
     svg {
-      color: ${colors.white};
+      color: ${themeColors.body};
       width: ${typography.mobile[3]};
 
       path {
-        stroke: ${colors.white};
-        fill: ${colors.white};
+        stroke: ${themeColors.body};
+        fill: ${themeColors.body};
       }
     }
 
@@ -49,8 +49,8 @@ const IconContainer = styled.div`
 `;
 
 const IdCard = styled.div`
-  ${({ theme: { colors, mediaQuery } }) => css`
-    border: 1px solid ${colors.white};
+  ${({ theme: { mediaQuery, themeColors } }) => css`
+    border: 1px solid ${themeColors.body};
     border-radius: 1rem;
     display: grid;
     gap: 1rem;
