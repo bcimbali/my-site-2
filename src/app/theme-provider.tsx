@@ -8,7 +8,7 @@ import { ThemeStylesContext } from '@/context/themeStylesContext';
 
 export default function ThemeProviderComponent({ children }: { children: React.ReactNode }) {
   const { themeState } = useContext(ThemeStylesContext);
-  console.log('In theme-provider.tsx, this is theme: ', themes[themeState]);
+  // console.log('In theme-provider.tsx, this is theme: ', themes[themeState]);
   return (
     <ThemeProvider theme={themes[themeState]}>
       <GlobalStyles />
