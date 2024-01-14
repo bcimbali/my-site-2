@@ -13,14 +13,15 @@ const Button = styled.button`
     }
   }) => css`
     ${opacityHover}
-    background: transparent;
-    border: 1px solid ${colors.white};
-    border-radius: 0.75rem;
-    padding: 0.125rem;
+    background: ${colors.white};
+    border: none;
+    border-bottom: 0.0625rem solid ${colors.white};
+    border-radius: 0.25rem;
+    padding: 0;
     svg {
       width: ${typography.mobile[1]};
       path {
-        fill: ${colors.white};
+        fill: ${colors.blue};
       }
     }
 

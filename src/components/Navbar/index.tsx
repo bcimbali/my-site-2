@@ -57,6 +57,18 @@ const DesktopLinkNumber = styled.span`
   `}
 `;
 
+const DesktopLinkThemeWrapper = styled.div`
+  ${({ theme: { mediaQuery } }) => css`
+    align-items: center;
+    display: none;
+    gap: 1.5rem;
+
+    ${mediaQuery('lg')(`
+      display: flex;
+    `)}
+  `}
+`;
+
 const DesktopLinkTitle = styled.h4``;
 
 const InnerNav = styled.div`
@@ -144,6 +156,14 @@ const StyledLink = styled(Link)`
   `}
 `;
 
+const VerticalDivider = styled.div`
+  ${({ theme: { colors, typography } }) => css`
+    background: ${colors.white};
+    height: ${typography.desktop[0]};
+    width: 1px;
+  `}
+`;
+
 const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const pathname = usePathname();
@@ -193,17 +213,21 @@ const Navbar = () => {
             <BcLogo color={theme.themeColors.headings} fill={theme.themeColors.headings} />
           </StyledLink>
 
-          <DesktopLinkContainer>
+          <DesktopLinkThemeWrapper>
+            <DesktopLinkContainer>
+              {pageData.map(({ name, number, path }) => (
+                <DesktopLinkItem key={path}>
+                  <DesktopLink href={path} $isDisabled={path === pathname}>
+                    <DesktopLinkNumber>{number}</DesktopLinkNumber>
+                    <DesktopLinkTitle>{name}</DesktopLinkTitle>
+                  </DesktopLink>
+                </DesktopLinkItem>
+              ))}
+            </DesktopLinkContainer>
+            <VerticalDivider />
             <ThemeSwitcher />
-            {pageData.map(({ name, number, path }) => (
-              <DesktopLinkItem key={path}>
-                <DesktopLink href={path} $isDisabled={path === pathname}>
-                  <DesktopLinkNumber>{number}</DesktopLinkNumber>
-                  <DesktopLinkTitle>{name}</DesktopLinkTitle>
-                </DesktopLink>
-              </DesktopLinkItem>
-            ))}
-          </DesktopLinkContainer>
+            <VerticalDivider />
+          </DesktopLinkThemeWrapper>
         </InnerNav>
         <MobileDropdown isOpen={isMobileNavOpen} />
       </OuterNav>
