@@ -6,6 +6,7 @@ import StyledComponentsRegistry from '@/lib/registry';
 import ThemeProvider from '@/app/theme-provider';
 import PageContainer from '@/components/PageContainer';
 import TrainProvider from '@/app/train-provider';
+import ThemeStylesProviderComponent from '@/app/theme-styles-provider';
 import baseUrl from '@/lib/urlHelpers';
 
 export const metadata: Metadata = {
@@ -32,18 +33,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <StyledComponentsRegistry>
-        <TrainProvider>
-          <ThemeProvider>
-            <PageContainer>
-              <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-              />
-              {children}
-              <SpeedInsights />
-            </PageContainer>
-          </ThemeProvider>
-        </TrainProvider>
+        <ThemeStylesProviderComponent>
+          <TrainProvider>
+            <ThemeProvider>
+              <PageContainer>
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+                {children}
+                <SpeedInsights />
+              </PageContainer>
+            </ThemeProvider>
+          </TrainProvider>
+        </ThemeStylesProviderComponent>
       </StyledComponentsRegistry>
     </html>
   );
