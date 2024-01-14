@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Hamburger from 'src/icons/tsx/hamburger';
 import MobileCloseIcon from '@/icons/tsx/mobileXIcon';
-import pageData from '@/lib/pageData';
+import pageData from '@/data/pageData';
 import MobileDropdown from '@/components/MobileDropdown';
 import { usePathname } from 'next/navigation';
 import { BcLogo } from '@/icons/tsx';

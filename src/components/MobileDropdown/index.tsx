@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import Link from 'next/link';
-import pageData from '@/lib/pageData';
+import pageData from '@/data/pageData';
 import { usePathname } from 'next/navigation';
 import { Github, Linkedin } from 'src/icons/tsx';
 
