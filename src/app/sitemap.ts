@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import baseUrl from '@/lib/urlHelpers';
-import projectsData from '@/lib/projectsData';
+import projectsData from '@/data/projectsData';
 
 export default function sitemap() {
   const staticPages: MetadataRoute.Sitemap = [
