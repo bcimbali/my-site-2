@@ -53,11 +53,11 @@ const theme = {
     headings: colors.white,
     mobileDropdownBg: colors.blue,
     mobileDropdownFg: colors.white,
-    // navbarBg: '#004694',
     navbarBg: colors.blue,
     secondary: '#380D8B',
     warning: colors.red,
-    danger: colors.red
+    danger: colors.red,
+    textBg: colors.blue
   },
   layout: gridValues,
   maxWidth,

@@ -74,10 +74,14 @@ const Chip = styled.li`
 const ChipText = styled.p``;
 
 const ContentContainer = styled.div`
-  ${({ theme: { spacing } }) => css`
+  ${({ theme: { spacing, themeColors } }) => css`
+    background: ${themeColors.textBg};
+    border: 1px solid ${themeColors.body};
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: ${spacing[1]};
+    padding: 1rem;
     width: 100%;
   `}
 `;

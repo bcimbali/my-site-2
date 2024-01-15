@@ -48,7 +48,7 @@ const theme = {
   themeColors: {
     bg: colors.bg,
     body: colors.black,
-    fg: colors.white,
+    fg: colors.black,
     footerBg: colors.black,
     headings: colors.black,
     mobileDropdownBg: colors.blue,
@@ -56,7 +56,8 @@ const theme = {
     navbarBg: colors.blue,
     secondary: '#380D8B',
     warning: colors.red,
-    danger: colors.red
+    danger: colors.red,
+    textBg: colors.blue
   },
   layout: gridValues,
   maxWidth,
