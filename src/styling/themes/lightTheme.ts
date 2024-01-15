@@ -28,16 +28,17 @@ const spacing = genSpacingValues({ lineHeight: bodyLineHeight, base: baseRem });
 const colors = {
   red: '#ff6f69',
   orange: '#FF5733',
-  yellow: '#FFFF33',
+  yellow: '#fffc99',
   green: '#7CFC00',
-  blue: '#004694',
+  blue: '#C6E4EE',
   purple: '#b1b0e5',
   brown: '#483C32',
   black: '#111111',
   gray: '#222222',
   // For white shades: https://www.jootoor.com/shades-white-color-codes/
   white: '#E3DAC9',
-  bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
+  // bg: 'linear-gradient(to bottom, #004694, #196DD8, #429CFE, #73C9FF)',
+  bg: 'linear-gradient(#C6E4EE 0%, #C6E4EE 40%, #FED1AE 60%, #FAA0B9 70%, #CB7DCB 80%, #757ECB 100%)',
   fg: '#FFFFFF'
 } as const;
 
