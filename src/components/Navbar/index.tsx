@@ -205,7 +205,12 @@ const Navbar = () => {
                 height="24px"
               />
             ) : (
-              <Hamburger width="24px" height="24px" />
+              <Hamburger
+                width="24px"
+                height="24px"
+                color={theme.themeColors.headings}
+                fill={theme.themeColors.headings}
+              />
             )}
           </MobileNavBttn>
 
