@@ -8,7 +8,11 @@
 
 [Live Deploy](https://my-site-2-six.vercel.app/)
 
-![Homepage of my portfolio](public/my-portfolio-homepage-desktop.jpg)
+Night Theme:
+![Homepage of my portfolio](public/my-portfolio-homepage-desktop-night.jpg)
+
+Morning Theme:
+![Homepage of my portfolio](public/my-portfolio-homepage-desktop-morning.jpg)
 
 ## 🏗️ Built with 🏗️
 
