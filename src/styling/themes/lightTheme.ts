@@ -52,7 +52,7 @@ const theme = {
     footerBg: colors.black,
     headings: colors.black,
     mobileDropdownBg: colors.blue,
-    mobileDropdownFg: colors.white,
+    mobileDropdownFg: colors.black,
     navbarBg: colors.blue,
     secondary: '#380D8B',
     warning: colors.red,

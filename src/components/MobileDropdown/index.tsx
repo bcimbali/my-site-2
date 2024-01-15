@@ -121,14 +121,14 @@ const MobileLinkTitle = styled.h4`
 `;
 
 const StyledLink = styled(Link)`
-  ${({ theme: { colors, typography } }) => css`
+  ${({ theme: { themeColors, typography } }) => css`
     svg {
-      color: ${colors.white};
+      color: ${themeColors.mobileDropdownFg};
       width: ${typography.mobile[2]};
 
       path {
-        stroke: ${colors.white};
-        fill: ${colors.white};
+        stroke: ${themeColors.mobileDropdownFg};
+        fill: ${themeColors.mobileDropdownFg};
       }
     }
   `}
