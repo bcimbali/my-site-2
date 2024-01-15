@@ -8,10 +8,14 @@ import { Location, User } from '@/icons/tsx';
 import aboutPhoto from '@/../public/brett_smiling_800x800.jpg';
 
 const ContentContainer = styled.div`
-  ${({ theme: { spacing } }) => css`
+  ${({ theme: { spacing, themeColors } }) => css`
+    background: ${themeColors.textBg};
+    border: 1px solid ${themeColors.body};
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     gap: ${spacing[1]};
+    padding: 1rem;
     width: 100%;
   `}
 `;
@@ -50,6 +54,7 @@ const IconContainer = styled.div`
 
 const IdCard = styled.div`
   ${({ theme: { mediaQuery, themeColors } }) => css`
+    background: ${themeColors.textBg};
     border: 1px solid ${themeColors.body};
     border-radius: 1rem;
     display: grid;
