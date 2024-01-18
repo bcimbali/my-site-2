@@ -38,7 +38,7 @@ const FooterContainer = styled.footer`
 
 const FooterText = styled.p`
   ${({ theme: { mediaQuery, themeColors, typography } }) => css`
-    color: ${themeColors.fg};
+    color: ${themeColors.foorterFg};
     font-size: ${typography.mobile[-3]};
     text-align: center;
 

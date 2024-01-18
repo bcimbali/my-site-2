@@ -50,6 +50,7 @@ const theme = {
     body: colors.white,
     fg: colors.white,
     footerBg: colors.black,
+    foorterFg: colors.white,
     headings: colors.white,
     mobileDropdownBg: colors.blue,
     mobileDropdownFg: colors.white,
