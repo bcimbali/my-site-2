@@ -159,7 +159,7 @@ const AboutPage = () => {
           <IdContent>
             <IdName>Brett Cimbalik</IdName>
             <IdTitle>Software Engineer</IdTitle>
-            <IdLocation>Chicago, IL</IdLocation>
+            <IdLocation>Ferndale, MI</IdLocation>
           </IdContent>
         </IdCard>
         <ContentContainer>
@@ -173,7 +173,7 @@ const AboutPage = () => {
             <Location />
           </IconContainer>
           <Description>
-            {`I currently reside in Chicago. Since 2019, I've been at Graveflex, a fast-moving digital agency that creates custom software for web and mobile platforms.`}
+            {`I currently reside in Ferndale. Since 2019, I've been at Graveflex, a fast-moving digital agency that creates custom software for web and mobile platforms.`}
           </Description>
         </ContentContainer>
       </InnerContainer>
