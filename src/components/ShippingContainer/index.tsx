@@ -1,6 +1,6 @@
 'use client';
 
-import type { SVGProps } from 'react';
+import type { ReactElement, SVGProps } from 'react';
 import React, { useContext, useMemo } from 'react';
 import styled from 'styled-components';
 import ContainerContent from './components/ContainerContent';
@@ -55,7 +55,7 @@ const ShippingContainer = ({
     desktopWidth?: string;
     fill?: string;
     mobileWidth?: string;
-    src: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+    src: (props: SVGProps<SVGSVGElement>) => ReactElement;
   };
 }) => {
   const hasLink = useMemo(() => !!link, [link]);

@@ -1,6 +1,6 @@
 'use client';
 
-import type { SVGProps } from 'react';
+import type { ReactElement, SVGProps } from 'react';
 import React from 'react';
 import styled, { css, useTheme } from 'styled-components';
 import { shippingContainer as shipContainer } from '@/styling/layout';
@@ -243,7 +243,7 @@ const ContainerContent = ({
   textColor?: string;
   title?: string;
   logo?: {
-    src: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+    src: (props: SVGProps<SVGSVGElement>) => ReactElement;
     color?: string;
     desktopWidth?: string;
     fill?: string;
