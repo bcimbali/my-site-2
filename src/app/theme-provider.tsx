@@ -7,10 +7,12 @@ import GlobalStyles from '@/styling/globalStyles';
 import { ThemeStylesContext } from '@/context/themeStylesContext';
 
 export default function ThemeProviderComponent({ children }: { children: React.ReactNode }) {
-  const { themeState } = useContext(ThemeStylesContext);
+  const { themeState, ...allElse } = useContext(ThemeStylesContext);
+  console.log('In theme-provider.tsx, this is allElse: ', allElse);
+  console.log('In theme-provider.tsx, this is themeState: ', themeState);
   console.log('In theme-provider.tsx, this is theme: ', themes[themeState]);
   return (
-    <ThemeProvider theme={themes[themeState]}>
+    <ThemeProvider theme={themes?.dark}>
       <GlobalStyles />
       {children}
     </ThemeProvider>
