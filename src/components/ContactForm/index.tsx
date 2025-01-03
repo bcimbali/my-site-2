@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useActionState } from 'react';
 import styled, { css } from 'styled-components';
 import { useForm, FieldPath } from 'react-hook-form';
 import contactFormSubmit, { State } from '@/server_actions/contactFormSubmit';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormState } from 'react-dom';
 import FormContent from './FormContent';
 import { formSchema } from './validation';
 
@@ -54,7 +53,7 @@ const ContactForm = () => {
     formState: { errors, isValid },
     setError
   } = useForm<ContactFormFields>({ mode: 'all', resolver: zodResolver(formSchema) });
-  const [state, formAction] = useFormState<State, FormData>(contactFormSubmit, null);
+  const [state, formAction] = useActionState<State, FormData>(contactFormSubmit, null);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
   useEffect(() => {
