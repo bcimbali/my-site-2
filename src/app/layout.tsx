@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { WebSite, WithContext } from 'schema-dts';
 import { getCookie } from 'cookies-next';
-import { cookies } from 'next/headers';
+import { cookies as headerCookies } from 'next/headers';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';
 import ThemeProvider from '@/app/theme-provider';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl)
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd: WithContext<WebSite> = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -32,8 +32,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: 'Brett Cimbalik'
   };
 
-  const themeCookieValue =
-    (getCookie('theme-setting', { cookies }) as 'dark' | 'light') || ('dark' as 'dark' | 'light');
+  const cookies = await headerCookies();
+
+  const themeCookieValue = cookies?.get('theme-setting')?.value as 'dark' | 'light';
 
   return (
     <html lang="en">
