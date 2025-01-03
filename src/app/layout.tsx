@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { WebSite, WithContext } from 'schema-dts';
-import { getCookie } from 'cookies-next';
 import { cookies as headerCookies } from 'next/headers';
 import './globals.css';
 import StyledComponentsRegistry from '@/lib/registry';

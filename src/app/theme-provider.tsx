@@ -7,7 +7,7 @@ import GlobalStyles from '@/styling/globalStyles';
 import { ThemeStylesContext } from '@/context/themeStylesContext';
 
 export default function ThemeProviderComponent({ children }: { children: React.ReactNode }) {
-  const { themeState, ...allElse } = useContext(ThemeStylesContext);
+  const { themeState } = useContext(ThemeStylesContext);
 
   return (
     <ThemeProvider theme={themes[themeState] ?? themes?.dark}>
