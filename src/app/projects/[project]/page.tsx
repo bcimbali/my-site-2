@@ -1,12 +1,18 @@
 import ProjectDetailPage from '@/components/ProjectDetailPage';
 
 type PageTypes = {
-  params: {
+  params: Promise<{
     project: string;
-  };
+  }>;
 };
 
-export async function generateMetadata({ params: { project } }: PageTypes) {
+export async function generateMetadata(props: PageTypes) {
+  const params = await props.params;
+
+  const {
+    project
+  } = params;
+
   return {
     title: `Brett Cimbalik | ${project}`,
     alternates: {
@@ -26,6 +32,12 @@ export async function generateMetadata({ params: { project } }: PageTypes) {
   };
 }
 
-export default function Projects({ params: { project } }: PageTypes) {
+export default async function Projects(props: PageTypes) {
+  const params = await props.params;
+
+  const {
+    project
+  } = params;
+
   return <ProjectDetailPage projectName={project} />;
 }
