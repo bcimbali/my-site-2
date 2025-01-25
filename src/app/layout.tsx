@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   const cookies = await headerCookies();
 
-  const themeCookieValue = cookies?.get('theme-setting')?.value as 'dark' | 'light';
+  const themeCookieValue = cookies?.get('theme-setting')?.value as 'dark' | 'light' ?? 'dark';
 
   return (
     <html lang="en">
