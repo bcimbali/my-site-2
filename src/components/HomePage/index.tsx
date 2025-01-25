@@ -65,7 +65,7 @@ const HomePage = () => {
     <StyledDiv>
       <TitleContainer>
         <PageTitle noMargin>{'Brett Cimbalik'}</PageTitle>
-        <PageSubtitle>Web Developer</PageSubtitle>
+        <PageSubtitle>Software Engineer</PageSubtitle>
       </TitleContainer>
       <TrainMarquee hiddenTrainMarkup={hiddenTrainMarkup}>{trainMarkup}</TrainMarquee>
 
