@@ -4,6 +4,7 @@ import { formSchema } from '@/components/ContactForm/validation';
 import { ZodError } from 'zod';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/components/ContactFormEmail';
+import React from 'react';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -44,7 +45,7 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
       to: `${process.env.CONTACT_FORM_EMAIL_TO}`,
       subject: `${formSubject}`,
       text: '',
-      react: ContactFormEmail({ formEmail, formMessage })
+      react: React.createElement(ContactFormEmail, { formEmail, formMessage })
     });
 
     // Handle server-side errors:
