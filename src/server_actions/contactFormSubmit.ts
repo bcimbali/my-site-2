@@ -23,8 +23,9 @@ export type State =
     }
   | null;
 
-const contactFormSubmit = async (prevState: State | null, data: FormData): Promise<State> => {
+const contactFormSubmit = async (extras: { captchaToken?: string }, prevState: State | null, data: FormData): Promise<State> => {
   console.log('In contactFormSubmit.ts, this is data: ', data);
+  console.log('In contactFormSubmit.ts, this is captchaToken: ', extras?.captchaToken);
   // Outer try catch only works for errors
   // thrown by the fetch function itself:
   try {
@@ -59,6 +60,7 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
     };
   } catch (e) {
     // In case of a ZodError (caused by our validation) we're adding issues to our response:
+    console.error(e);
     if (e instanceof ZodError) {
       return {
         status: 'error',

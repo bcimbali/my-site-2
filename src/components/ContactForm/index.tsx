@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FormContent from './FormContent';
 import { formSchema } from './validation';
+import { ReCaptcha } from 'next-recaptcha-v3';
 
 export interface FormValues {
   subject: string;
@@ -53,7 +54,12 @@ const ContactForm = () => {
     formState: { errors, isValid },
     setError
   } = useForm<ContactFormFields>({ mode: 'all', resolver: zodResolver(formSchema) });
-  const [state, formAction] = useActionState<State, FormData>(contactFormSubmit, null);
+  const [token, setToken] = useState<string>();
+  const submitContactWithCaptchaToken = contactFormSubmit.bind(null, {
+    captchaToken: token
+  });
+
+  const [state, formAction] = useActionState<State, FormData>(submitContactWithCaptchaToken, null);
   const [isSubmitSuccessful, setIsSubmitSuccessful] = useState(false);
 
   useEffect(() => {
@@ -80,6 +86,7 @@ const ContactForm = () => {
       ) : (
         <Form action={formAction}>
           <FormContent register={register} isValid={isValid} errors={errors} />
+          <ReCaptcha onValidate={setToken} action="contact_form_submit" />
           <StateText>{state?.message}</StateText>
         </Form>
       )}
