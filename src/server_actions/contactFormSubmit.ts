@@ -29,7 +29,7 @@ const contactFormSubmit = async (extras: { captchaToken?: string }, prevState: S
   console.log('In contactFormSubmit.ts, this is captchaToken: ', extras?.captchaToken);
 
   if (!extras?.captchaToken) {
-    // If no token, throw error or return out
+    // If no token, throw error or return out:
     throw new Error(`No Captcha token provided.`);
   }
 
