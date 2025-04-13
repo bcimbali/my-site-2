@@ -5,6 +5,7 @@ import { ZodError } from 'zod';
 import { Resend } from 'resend';
 import ContactFormEmail from '@/components/ContactFormEmail';
 import React from 'react';
+import verifyCaptchaToken from '@/lib/verifyReCapthcha';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -23,8 +24,30 @@ export type State =
     }
   | null;
 
-const contactFormSubmit = async (prevState: State | null, data: FormData): Promise<State> => {
+const contactFormSubmit = async (extras: { captchaToken?: string }, prevState: State | null, data: FormData): Promise<State> => {
   console.log('In contactFormSubmit.ts, this is data: ', data);
+  console.log('In contactFormSubmit.ts, this is captchaToken: ', extras?.captchaToken);
+
+  if (!extras?.captchaToken) {
+    // If no token, throw error or return out:
+    throw new Error(`No Captcha token provided.`);
+  }
+
+  // Verify the token:
+  const captchaData = await verifyCaptchaToken({ token: extras?.captchaToken});
+  console.log('In contactFormSubmit.ts, this is captchaData: ', captchaData);
+
+  if (!captchaData) {
+    throw('No Captcha Data');
+  }
+
+  if (!captchaData.success || captchaData.score < 0.5) {
+    // let err = '';
+    // !captchaData.success ? err = captchaData['error-codes'].join(', ') : 'Captcha failed';
+
+    throw new Error('Captcha failed.')
+  }
+
   // Outer try catch only works for errors
   // thrown by the fetch function itself:
   try {
@@ -59,6 +82,7 @@ const contactFormSubmit = async (prevState: State | null, data: FormData): Promi
     };
   } catch (e) {
     // In case of a ZodError (caused by our validation) we're adding issues to our response:
+    console.error(e);
     if (e instanceof ZodError) {
       return {
         status: 'error',

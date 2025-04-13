@@ -9,6 +9,7 @@ import PageContainer from '@/components/PageContainer';
 import TrainProvider from '@/app/train-provider';
 import ThemeStylesProviderComponent from '@/app/theme-styles-provider';
 import baseUrl from '@/lib/urlHelpers';
+import { ReCaptchaProvider } from 'next-recaptcha-v3';
 
 export const metadata: Metadata = {
   title: 'Brett Cimbalik',
@@ -33,26 +34,28 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   const cookies = await headerCookies();
 
-  const themeCookieValue = cookies?.get('theme-setting')?.value as 'dark' | 'light' ?? 'dark';
+  const themeCookieValue = (cookies?.get('theme-setting')?.value as 'dark' | 'light') ?? 'dark';
 
   return (
     <html lang="en">
-      <StyledComponentsRegistry>
-        <ThemeStylesProviderComponent themeFromCookie={themeCookieValue}>
-          <TrainProvider>
-            <ThemeProvider>
-              <PageContainer>
-                <script
-                  type="application/ld+json"
-                  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-                />
-                {children}
-                <SpeedInsights />
-              </PageContainer>
-            </ThemeProvider>
-          </TrainProvider>
-        </ThemeStylesProviderComponent>
-      </StyledComponentsRegistry>
+      <ReCaptchaProvider>
+        <StyledComponentsRegistry>
+          <ThemeStylesProviderComponent themeFromCookie={themeCookieValue}>
+            <TrainProvider>
+              <ThemeProvider>
+                <PageContainer>
+                  <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                  />
+                  {children}
+                  <SpeedInsights />
+                </PageContainer>
+              </ThemeProvider>
+            </TrainProvider>
+          </ThemeStylesProviderComponent>
+        </StyledComponentsRegistry>
+      </ReCaptchaProvider>
     </html>
   );
 }
