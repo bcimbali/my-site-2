@@ -42,8 +42,8 @@ const contactFormSubmit = async (extras: { captchaToken?: string }, prevState: S
   }
 
   if (!captchaData.success || captchaData.score < 0.5) {
-    let err = '';
-    !captchaData.success ? err = captchaData['error-codes'].join(', ') : 'Captcha failed';
+    // let err = '';
+    // !captchaData.success ? err = captchaData['error-codes'].join(', ') : 'Captcha failed';
 
     throw new Error('Captcha failed.')
   }
